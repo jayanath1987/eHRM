@@ -1,0 +1,1976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.21" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.0.v20100531 Build &lt;2.6.0.v20100609-1613></property>
+    <simple-property-list name="includeResource">
+        <value>resource/Train_summary</value>
+        <value>resource/Train_summary_ta</value>
+        <value>resource/Train_summary_si</value>
+    </simple-property-list>
+    <list-property name="includeScripts">
+        <property>wfd_12535314174ab75f19a113d--md5.js</property>
+    </list-property>
+    <property name="units">in</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">1338</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">1338</property>
+        </structure>
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">1337</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">1337</property>
+            <expression name="value" type="javascript">reportContext.getAppContext().get("birt.viewer.resource.path")+"/ServerProfiles.dat"</expression>
+        </structure>
+    </list-property>
+    <method name="beforeFactory"><![CDATA[importPackage( Packages.javax.servlet.http );
+
+var request = reportContext.getHttpServletRequest();
+var flag = 0;
+var timeStamp = "";
+var securityToken = "";
+
+//read the url values
+var request = reportContext.getHttpServletRequest();
+
+user=request.getParameter("__user");
+repname=request.getParameter("__report");
+securityToken=request.getParameter("__st");
+time=request.getParameter("__time");
+
+var timeStamp = time*1000; // java timestamp = php timestamp * 1000
+var reportDate = new Date(timeStamp);
+var currentDate = new Date();
+
+// Get msec from each, and subtract.
+var diff = currentDate.getTime() - reportDate.getTime();
+
+urlstring=md5(repname+user+time);
+
+//set the flag to allow the report components to hide if flag=1 (= no access)
+if (securityToken==urlstring)
+{
+	if (diff < 100000) {
+		flag=1;
+	}
+}
+
+reportContext.setGlobalVariable('access_flag', flag);
+
+repLanguage=request.getParameter("__locale");
+if (repLanguage=="") {
+	repLanguage="en";
+}
+
+reportContext.setGlobalVariable('report_language', repLanguage);
+reportContext.setGlobalVariable('user', user);]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="trainingProgrammeName" id="1412">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="FromDate" id="1414">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="ToDate" id="1415">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="CommonHRMData" id="1337">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://192.168.0.108:3306/20110116</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">aHNlbmlkc29mdA==</encrypted-property>
+            <property name="OdaConnProfileName">hrmintegration</property>
+            <property name="OdaConnProfileStorePath">/home/hrm/tomcat/webapps/birt-viewer/ServerProfiles.dat</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="training_notice_info" id="1338">
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">if (vars["report_language"]=="en") {
+d = row["td_course_name_en"]
+}else if(vars["report_language"]=="si"){
+d = row["td_course_name_si"]
+}else{
+d = row["td_course_name_ta"]
+}
+if ( params["trainingProgrammeName"] .value== null ) {
+d = null
+}
+d;</expression>
+                    <simple-property-list name="value1">
+                        <value>params["trainingProgrammeName"].value</value>
+                    </simple-property-list>
+                </structure>
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">d = row["td_course_fromdate"]
+
+if ( params["FromDate"] .value== null) {
+d = null
+}
+d;</expression>
+                    <simple-property-list name="value1">
+                        <value>d = params["FromDate"].value</value>
+                    </simple-property-list>
+                </structure>
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">d = row["td_course_todate"]
+
+if ( params["ToDate"] .value== null) {
+d = null
+}
+d;</expression>
+                    <simple-property-list name="value1">
+                        <value>d = params["ToDate"].value</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue" type="javascript">reportContext.getGlobalVariable('user')</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">td_inst_name_en</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">td_inst_name_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">td_inst_name_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">emp_display_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">emp_display_name_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">emp_display_name_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">td_course_year</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">td_course_name_en</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">td_course_name_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">td_course_name_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">lang_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">lang_name_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">lang_name_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">td_course_venue_en</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">td_course_venue_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">td_course_venue_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">td_course_fromdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">td_course_todate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">td_course_objective_en</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">td_course_objective_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">td_course_objective_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">td_course_whom_en</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">td_course_whom_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">td_course_whom_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">td_course_content_en</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">td_course_content_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">td_course_content_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">td_course_fees</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CommonHRMData</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">td_inst_name_en</property>
+                    <property name="nativeName">td_inst_name_en</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">td_inst_name_si</property>
+                    <property name="nativeName">td_inst_name_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">td_inst_name_ta</property>
+                    <property name="nativeName">td_inst_name_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">emp_display_name</property>
+                    <property name="nativeName">emp_display_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">emp_display_name_si</property>
+                    <property name="nativeName">emp_display_name_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">emp_display_name_ta</property>
+                    <property name="nativeName">emp_display_name_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">td_course_year</property>
+                    <property name="nativeName">td_course_year</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">td_course_name_en</property>
+                    <property name="nativeName">td_course_name_en</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">td_course_name_si</property>
+                    <property name="nativeName">td_course_name_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">td_course_name_ta</property>
+                    <property name="nativeName">td_course_name_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">lang_name</property>
+                    <property name="nativeName">lang_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">lang_name_si</property>
+                    <property name="nativeName">lang_name_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">lang_name_ta</property>
+                    <property name="nativeName">lang_name_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">td_course_venue_en</property>
+                    <property name="nativeName">td_course_venue_en</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">td_course_venue_si</property>
+                    <property name="nativeName">td_course_venue_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">td_course_venue_ta</property>
+                    <property name="nativeName">td_course_venue_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">td_course_fromdate</property>
+                    <property name="nativeName">td_course_fromdate</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">td_course_todate</property>
+                    <property name="nativeName">td_course_todate</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">td_course_objective_en</property>
+                    <property name="nativeName">td_course_objective_en</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">td_course_objective_si</property>
+                    <property name="nativeName">td_course_objective_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">td_course_objective_ta</property>
+                    <property name="nativeName">td_course_objective_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">td_course_whom_en</property>
+                    <property name="nativeName">td_course_whom_en</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">td_course_whom_si</property>
+                    <property name="nativeName">td_course_whom_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">td_course_whom_ta</property>
+                    <property name="nativeName">td_course_whom_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">td_course_content_en</property>
+                    <property name="nativeName">td_course_content_en</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">td_course_content_si</property>
+                    <property name="nativeName">td_course_content_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">td_course_content_ta</property>
+                    <property name="nativeName">td_course_content_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">td_course_fees</property>
+                    <property name="nativeName">td_course_fees</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[CALL sp_rpt_training_notice_summary(?);]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_inst_name_en</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>75</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_inst_name_en</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_inst_name_en</design:label>
+            <design:formattingHints>
+              <design:displaySize>75</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_inst_name_si</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>75</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_inst_name_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_inst_name_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>75</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_inst_name_ta</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>75</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_inst_name_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_inst_name_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>75</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>emp_display_name</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>emp_display_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emp_display_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>emp_display_name_si</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>emp_display_name_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emp_display_name_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>emp_display_name_ta</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>emp_display_name_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emp_display_name_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_year</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_year</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_year</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_name_en</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_name_en</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_name_en</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_name_si</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_name_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_name_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_name_ta</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_name_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_name_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>lang_name</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>120</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>lang_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>lang_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>120</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>lang_name_si</design:name>
+            <design:position>12</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>120</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>lang_name_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>lang_name_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>120</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>lang_name_ta</design:name>
+            <design:position>13</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>120</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>lang_name_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>lang_name_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>120</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_venue_en</design:name>
+            <design:position>14</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_venue_en</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_venue_en</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_venue_si</design:name>
+            <design:position>15</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_venue_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_venue_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_venue_ta</design:name>
+            <design:position>16</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_venue_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_venue_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_fromdate</design:name>
+            <design:position>17</design:position>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_fromdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_fromdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_todate</design:name>
+            <design:position>18</design:position>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_todate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_todate</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_objective_en</design:name>
+            <design:position>19</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_objective_en</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_objective_en</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_objective_si</design:name>
+            <design:position>20</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_objective_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_objective_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_objective_ta</design:name>
+            <design:position>21</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_objective_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_objective_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_whom_en</design:name>
+            <design:position>22</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_whom_en</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_whom_en</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_whom_si</design:name>
+            <design:position>23</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_whom_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_whom_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_whom_ta</design:name>
+            <design:position>24</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_whom_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_whom_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_content_en</design:name>
+            <design:position>25</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_content_en</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_content_en</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_content_si</design:name>
+            <design:position>26</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_content_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_content_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_content_ta</design:name>
+            <design:position>27</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_content_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_content_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>td_course_fees</design:name>
+            <design:position>28</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>td_course_fees</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>td_course_fees</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="orgName" id="27">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">title</property>
+                    <text-property name="displayName">title</text-property>
+                    <text-property name="heading">title</text-property>
+                    <property name="displayLength">200</property>
+                    <property name="horizontalAlign">justify</property>
+                    <property name="wordWrap">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">title_si</property>
+                    <text-property name="displayName">title_si</text-property>
+                    <text-property name="heading">title_si</text-property>
+                    <property name="displayLength">200</property>
+                    <property name="horizontalAlign">justify</property>
+                    <property name="wordWrap">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">title_ta</property>
+                    <text-property name="displayName">title_ta</text-property>
+                    <text-property name="heading">title_ta</text-property>
+                    <property name="displayLength">200</property>
+                    <property name="horizontalAlign">justify</property>
+                    <property name="wordWrap">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">title</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">title_si</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">title_ta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CommonHRMData</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">title</property>
+                    <property name="nativeName">title</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">title_si</property>
+                    <property name="nativeName">title_si</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">title_ta</property>
+                    <property name="nativeName">title_ta</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select hs_hr_compstructtree.title,hs_hr_compstructtree.title_si,hs_hr_compstructtree.title_ta
+from hs_hr_compstructtree
+where hs_hr_compstructtree.id=1]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>title</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>title</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>title</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>title_si</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>title_si</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>title_si</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>title_ta</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>title_ta</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>title_ta</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="NewStyle" id="1409">
+            <structure name="dateTimeFormat">
+                <property name="category">Short Date</property>
+                <property name="pattern">Short Date</property>
+                <property name="locale">si_LK</property>
+            </structure>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+            <property name="headerHeight">1.5in</property>
+            <page-header>
+                <grid id="1196">
+                    <property name="marginTop">auto</property>
+                    <property name="marginLeft">auto</property>
+                    <property name="marginBottom">5px</property>
+                    <property name="marginRight">auto</property>
+                    <property name="height">1.2291666666666667in</property>
+                    <property name="width">11.197916666666666in</property>
+                    <column id="1197">
+                        <property name="width">1.375in</property>
+                    </column>
+                    <column id="1198">
+                        <property name="width">8.260416666666666in</property>
+                    </column>
+                    <column id="1199">
+                        <property name="width">1.5625in</property>
+                    </column>
+                    <row id="1200">
+                        <cell id="1201">
+                            <image id="1165">
+                                <property name="marginLeft">auto</property>
+                                <property name="height">0.6770833333333334in</property>
+                                <property name="width">0.4895833333333333in</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/logo.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="1202">
+                            <data id="1167">
+                                <property name="fontFamily">serif</property>
+                                <property name="fontSize">18pt</property>
+                                <property name="color">#000000</property>
+                                <property name="marginTop">0px</property>
+                                <property name="marginLeft">50px</property>
+                                <property name="marginBottom">auto</property>
+                                <property name="marginRight">50pt</property>
+                                <property name="textAlign">center</property>
+                                <property name="whiteSpace">nowrap</property>
+                                <property name="dataSet">orgName</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">title</property>
+                                        <text-property name="displayName">title</text-property>
+                                        <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	dataSetRow["title"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["title_si"]=="") {
+		dataSetRow["title"]
+	} else {
+		dataSetRow["title_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["title_ta"]=="") {
+		dataSetRow["title"]
+	} else {
+		dataSetRow["title_ta"]
+	}
+}</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">title</property>
+                            </data>
+                        </cell>
+                        <cell id="1203">
+                            <image id="1170">
+                                <property name="height">0.4583333333333333in</property>
+                                <property name="width">1.0416666666666667in</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/icta.png</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1204">
+                        <property name="height">0.4375in</property>
+                        <cell id="1205">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <label id="1168">
+                                <property name="backgroundColor">#FFFFFF</property>
+                                <property name="fontFamily">serif</property>
+                                <property name="fontSize">16pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#000000</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">5px</property>
+                                <property name="marginRight">25pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="TrainingNotice">Retirement Notification Report</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="1318">
+                    <property name="fontFamily">"BhashitaComplexSans"</property>
+                    <property name="width">11.03125in</property>
+                    <column id="1319">
+                        <property name="width">10.53125in</property>
+                    </column>
+                    <column id="1320">
+                        <property name="width">0.5in</property>
+                    </column>
+                    <row id="1321">
+                        <cell id="1322">
+                            <text id="1336">
+                                <property name="color">#000000</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<value-of format="yyyy-MM-dd">new Date()</value-of>]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1323">
+                            <grid id="1325">
+                                <column id="1326"/>
+                                <column id="1327"/>
+                                <column id="1328"/>
+                                <row id="1329">
+                                    <cell id="1330">
+                                        <auto-text id="1331">
+                                            <property name="color">#000000</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="1332">
+                                        <text id="1333">
+                                            <property name="contentType">plain</property>
+                                            <text-property name="content"><![CDATA[/]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1334">
+                                        <auto-text id="1335">
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="1339">
+            <property name="marginLeft">5pt</property>
+            <property name="width">11.135416666666666in</property>
+            <property name="dataSet">training_notice_info</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">td_inst_name_en</property>
+                    <text-property name="displayName">td_inst_name_en</text-property>
+                    <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	dataSetRow["td_inst_name_en"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["td_inst_name_si"]==null || dataSetRow["td_inst_name_si"]=="") {
+		dataSetRow["td_inst_name_en"]
+	} else {
+		dataSetRow["td_inst_name_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["td_inst_name_ta"]==null || dataSetRow["td_inst_name_ta"]=="") {
+			dataSetRow["td_inst_name_en"]
+	} else {
+		dataSetRow["td_inst_name_ta"]
+	}
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_year</property>
+                    <text-property name="displayName">td_course_year</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_year"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_name_en</property>
+                    <text-property name="displayName">td_course_name_en</text-property>
+                    <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	dataSetRow["td_course_content_en"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["td_course_content_si"]=="" || dataSetRow["td_course_content_si"]==null) {
+		dataSetRow["td_course_content_en"]
+	} else {
+		dataSetRow["td_course_content_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["td_course_content_ta"]=="" || dataSetRow["td_course_content_ta"]==null) {
+			dataSetRow["td_course_content_en"]
+	} else {
+		dataSetRow["td_course_content_ta"]
+	}
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">lang_name</property>
+                    <text-property name="displayName">lang_name</text-property>
+                    <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	intColname=dataSetRow["lang_name"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["lang_name_si"]=="" || dataSetRow["lang_name_si"]==null) {
+		intColname=dataSetRow["lang_name"]
+	} else {
+		intColname=dataSetRow["lang_name_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["lang_name_ta"]=="" || dataSetRow["lang_name_ta"]==null) {
+		intColname=dataSetRow["lang_name"]
+	} else {
+		intColname=dataSetRow["lang_name_ta"]
+	}
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_venue_en</property>
+                    <text-property name="displayName">td_course_venue_en</text-property>
+                    <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	intColname=dataSetRow["td_course_venue_en"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["td_course_venue_si"]=="" || dataSetRow["td_course_venue_si"]==null) {
+		intColname=dataSetRow["td_course_venue_en"]
+	} else {
+		intColname=dataSetRow["td_course_venue_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["td_course_venue_ta"]=="" || dataSetRow["td_course_venue_ta"]==null) {
+		intColname=dataSetRow["td_course_venue_en"]
+	} else {
+		intColname=dataSetRow["td_course_venue_ta"]
+	}
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_fromdate</property>
+                    <text-property name="displayName">td_course_fromdate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_fromdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_todate</property>
+                    <text-property name="displayName">td_course_todate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_todate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_objective_en</property>
+                    <text-property name="displayName">td_course_objective_en</text-property>
+                    <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	dataSetRow["td_course_objective_en"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["td_course_objective_si"]=="" || dataSetRow["td_course_objective_si"]==null) {
+		dataSetRow["td_course_objective_en"]
+	} else {
+		dataSetRow["td_course_objective_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["td_course_objective_ta"]=="" || dataSetRow["td_course_objective_ta"]==null) {
+			dataSetRow["td_course_objective_en"]
+	} else {
+		dataSetRow["td_course_objective_ta"]
+	}
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_whom_en</property>
+                    <text-property name="displayName">td_course_whom_en</text-property>
+                    <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	dataSetRow["td_course_whom_en"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["td_course_whom_si"]==""  || dataSetRow["td_course_whom_si"]==null) {
+		dataSetRow["td_course_whom_en"]
+	} else {
+		dataSetRow["td_course_whom_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["td_course_whom_ta"]==""  || dataSetRow["td_course_whom_ta"]==null) {
+			dataSetRow["td_course_whom_en"]
+	} else {
+		dataSetRow["td_course_whom_ta"]
+	}
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_content_en</property>
+                    <text-property name="displayName">td_course_content_en</text-property>
+                    <expression name="expression" type="javascript">if (vars["report_language"]=="en") {
+	dataSetRow["td_course_content_en"]
+} else if (vars["report_language"]=="si") {
+	if  (dataSetRow["td_course_content_si"]=="" || dataSetRow["td_course_content_si"]==null) {
+		dataSetRow["td_course_content_en"]
+	} else {
+		dataSetRow["td_course_content_si"]
+	}
+} else if (vars["report_language"]=="ta") {
+	if  (dataSetRow["td_course_content_ta"]=="" || dataSetRow["td_course_content_ta"]==null) {
+			dataSetRow["td_course_content_en"]
+	} else {
+		dataSetRow["td_course_content_ta"]
+	}
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_fees</property>
+                    <text-property name="displayName">td_course_fees</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_fees"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_inst_name_en_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_inst_name_en"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_inst_name_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_inst_name_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_inst_name_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_inst_name_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">emp_display_name</property>
+                    <expression name="expression" type="javascript">dataSetRow["emp_display_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">emp_display_name_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["emp_display_name_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">emp_display_name_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["emp_display_name_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_name_en_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_name_en"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_name_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_name_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_name_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_name_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">lang_name_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["lang_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">lang_name_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["lang_name_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">lang_name_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["lang_name_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_venue_en_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_venue_en"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_venue_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_venue_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_venue_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_venue_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_objective_en_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_objective_en"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_objective_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_objective_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_objective_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_objective_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_whom_en_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_whom_en"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_whom_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_whom_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_whom_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_whom_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_content_en_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_content_en"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_content_si</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_content_si"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">td_course_content_ta</property>
+                    <expression name="expression" type="javascript">dataSetRow["td_course_content_ta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="1376">
+                <property name="width">1.3229166666666667in</property>
+            </column>
+            <column id="1377">
+                <property name="width">0.96875in</property>
+            </column>
+            <column id="1378">
+                <property name="width">1.3229166666666667in</property>
+            </column>
+            <column id="1379">
+                <property name="width">0.6354166666666666in</property>
+            </column>
+            <column id="1380">
+                <property name="width">1.28125in</property>
+            </column>
+            <column id="1381">
+                <property name="width">0.8020833333333334in</property>
+            </column>
+            <column id="1382">
+                <property name="width">0.8125in</property>
+            </column>
+            <column id="1383">
+                <property name="width">1.1979166666666667in</property>
+            </column>
+            <column id="1384">
+                <property name="width">1.1875in</property>
+            </column>
+            <column id="1385">
+                <property name="width">0.9791666666666666in</property>
+            </column>
+            <column id="1386">
+                <property name="width">0.625in</property>
+            </column>
+            <header>
+                <row id="1340">
+                    <property name="height">0.375in</property>
+                    <property name="fontSize">8pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">left</property>
+                    <cell id="1341">
+                        <label id="1387">
+                            <text-property name="text" key="InstituteName">td_inst_name_en</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1342">
+                        <label id="1389">
+                            <text-property name="text" key="TrainingCalendaryear">td_course_year</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1343">
+                        <label id="1391">
+                            <text-property name="text" key="TrainingName">td_course_name_en</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1344">
+                        <label id="1393">
+                            <text-property name="text" key="Medium">lang_name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1345">
+                        <label id="1395">
+                            <text-property name="text" key="Venue">td_course_venue_en</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1346">
+                        <label id="1397">
+                            <text-property name="text" key="FromDate">td_course_fromdate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1347">
+                        <label id="1399">
+                            <text-property name="text" key="ToDate">td_course_todate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1348">
+                        <label id="1401">
+                            <text-property name="text" key="Objective">td_course_objective_en</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1349">
+                        <label id="1403">
+                            <text-property name="text" key="Towhom">td_course_whom_en</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1350">
+                        <label id="1405">
+                            <text-property name="text" key="Contents">td_course_content_en</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1351">
+                        <label id="1407">
+                            <text-property name="text" key="Coursefee">td_course_fees</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="1416">
+                <property name="groupName">Institute Name</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr" type="javascript">row["td_inst_name_en"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["td_inst_name_en"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="1417">
+                        <cell id="1418">
+                            <label id="1442">
+                                <property name="fontWeight">bold</property>
+                                <text-property name="text" key="InstituteName">Institute Name</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1419">
+                            <data id="1441">
+                                <property name="fontWeight">bold</property>
+                                <property name="resultSetColumn">td_inst_name_en</property>
+                            </data>
+                        </cell>
+                        <cell id="1420"/>
+                        <cell id="1421"/>
+                        <cell id="1422"/>
+                        <cell id="1423"/>
+                        <cell id="1424"/>
+                        <cell id="1425"/>
+                        <cell id="1426"/>
+                        <cell id="1427"/>
+                        <cell id="1428"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="1429">
+                        <cell id="1430"/>
+                        <cell id="1431"/>
+                        <cell id="1432"/>
+                        <cell id="1433"/>
+                        <cell id="1434"/>
+                        <cell id="1435"/>
+                        <cell id="1436"/>
+                        <cell id="1437"/>
+                        <cell id="1438"/>
+                        <cell id="1439"/>
+                        <cell id="1440"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="1352">
+                    <property name="textAlign">left</property>
+                    <property name="whiteSpace">normal</property>
+                    <cell id="1353">
+                        <data id="1388">
+                            <property name="fontSize">8pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="resultSetColumn">td_inst_name_en</property>
+                        </data>
+                    </cell>
+                    <cell id="1354">
+                        <data id="1390">
+                            <property name="fontSize">8pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="resultSetColumn">td_course_year</property>
+                        </data>
+                    </cell>
+                    <cell id="1355">
+                        <data id="1392">
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="resultSetColumn">td_course_name_en</property>
+                        </data>
+                    </cell>
+                    <cell id="1356">
+                        <data id="1394">
+                            <property name="fontSize">8pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="resultSetColumn">lang_name</property>
+                        </data>
+                    </cell>
+                    <cell id="1357">
+                        <data id="1396">
+                            <property name="fontSize">8pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="resultSetColumn">td_course_venue_en</property>
+                        </data>
+                    </cell>
+                    <cell id="1358">
+                        <data id="1398">
+                            <property name="fontSize">8pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Short Date</property>
+                                <property name="pattern">Short Date</property>
+                                <property name="locale">si_LK</property>
+                            </structure>
+                            <property name="whiteSpace">normal</property>
+                            <property name="resultSetColumn">td_course_fromdate</property>
+                        </data>
+                    </cell>
+                    <cell id="1359">
+                        <data id="1400">
+                            <property name="fontSize">8pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Short Date</property>
+                                <property name="pattern">Short Date</property>
+                                <property name="locale">si_LK</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">td_course_todate</property>
+                        </data>
+                    </cell>
+                    <cell id="1360">
+                        <data id="1402">
+                            <property name="fontSize">8pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="resultSetColumn">td_course_objective_en</property>
+                        </data>
+                    </cell>
+                    <cell id="1361">
+                        <data id="1404">
+                            <property name="fontSize">8pt</property>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">td_course_whom_en</property>
+                        </data>
+                    </cell>
+                    <cell id="1362">
+                        <data id="1406">
+                            <property name="fontSize">8pt</property>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">td_course_content_en</property>
+                        </data>
+                    </cell>
+                    <cell id="1363">
+                        <data id="1408">
+                            <property name="fontSize">8pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                <property name="locale">si_LK</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">td_course_fees</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="1364">
+                    <cell id="1365"/>
+                    <cell id="1366"/>
+                    <cell id="1367"/>
+                    <cell id="1368"/>
+                    <cell id="1369"/>
+                    <cell id="1370"/>
+                    <cell id="1371"/>
+                    <cell id="1372"/>
+                    <cell id="1373"/>
+                    <cell id="1374"/>
+                    <cell id="1375"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="report_language">
+            <expression name="value" type="javascript">reportContext.getGlobalVariable('report_language')</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="access_flag">
+            <expression name="value" type="javascript">reportContext.getGlobalVariable('access_flag')</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

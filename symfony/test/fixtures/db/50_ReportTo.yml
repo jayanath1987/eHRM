@@ -1,0 +1,35 @@
+ReportTo:
+  ReportTo_7_4_1:
+    supervisorId: '7'
+    subordinateId: '4'
+    reportingMode: '1'
+  ReportTo_6_6_1:
+    supervisorId: '7'
+    subordinateId: '6'
+    reportingMode: '1'
+  ReportTo_3_7_1:
+    supervisorId: '3'
+    subordinateId: '7'
+    reportingMode: '1'
+  ReportTo_2_8_1:
+    supervisorId: '3'
+    subordinateId: '8'
+    reportingMode: '1'
+  ReportTo_10_9_1:
+    supervisorId: '3'
+    subordinateId: '9'
+    reportingMode: '1'
+  ReportTo_2_3_1:
+    supervisorId: '2'
+    subordinateId: '3'
+    reportingMode: '1'
+  ReportTo_2_1_1:
+    supervisorId: '2'
+    subordinateId: '1'
+    reportingMode: '1'
+  ReportTo_1_10_1:
+    supervisorId: '1'
+    subordinateId: '10'
+    reportingMode: '1'
+
+

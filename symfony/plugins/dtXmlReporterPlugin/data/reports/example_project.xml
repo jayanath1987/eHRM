@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<project xmlns:xi="http://www.w3.org/2003/XInclude">
+  <!-- The ID also doubles as a URI slug !-->
+  <category id="example-category" name="Example category">
+    <report id="example-report" name="Example Report">
+      <xi:include href="definitions/example_definition.xml"/>
+      <xi:include href="filters/example_filters.xml"/>
+      <queries>
+        <xi:include href="queries/example_query.xml"/>
+      </queries>
+      <xi:include href="stylesheets/common.xsl"/>
+    </report>
+  </category>
+</project>

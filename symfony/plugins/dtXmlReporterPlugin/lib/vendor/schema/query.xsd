@@ -1,0 +1,359 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:db="http://docbook.org/ns/docbook">
+
+  <xs:element name="queries">
+    <xs:annotation>
+      <xs:documentation>
+        This is the top-level element for the queries document.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="query" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- Global elements -->
+  <xs:element name="query">
+    <xs:annotation>
+      <xs:documentation>
+        Contains the body of the query.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element ref="select"/>
+          <xs:element ref="inGroup"/>
+          <xs:element ref="from"/>
+          <xs:element ref="leftJoin"/>
+          <xs:element ref="where"/>
+          <xs:element ref="orderBy"/>
+          <xs:element ref="groupBy"/>
+          <xs:element ref="token"/>
+          <xs:element ref="raw"/>
+          <xs:element ref="limit"/>
+          <xs:element ref="query"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Unique name for the query. This name is transferred to the queries resultset.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="connection" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Database connection to use for query.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="select">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Select a field from the DB query result. Multiple select elements can be used.
+        </db:para>
+        <db:example>
+          <db:title>Example</db:title>
+          <db:programlisting>
+            <![CDATA[
+            <select as="foobar">f.foobar</select>
+            <select as="some_sum">SUM(f.cost)</select>
+            ]]>
+          </db:programlisting>
+        </db:example>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="as" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Mandatory alias for field / evaluation
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="inGroup">
+    <xs:annotation>
+      <xs:documentation>
+        Associates this query with the given group "name". This enables filters
+        to append a criteria to multiple queries.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="name" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Group name
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="from">
+    <xs:annotation>
+      <xs:documentation>
+        Specify the table to select from. (joins can be specified seperately)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="table" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Main table to select from
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="as" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Alias for table
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="leftJoin">
+    <xs:annotation>
+      <xs:documentation>
+        Join a table. Assumes that one "from" element already exists. FROM is the joining tables foreign-key field, TO is the destination tables foreign-key field. "toTable" is optional and represents the destination table name, the table specified in the "from" element is used by default.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="table" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Table to join
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="as" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Alias for joined table
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="from" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Field on foreign table to join from
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="to" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Field on target table to join to
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="toTable" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Target table alias if different from initial <db:tag>table</db:tag> tag. Note that this must use the table <db:emphasis>alias</db:emphasis>.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="where">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Add a criteria to the query. 
+          Multiple "where" elements can be used. Note that less than and more than have to be specified as XML entities. 
+        </db:para>
+        <db:para>
+          The LOGIC attribute specifies the joining logic to use for the subsequent WHERE if present. e.g. "OR" would produce: "somefield1=1 OR somefield2 ..."
+        </db:para>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="field" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Subject field, e.g. "f.foobar"
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="valueAsSql" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Interpret the value literally (e.g. do not automatically delimit the value with quotes).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="valueFromWidget">
+        <xs:annotation>
+          <xs:documentation>
+            Only applies when this clause is the child of a filter "widget". If set to true
+            the value of the widget will be assumed as the value
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="operator">
+        <xs:annotation>
+          <xs:documentation>
+            Logical operator to use
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="="/>
+            <xs:enumeration value="&gt;"/>
+            <xs:enumeration value="&lt;"/>
+            <xs:enumeration value="&gt;="/>
+            <xs:enumeration value="&lt;="/>
+            <xs:enumeration value="like"/>
+            <xs:enumeration value="in"/>
+            <xs:enumeration value="not in"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="logic">
+        <xs:annotation>
+          <xs:documentation>
+            Joining logic for subsequenet criteria. (note that this is not a good solution.. but will probably be supported after
+            a better solution is made)
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="and"/>
+            <xs:enumeration value="or"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="orderBy">
+    <xs:annotation>
+      <xs:documentation>
+        Order resultset by given field. Multiples allowed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="field" type="xs:string"/>
+      <xs:attribute name="order">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="ascending"/>
+            <xs:enumeration value="descending"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="limit">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>Limit the number of rows returned</db:para>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="rows" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>
+            <db:para>Number of rows to return</db:para>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="offset" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>
+            <db:para>Offset</db:para>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="groupBy">
+    <xs:annotation>
+      <xs:documentation>
+        Group resultset by given field. Multiples allowed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="field" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="token">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Tokens are currently used to replace %VALUES% in queries. There is a problem here in that the delimiters are the same as MySQL like delimiters. 
+          This is currently the only way to allow nested queries to derive values from the parent "row".
+        </db:para>
+        <db:example>
+          <db:title>Using nested query</db:title>
+          <db:programlisting>
+            <![CDATA[
+            <query name="base_query">
+              <select as="id">f.id</select>
+              ..
+              <query name="sub-query">
+                ..
+                <where field="some_field">%foobar_id%</where>
+                <token name="foobar_id" valueFromResultset="../field[@name='id']"/>
+              </query>
+            </query>
+            ]]>
+          </db:programlisting>
+        </db:example>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Value to replace token with
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="valueFromResultset" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Get the value from the resultset using XPath, e.g. in a nested query, to get the parent rows ID: "../field[@name='id']"
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Name of the token to replace
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="raw" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>
+        Raw SQL. This is element will probably be scrapped at some point. It can be used within a query object instead of any of the tags.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>
+
+

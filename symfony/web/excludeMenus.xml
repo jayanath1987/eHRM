@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : excludeMenus.xml
+    Created on : May 30, 2011, 11:20 AM
+    Author     : hsenid
+    Description:
+        Purpose of the document follows.
+        Enter the Module/Action here if you want excluded menu from menu security.
+        Menus here digest should be included.
+-->
+
+<root>
+    <MenuName>ESS/index</MenuName>
+    <MenuName>admin/changepassword</MenuName>
+    <MenuName>default/error</MenuName>
+    <MenuName>default/accessDenied</MenuName> 
+    <MenuName>training/SaveWorkFlowApprove</MenuName>  
+    <MenuName>workflow/ApprovalSummary</MenuName>
+    <MenuName>training/WorkFlowApprove</MenuName>
+    <MenuName>workflow/ShowWorkflowHistory</MenuName>
+    <MenuName>default/PermissionDenind</MenuName>   
+    <MenuName>transfer/SaveWorkFlowApprove</MenuName>
+    <MenuName>evaluation/FTApproveSearch</MenuName>
+    <MenuName>evaluation/DefineEmployeeEvaluation</MenuName>
+    <MenuName>default/ListNotification</MenuName>
+    <MenuName>evaluation/UpdateClientEvaluation</MenuName>
+    <MenuName>evaluation/EmployeeEvaluation</MenuName>
+    <MenuName>evaluation/AddComment</MenuName>
+    <MenuName>training/Adminapp</MenuName>
+    <MenuName>attendance/DataProcess</MenuName>
+</root>

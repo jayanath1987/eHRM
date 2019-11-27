@@ -1,0 +1,17 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=esm_nodata'
+      username: root
+      password: jayanath
+      port: 3306
+      attributes: { export: tables }
+test:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=test_hr_mysql_esamurdhi'
+      username: root
+      password: hsenidsoft
+      port: 3306

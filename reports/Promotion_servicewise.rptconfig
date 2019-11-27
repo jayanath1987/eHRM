@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.21" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isnull_826_0</property>
+            <property name="value">EmployeeID_826</property>
+        </structure>
+        <structure>
+            <property name="name">EmployeeID_826_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_827_1</property>
+            <property name="value">EmployeeName_827</property>
+        </structure>
+        <structure>
+            <property name="name">EmployeeName_827_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__ServiceName_1337_2</property>
+            <property name="value">Service 1</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1338_3</property>
+            <property name="value">GradeName_1338</property>
+        </structure>
+        <structure>
+            <property name="name">GradeName_1338_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ServiceName_1337_4</property>
+            <property name="value">4</property>
+        </structure>
+        <structure>
+            <property name="name">ServiceName_1337_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ServiceName_1337_expr_</property>
+            <property name="value">dataSetRow["service_code"]</property>
+        </structure>
+    </list-property>
+</report>

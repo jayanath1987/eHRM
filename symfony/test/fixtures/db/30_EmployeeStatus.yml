@@ -1,0 +1,23 @@
+EmployeeStatus:
+  EmployeeStatus_EST000:
+    id: EST000
+    name: Terminated
+  EmployeeStatus_EST001:
+    id: EST001
+    name: 'Full Time Contract'
+  EmployeeStatus_EST002:
+    id: EST002
+    name: 'Full Time Internship'
+  EmployeeStatus_EST003:
+    id: EST003
+    name: 'Full Time Permanent'
+  EmployeeStatus_EST004:
+    id: EST004
+    name: 'Part Time Contract'
+  EmployeeStatus_EST005:
+    id: EST005
+    name: 'Part Time Internship'
+  EmployeeStatus_EST006:
+    id: EST006
+    name: 'Part Time Permanent'
+

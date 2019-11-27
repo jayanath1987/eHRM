@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2008-12-18T22:47:25Z" product-name="messages">
+        <header/>
+        <body>
+      <!-- Common -->
+            <trans-unit id="1">
+                <source>Edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Reset</source>
+                <target>Reset</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add</source>
+                <target>Add</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Hide</source>
+                <target>Hide</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search By</source>
+                <target>Search By</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>--Select--</source>
+                <target>--Select--</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search For:</source>
+                <target>Search For:</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search</source>
+                <target>Search</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Fields marked with an asterisk * are required</source>
+                <target>Fields marked with an asterisk * are required</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Please select a field to search</source>
+                <target>Please select a field to search</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Do you really want to delete?</source>
+                <target>Do you really want to delete?</target>
+            </trans-unit>     
+            <trans-unit id="1">
+                <source>Successfully Added</source>
+                <target>Successfully Added</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Successfully Updated</source>
+                <target>Successfully Updated</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Successfully Deleted</source>
+                <target>Successfully Deleted</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Select at least one record to delete</source>
+                <target>Select at least one record to delete</target>
+            </trans-unit>      
+            <trans-unit id="1">
+                <source>This field contains invalid characters.</source>
+                <target>This field contains invalid characters.</target>
+            </trans-unit>
+      <!-- Company Info -->
+            <trans-unit id="1">
+                <source>Company Info : General</source>
+                <target>Organization Info : General Module</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Company Name</source>
+                <target>Organization Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Division Name</source>
+                <target>Location Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Division Name (Sinhala)</source>
+                <target>Location Name (Sinhala)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Division Name (Tamil)</source>
+                <target>Location Name (Tamil)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Address (Sinhala)</source>
+                <target>Address (Sinhala)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Address (Tamil)</source>
+                <target>Address (Tamil)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Company Head</source>
+                <target>Organization Head</target>
+            </trans-unit>      
+            <trans-unit id="1">
+                <source>Address</source>
+                <target>Address</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Country</source>
+                <target>Country</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Telephone (Intercom)</source>
+                <target>Telephone (Intercom)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Telephone (VIP)</source>
+                <target>Telephone (VIP)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Telephone (Direct Line)</source>
+                <target>Telephone (Direct Line)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Telephone (Extension)</source>
+                <target>Telephone (Extension)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Fax</source>
+                <target>Fax</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>URL</source>
+                <target>URL</target>
+            </trans-unit>      
+            <trans-unit id="1">
+                <source>Company Info : Company Structure</source>
+                <target>Organization Info : Organization Structure</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Please define Company General Information first!</source>
+                <target>Please define Organization General Information first!</target>
+            </trans-unit>      
+            <trans-unit id="1">
+                <source>Division Head</source>
+                <target>Location Head</target>
+            </trans-unit> 
+            <trans-unit id="1">
+                <source>Company Name is required</source>
+                <target>Company Name is required</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Invalid Telephone (Intercom) number</source>
+                <target>Invalid Telephone (Intercom) number</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Invalid Telephone (VIP) number</source>
+                <target>Invalid Telephone (VIP) number</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Invalid Telephone (Direct Line) number</source>
+                <target>Invalid Telephone (Direct Line) number</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Invalid Telephone (Extension) number</source>
+                <target>Invalid Telephone (Extension) number</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Invalid Fax number</source>
+                <target>Invalid Fax number</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Length should be less than 200 characters</source>
+                <target>Length should be less than 200 characters</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Length should be less than 200 characters</source>
+                <target>Length should be less than 200 characters</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Length should be less than 200 characters</source>
+                <target>Length should be less than 200 characters</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Invalid E-Mail</source>
+                <target>Invalid E-Mail</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Invalid URL</source>
+                <target>Invalid URL</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add a sub-division to #Division</source>
+                <target>Add a Location to #Location</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Are you sure you want to delete #SubDivision? Also unit(s) under #SubDivision will be deteted. It could cause the company structure to change.</source>
+                <target>Are you sure you want to delete #Location? Also unit(s) under #Location will be deteted. It could cause the company structure to change.</target>
+            </trans-unit>
+      <!-- Languages -->
+            <trans-unit id="1">
+                <source>Languages</source>
+                <target>Languages</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Language ID</source>
+                <target>Language ID</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Language Name</source>
+                <target>Language Name</target>
+            </trans-unit>
+      <!-- Skills -->
+            <trans-unit id="1">
+                <source>Skill</source>
+                <target>Skill</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Skill ID</source>
+                <target>Skill ID</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Skill Name</source>
+                <target>Skill Name</target>
+            </trans-unit>
+      <!-- Education -->
+            <trans-unit id="1">
+                <source>Education</source>
+                <target>Education</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Education ID</source>
+                <target>Education ID</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Education Name</source>
+                <target>Education Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Grades</source>
+                <target>Grades</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Grade Name</source>
+                <target>Grade Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Grade</source>
+                <target>Add Grade</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Grade Name</source>
+                <target>Grade Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Classes</source>
+                <target>Classes</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Class Name</source>
+                <target>Class Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Class</source>
+                <target>Add Class</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Attachmeny Type</source>
+                <target>Add Attachmeny Type</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Update Class</source>
+                <target>Update Class</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Update Grade</source>
+                <target>Update Grade</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Attachment Type</source>
+                <target>Attachment Type</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Services</source>
+                <target>Services</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Servic</source>
+                <target>Servic</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Services</source>
+                <target>Add Services</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Services Name</source>
+                <target>Services Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Designation</source>
+                <target>Designation</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Designation</source>
+                <target>Add Designation</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Designation Name</source>
+                <target>Designation Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Valid Employee is required</source>
+                <target>Valid Employee is required</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Users</source>
+                <target>User Details</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>User ID</source>
+                <target>User ID</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>User Name</source>
+                <target>User login ID</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Employee</source>
+                <target>Employee</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Confirm Password</source>
+                <target>Confirm Password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Confirm Password</source>
+                <target>Confirm Password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Status</source>
+                <target>Status</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Capability</source>
+                <target>Capability</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Confirm Password is required</source>
+                <target>Confirm Password is required</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Enabled</source>
+                <target>Enabled</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Change Password</source>
+                <target>Change Password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Current Password</source>
+                <target>Current Password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>New Password</source>
+                <target>New Password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>New password does not match please Type again</source>
+                <target>New password does not match please Type again</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Confirm Password</source>
+                <target>Confirm Password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>You have successfully change your password</source>
+                <target>You have successfully change your password</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Current Password is Incorrect</source>
+                <target>Current Password is Incorrect</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Edit Job Title</source>
+                <target>Edit Job Title</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Job Title</source>
+                <target>Add Job Title</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Job Title</source>
+                <target>Job Title</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Define EB Exam</source>
+                <target>Define EB Exam</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>EBExam Name</source>
+                <target>EBExam Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Service Name</source>
+                <target>Service Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>EB Exam Name</source>
+                <target>EB Exam Name</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Incriment Rate</source>
+                <target>Increment Rate</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Incriment Amount</source>
+                <target>Increment Amount</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Level Summary</source>
+                <target>Level</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Job Role Summary</source>
+                <target>Job Role</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Division code</source>
+                <target>Location code</target>
+            </trans-unit>   
+            <trans-unit id="1">
+                <source>Division Head(s)</source>
+                <target>Location Head(s)</target>
+            </trans-unit>  
+            <trans-unit id="1">
+                <source>User login ID</source>
+                <target>User login ID</target>
+            </trans-unit>  
+            <trans-unit>
+                <source>Security Level</source>
+                <target>Security Level</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

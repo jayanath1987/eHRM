@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : excludeMenus.xml
+    Created on : May 30, 2011, 11:20 AM
+    Author     : hsenid
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <MenuName>ESS/index</MenuName>
+    <MenuName>admin/changepassword</MenuName>
+    <MenuName>default/error</MenuName>
+    <MenuName>default/accessDenied</MenuName>
+</root>

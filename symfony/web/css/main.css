@@ -1,0 +1,21 @@
+div.pagingbar a,
+div.pagingbar span {
+	padding-left: 0px;
+	padding-right: 2px;
+}
+
+div.pagingbar span {
+	color: gray;
+}
+
+/* Messages Styling */
+.error_list li{
+    color: #FF0000;
+}
+.error_list{
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+.formCheckbox{
+    margin-left: 10px !important;
+}

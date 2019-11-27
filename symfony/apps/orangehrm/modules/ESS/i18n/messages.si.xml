@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="EN" target-language="si" datatype="plaintext" original="messages" date="2009-12-08T13:58:35Z" product-name="messages">
+        <header/>
+        <body>
+            <trans-unit id="1">
+                <source>Hi, </source>
+                <target>ආයුබෝවන්, </target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Employee ID </source>
+                <target>සේවක අංකය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Designation</source>
+                <target>තනතුර</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Division</source>
+                <target>සේවා ස්ථානය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>My Profile</source>
+                <target>මගේ තොරතුරු</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Office Telephone</source>
+                <target>කාර්යාල දුරකථනය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Official E-Mail Address</source>
+                <target>කාර්යාල විද්‍යුත් තැපෑල ලිපිනය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Work Experience</source>
+                <target>පළපුරුද්ද</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Personal Telephone</source>
+                <target>පෞද්ගලික දුරකථනය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>NIC Number</source>
+                <target>ජා.හැ.ප අංකය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Date Joined</source>
+                <target>ඇතුලත් වූ දිනය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>For your Approval</source>
+                <target>ඔබේ අනුමතය සදහා</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Disciplinary</source>
+                <target>විනය පිලිබඳ</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Leave</source>
+                <target>නිවාඩු</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Promotion</source>
+                <target>උසස් කිරීම</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Training</source>
+                <target>පුහුණුව</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Transfer</source>
+                <target>මාරුවීම</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Policy Documents</source>
+                <target>ප්‍රතිපත්තිය ලේඛන</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>My Attendance</source>
+                <target>මගේ පැමිණීම</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Date</source>
+                <target>දිනය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>In Time</source>
+                <target>තුළට</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Out Time</source>
+                <target>පිටත වූ</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Late</source>
+                <target>ප්‍රමාද වූ</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Departure</source>
+                <target>වේලාසනින්</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Notices</source>
+                <target>නිවේදන</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Documents</source>
+                <target>ලේඛන</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Module</source>
+                <target>ඒකකය</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Request Count</source>
+                <target>මුළු ඉල්ලීම්</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Approvals</source>
+                <target>අනුමැතිය සදහා</target>
+            </trans-unit>
+              <trans-unit id="1">
+                <source>Transfer</source>
+                <target>ස්ථාන මාරුවීම්</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Pending Approvals</source>
+                <target>ස්ථාන මාරුවීම්</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Prev</source>
+                <target>පෙර</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Next</source>
+                <target>ඊලග</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

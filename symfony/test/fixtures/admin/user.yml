@@ -1,0 +1,4 @@
+UserGroup:
+  UG_001: { name: 'Project Manager', id: USG008 }
+  UG_002: { name: 'Software Eng', id: USG009 }
+  UG_003: { name: 'Tec Lead', id: USG010 }

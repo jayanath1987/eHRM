@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="EN" target-language="ta" datatype="plaintext" original="messages" date="2009-12-08T13:58:35Z" product-name="messages">
+        <header/>
+        <body>
+            <trans-unit id="1">
+                <source>Hi,</source>
+                <target>நல்வரவு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Employee ID </source>
+                <target>ஊழியர் இல</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Designation</source>
+                <target>பதவி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Division</source>
+                <target>பிரிவு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>My Profile</source>
+                <target>என்னுடைய பக்கத்தோற்றம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Office Telephone</source>
+                <target>அலுவலக தொலைபேசி இலக்கம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Official E-Mail Address</source>
+                <target>உத்தியோக மின்னஞ்சல் முகவரி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Work Experience</source>
+                <target>வேலை அனுபவம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Personal Telephone</source>
+                <target>தனிப்பட்ட தொலைபேசி இலக்கம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>NIC Number</source>
+                <target>தே.அ.அ இல</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Date Joined</source>
+                <target>இணைந்த திகதி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>For your Approval</source>
+                <target>உங்களது அனுமதிப்புக்குரியது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Disciplinary</source>
+                <target>ஒழுங்கு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Leave</source>
+                <target>விடுமுறை</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Promotion</source>
+                <target>பதவி உயர்வு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Training</source>
+                <target>பயிற்ச்சி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Transfer</source>
+                <target>இடமாற்றம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Policy Documents</source>
+                <target>கொள்கை ஆவணங்கள்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>My Attendance</source>
+                <target>எனது வரவு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Date</source>
+                <target>திகதி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>In Time</source>
+                <target>உள்வந்த நேரம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Out Time</source>
+                <target>வெளிச் சென்ற நேரம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Late</source>
+                <target>தாமதம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Departure</source>
+                <target>புறப்பாடு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Notices</source>
+                <target>அறிவிப்புகள்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Documents</source>
+                <target>ஆவணங்கள்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Module</source>
+                <target>தொகுதி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Request Count</source>
+                <target>கோரிப்புக்கள் எண்ணிக்கை</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Address</source>
+                <target>முகவரி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Approvals</source>
+                <target>அனுமதியும்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Appointment date</source>
+                <target>நியமனம் தேதி</target>
+            </trans-unit>            
+        </body>
+    </file>
+</xliff>

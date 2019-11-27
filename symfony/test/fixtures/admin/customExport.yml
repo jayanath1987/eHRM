@@ -1,0 +1,4 @@
+CustomExport:
+  CE_001: { name: 'General list', fields: lastName|empId|firstName|zip, headings: 'Last Name|EmpId|First Name|Zip', id: '004' }
+  CE_002: { name: 'Name list', fields: empId|firstName|lastName, headings: 'EmpId|First Name|Last Name', id: '005' }
+  CE_003: { name: 'Email list', fields: empId|email, headings: EmpId|Email, id: '006' }

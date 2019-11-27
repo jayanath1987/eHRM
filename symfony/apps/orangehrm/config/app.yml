@@ -1,0 +1,12 @@
+# default values
+all:
+  items_per_page:  15
+  sort_asc_class: 'ASC'
+  sort_desc_class: 'DESC'
+  sort_default_class: 'null'  
+  date_input_hint: 'dd-mm-yy'
+  date_format: 'dd-MM-yyyy'
+
+  #ON=translator is ON , OFF=translator is OFF
+  lang_translate_status: 'ON'
+  name_translate_path: ''

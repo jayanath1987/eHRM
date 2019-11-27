@@ -1,0 +1,6 @@
+Nationality:
+  N_001: { name: 'get over it' }
+  N_002: { name: 'dont turn around' }
+EthnicRace:
+  ER_001: { desc: 'hello 1' }
+  ER_002: { desc: 'hello 2' }

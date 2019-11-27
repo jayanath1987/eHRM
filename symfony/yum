@@ -1,0 +1,31 @@
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * addons: mirror.learn.ac.lk
+ * base: centosx4.centos.org
+ * extras: mirror.learn.ac.lk
+ * rpmforge: mirror.oscc.org.my
+ * updates: centosx4.centos.org
+Installed Packages
+php53.i386                             5.3.3-21.el5                    installed
+php53-bcmath.i386                      5.3.3-21.el5                    installed
+php53-cli.i386                         5.3.3-21.el5                    installed
+php53-common.i386                      5.3.3-21.el5                    installed
+php53-gd.i386                          5.3.3-21.el5                    installed
+php53-mysql.i386                       5.3.3-21.el5                    installed
+php53-pdo.i386                         5.3.3-21.el5                    installed
+php53-soap.i386                        5.3.3-21.el5                    installed
+Available Packages
+php53-dba.i386                         5.3.3-21.el5                    base     
+php53-devel.i386                       5.3.3-21.el5                    base     
+php53-imap.i386                        5.3.3-21.el5                    base     
+php53-intl.i386                        5.3.3-21.el5                    base     
+php53-ldap.i386                        5.3.3-21.el5                    base     
+php53-mbstring.i386                    5.3.3-21.el5                    base     
+php53-odbc.i386                        5.3.3-21.el5                    base     
+php53-odbc64.i386                      5.3.3-2.el5                     base     
+php53-pgsql.i386                       5.3.3-21.el5                    base     
+php53-process.i386                     5.3.3-21.el5                    base     
+php53-pspell.i386                      5.3.3-21.el5                    base     
+php53-snmp.i386                        5.3.3-21.el5                    base     
+php53-xml.i386                         5.3.3-21.el5                    base     
+php53-xmlrpc.i386                      5.3.3-21.el5                    base     

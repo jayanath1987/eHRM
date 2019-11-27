@@ -1,0 +1,46 @@
+#tblSearchCriteria {
+    width: 100%;
+}
+
+#tblSearchCriteria td {
+    padding: 10px;
+    vertical-align:text-top;
+}
+
+table.data-table thead tr td {
+    padding: 7px 10px 7px 8px;
+    font-weight: bold;
+}
+
+table.data-table tbody tr td {
+    padding: 7px 10px;
+}
+
+input[type="text"] {
+    border: 1px solid;
+    width: 50px;
+    margin: 0;
+}
+
+.errorHolder {
+    margin: 10px 0 0 0;
+    color: #ff0000;
+}
+
+#leaveSummary_txtEmpName {
+    width: 150px;
+}
+
+.typeHint {
+    padding-top: 4px;
+    color:#999;
+}
+
+.pagingbar {
+    margin: 2px 2px 5px 0;
+}
+
+.navigationHearder {
+    background: #FAD163;
+    border-bottom: 2px solid #FFF;
+}

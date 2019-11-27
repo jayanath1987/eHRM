@@ -1,0 +1,4 @@
+CustomImport:
+  CI_001: { name: 'General list', has_heading: 0, fields: lastName|empId|firstName|zip, id: '004' }
+  CI_002: { name: 'Name list', has_heading: 1, fields: empId|firstName|lastName, id: '005' }
+  CI_003: { name: 'email list', has_heading: 1, fields: empId|email, id: '006' }

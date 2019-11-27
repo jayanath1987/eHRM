@@ -1,0 +1,328 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:db="http://docbook.org/ns/docbook">
+
+  <!-- Global elements -->
+  <xs:element name="definition" type="definitionType"/>
+
+  <!-- Complex types -->
+  <xs:complexType name="definitionType">
+    <xs:annotation>
+      <xs:documentation>
+        By default the report will only process resultsets referenced in this document, so global references (references outside of a "with" block) may not have access to the resultset it requires. You can force a resultset to be included by using the "use" element here.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="use" maxOccurs="1" minOccurs="0">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <db:para>
+                Instuct the processor to process the specified <db:emphasis>resultset</db:emphasis> (or sub-query) from the query document.
+                Querys are currently only executed if they are explicitly referenced from the <db:link linkend="doc.definition">definition</db:link> using the
+                <db:link linkend="type.withType">with</db:link> elements <db:link linkend="type.withType.attribute.resultset">resultset</db:link> attribute. So if you reference
+                a resultset that is not explicitly referenced you need to declare it with this.
+              </db:para>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:attribute name="resultset" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="title" type="valueNodeContainerType" maxOccurs="1" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element name="with" type="withType" maxOccurs="unbounded"/>
+        <xs:element name="iterate" type="withType" maxOccurs="unbounded"/>
+      </xs:choice>
+      <xs:element name="section" type="sectionType" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sectionType">
+    <xs:annotation>
+      <xs:documentation>
+        Sections contain the content of reports. 
+        They can be nested. 
+        Any part of the section can be iterated from the resultset with "with"
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="sectionContentType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sectionContentType">
+    <xs:annotation>
+      <xs:documentation>
+        Section content type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="title" type="valueNodeContainerType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="with" type="withType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="field" type="fieldType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="table" type="tableType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="section" type="sectionType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="withType">
+    <xs:annotation>
+      <xs:documentation>
+        Instructs the processor to iterate the containing section
+        with the resultset specified using "resultset" or an XPath 
+        based on the current context with "fromResultset"
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="sectionContentType">
+        <xs:attribute name="resultset" type="xs:string"/>
+        <xs:attribute name="fromResultset" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>
+              fromResultset evaluates an XPath expression based on the current context.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fieldType">
+    <xs:annotation>
+      <xs:documentation>
+        Represents a form field (e.g. a labelled value from the resultset)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="valueNodeContainerType">
+        <xs:attribute name="label" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="valueNodeContainerType" mixed="true">
+    <xs:annotation>
+      <xs:documentation>
+        Abstract nodeContainer type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0">
+      <xs:element name="text" type="valueNodeTextType"/>
+      <xs:element name="number" type="valueNodeNumberType"/>
+      <xs:element name="percentage" type="valueNodePercentageType"/>
+      <xs:element name="money" type="valueNodeMoneyType"/>
+      <xs:element name="date" type="valueNodeDateType"/>
+    </xs:choice>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <!-- Table stuff -->
+  <xs:complexType name="tableType">
+    <xs:annotation>
+      <xs:documentation>
+        Represents a table
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="1">
+      <xs:element name="group" type="tableGroupType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="header" type="tableSectionType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="body" type="tableSectionType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="footer" type="tableSectionType" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tableGroupType">
+    <xs:annotation>
+      <xs:documentation>
+        Represents groups of columns - the style attribute is tantamount to the HTML style attribute
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="span" type="xs:integer"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+
+  <xs:complexType name="tableSectionType">
+    <xs:annotation>
+      <xs:documentation>
+        Represents a table section, e.g. header, body or footer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="with" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Iterate the contents with the specified resultset
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="row" type="tableRowType" maxOccurs="unbounded"/>
+          </xs:sequence>
+          <xs:attribute name="resultset" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="row" type="tableRowType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tableRowType">
+    <xs:annotation>
+      <xs:documentation>
+        Represents a table row
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cell" type="tableCellType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>
+          Provide an arbitary identifier for this element, for use with XPath.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="tableCellType">
+    <xs:annotation>
+      <xs:documentation>
+        Represents a table cell. Cells can span columns and rows using the "colspan" and "rowspan" attributes.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="valueNodeContainerType">
+        <xs:attribute name="colspan" type="xs:integer"/>
+        <xs:attribute name="rowspan" type="xs:integer"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="valueNodeType" mixed="true">
+    <xs:annotation>
+      <xs:documentation>
+        A value node represents a value which can either be given or derived from XPath expressions using valueFromResultset or valueFromHere.
+
+        The values of which are XPath expressions relate to the resultset or the current document respectively. Derived types provide specific formatting instructions for specific value types.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="valueFromResultset" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>
+          Run this XPath query on the resultset and assume the return value.
+          XPath is in the scope of the current resultset iteration.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="valueFromHere" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>
+          Run this XPath query and assume the return value on this document in the current pass, or in a subsequent one.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="pass" type="xs:integer">
+      <xs:annotation>
+        <xs:documentation>
+          Instructs the processor to evaluate this value on the given /pass/. The first pass is "1" and is assumed if "pass" is ommitted. Passes are processed incrementally, so given passes 1,2,3,5 and 6 only passes 1,2 and 3 will be processed.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="valueNodeTextType">
+    <xs:annotation>
+      <xs:documentation>
+        Plain text field
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="true">
+      <xs:extension base="valueNodeType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="valueNodeNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        The number text can be highlighted by using multiple highlight elements, each of which can define a range for which the highlighting will be applied. 
+        The attributes <varname>lessThan</varname> and <varname>greaterThan</varname> can be used together or independently.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="true">
+      <xs:extension base="valueNodeType">
+        <xs:sequence>
+          <xs:element name="highlight" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>
+                Specifiy one or multiple highlight ranges.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:attribute name="lessThan" type="xs:integer">
+                <xs:annotation>
+                  <xs:documentation>
+                    Apply color to numbers less than this number
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+              <xs:attribute name="greaterThan" type="xs:integer">
+                <xs:annotation>
+                  <xs:documentation>
+                    Apply color to numbers greater than this number
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+              <xs:attribute name="color" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>
+                    Color for range, specified as in CSS, e.g. #ff0000, or "red"
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="falseAsZero" type="xs:boolean"/>
+        <xs:attribute name="format" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="valueNodeMoneyType">
+    <xs:annotation>
+      <xs:documentation>
+        Money field
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="true">
+      <xs:extension base="valueNodeNumberType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="valueNodePercentageType">
+    <xs:annotation>
+      <xs:documentation>
+        Percentage field
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="true">
+      <xs:extension base="valueNodeNumberType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="valueNodeDateType">
+    <xs:annotation>
+      <xs:documentation>
+        Date field
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="true">
+      <xs:extension base="valueNodeType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>
+
+

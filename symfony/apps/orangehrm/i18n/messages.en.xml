@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2008-12-18T22:47:25Z" product-name="messages">
+        <header/>
+        <body>
+            <trans-unit id="116">
+                <source>This field is required</source>
+                <target>This field is required</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>This field is required.</source>
+                <target>This field is required.</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Can not update. Record has been Deleted</source>
+                <target>Can not update. Record has been Deleted</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Upload fail maximum file size shoud be less than 5MB</source>
+                <target>Upload fail maximum file size shoud be less than 5MB</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Upload fail maximum file size shoud be less than 10MB</source>
+                <target>Upload fail maximum file size shoud be less than 10MB</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Upload Fail. Invalid File Type or Max upload size exceeded</source>
+                <target>Upload Fail. Invalid File Type or Max upload size exceeded</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Upload Fail. Invalid File Type</source>
+                <target>Upload Fail. Invalid File Type</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>From Date</source>
+                <target>From Date</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>To Date</source>
+                <target>To Date</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>This record may uses another place</source>
+                <target>Details have been used elsewhere in the system</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>select at least one check box to delete</source>
+                <target>Select at least one record to delete</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Select at least one check box to delete</source>
+                <target>Select at least one record to delete</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Record Not Found</source>
+                <target>Record Not Found</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Please select the search mode</source>
+                <target>Please select the search by</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Problem has Occured</source>
+                <target>Problem has Occured</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Credentials Required</source>
+                <target>Access Denied</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Date of join</source>
+                <target>Date Joined</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Some records are can not be deleted as them  Locked by another user </source>
+                <target>Some records can not be deleted. records are locked by another user.</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Can not delete as them  Locked by another user </source>
+                <target>Some records can not be deleted. records are locked by another user.</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Sorry,Your Search did not Match any Records.</source>
+                <target>No results found.</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Employee Id  should be equal to the NIC Number.</source>
+                <target>Employee Id  should be equal to the NIC Number.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
+

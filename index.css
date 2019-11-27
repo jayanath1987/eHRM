@@ -1,0 +1,93 @@
+.index_body{
+	margin:0px;
+	}
+
+.header_div{
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:url(images/background_rep.jpg) repeat-x;
+	width:100%;
+	height:75px;
+    
+	
+	}
+	
+	.esamurdiBanner{
+		background-image:url(images/e-samurdi-banner.gif);
+		background-repeat:no-repeat;
+		height:70px;
+		}
+		
+.bannerbackground{
+	
+	background-image:url(images/header_rep.gif);
+	background-repeat:repeat-x;
+	height:70px;
+	z-index:-1;
+	}
+	
+.topLinks_div{
+	position:relative;
+	float:right;
+	background:url(images/toplinks_rep.jpg) repeat-x ;
+	top:36px;
+	height:39px;
+	}
+
+
+
+.toplinks_text_div{
+	float:left;
+	position:relative;
+	padding-left:20px;
+	padding-right:5px;
+	top:-20px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color:#FFF;
+	}
+.toplinks_texxt{
+        font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color:#FFF;
+        }
+
+.language_div{
+	float:right;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color:#666666;
+        margin-top: 5px;
+	
+	}
+        .gov_div{
+	float:right;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color:#666666;
+        margin-top: 5px;
+        margin-right: 0px;
+	
+	}
+	.navigation_menu{
+	/*
+            position:absolute;
+		top:75px;
+		left:0px;
+		background-color:#fffbed;
+		width:165px;
+		*/
+
+                position:relative;
+                float: left;
+		top:80px;
+		left:0px;
+		
+		background-color:#fffbed;
+		width:169px;
+		}
+
+/*    a.selectedLink {
+        	background-color:#000000;
+    }*/

@@ -1,0 +1,47 @@
+sfXmlReporterPlugin
+===================
+
+This plugin enables the creation of complex, multi-dimensional reports (similar to those seen in Access) using XML and PHP.
+
+The manual is [here](http://www.xmlreporter.org/docs/html)
+
+This is Alpha software, there are sure to be bugs and missing features - if you find any missing features or bugs let me know :)
+
+I will be adding complete examples to the manual and codebase, and an online demo soon-ish ..
+
+Features
+--------
+
+ * Reports created by providing meta data on the required fields / lists (definitions)
+ * These definitions contain XPath expressions to either the resultset or the report context
+ * Any part of a report can be iterated with a resultset
+ * Resultsets are generated from an XML query document
+ * The query document allows independent nested queries
+ * Filters enable queries to be ammended via user input
+   * Add any query element to the main query depending on a user condition
+   * User input through HTML widgets
+   * Symfony widgets can be wrapped
+ * The report document is transformed for presentation with XSLT
+ * Reports are aggregated into a single project XML file
+ * Documents are validated with XSD schemas
+ * Uses PDO as DB layer
+   * Configuration can be pulled from Propel 1.2 or 1.3 using connection strategies
+   * Doctrine support should be very easy
+
+ * Symfony module for browsing and viewing reports
+
+ * (almost) Complete reference manual
+ * Unit Tested
+ * Main library decoupled from Symfony
+
+Getting Started
+---------------
+
+Execute the following task to create a skeleton project:
+
+    ./symfony xml-reporter:init-project your_application_name
+
+Todo
+----
+
+ * Jpgraph support

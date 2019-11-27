@@ -1,0 +1,38 @@
+JobTitle:
+  1: { jobtit_code: 1, jobtit_name: 'SE',jobtit_name_si: 'සනස',jobtit_name_ta: 'ஸநநஸஸநநஸ' }
+  2: { jobtit_code: 2, jobtit_name: 'SSE',jobtit_name_si: 'සනසසන',jobtit_name_ta: 'ஸநநஸஸ' }
+
+ServiceDetails:
+  1: { service_code: 1, service_name: 'HR',service_name_si: 'සසසසසනස',jobtit_name_ta: 'ஸநநஸஸநநஸ' }
+  2: { service_code: 2, service_name: 'Medi',service_name_si: 'සනස',jobtit_name_ta: 'ஸநநஸஸநஸ' }
+
+Grade:
+  1: { grade_code: 1, grade_name: 'Exec',grade_name_si: 'සසසස',grade_name_ta: 'ஸநநஸஸநநஸ' }
+  2: { grade_code: 2, grade_name: 'Admin',grade_name_si: 'සසසසසනස',grade_name_ta: 'ஸநநநஸ' }
+
+EmpClass:
+  1: { class_code: 1, class_name: 'Exec',class_name_si: 'සසසස',class_name_ta: 'ஸநநஸஸநநஸ' }
+  2: { class_code: 2, class_name: 'Admin',class_name_si: 'සසසසසනස',class_name_ta: 'ஸநநநஸ' }
+
+Skill:
+  1: { skill_code: 1, skill_name: 'Exec',skill_name_si: 'සසසස',skill_name_ta: 'ஸநநஸஸநநஸ' }
+  2: { skill_code: 2, skill_name: 'Admin',skill_name_si: 'සසසසසනස',skill_name_ta: 'ஸநநநஸ' }
+
+Language:
+  1: { lang_code: 'LAN001', lang_name: 'English',lang_name_si: 'එඑඑඑඑඑඑඑඑ',lang_name_ta: 'ககககககககககககக' }
+  2: { lang_code: 'LAN002', lang_name: 'Sinhala',lang_name_si: 'අඅඅඅඅඅඅඅඅඅඅඅ',lang_name_ta: 'பககககககககககக' }
+  3: { lang_code: 'LAN003', lang_name: 'Tamil',lang_name_si: 'යයයයයයයයයයය',lang_name_ta: 'ஙஙஙஙஙஙஙஙங' }
+  
+Education:
+  1: { edu_code: 1, edu_name: 'Exec',edu_name_si: 'සසසස',edu_name_ta: 'ஸநநஸஸநநஸ' }
+  2: { edu_code: 2, edu_name: 'Admin',edu_name_si: 'සසසසසනස',edu_name_ta: 'ஸநநநஸ' }
+
+CompanyStructure:
+  1: { comCode:1, companyName: 'Hsenid',country: 'Srilanka' ,companyName_si: 'සසසසසනස',companyName_ta: 'ஸநநநஸ',address:'colombo3',address_si:'colomboSi',address_ta:'colomboTa',phnIntercom:'0774824321',phnVIP:'0774123456',phnDirect:'987456123',phnExtensipm:'10',fax:'0774824325',email:'roshan86web@gmail.com',url: 'www.google.com' }
+
+SaveCompanyStructure:
+  1: { id:2, parent:1 , compannyName: 'IT',companyName_si: 'අඅඅඅඅඅඅ',companyName_ta: 'ஸளனளநநநஸ',address:'colombo3',address_si:'colomboSi',address_ta:'colomboTa',phnIntercom:'0774824321',phnVIP:'0774123456',phnDirect:'987456123',phnExtensipm:'10',fax:'0774824325',email:'roshan86web@gmail.com',url: 'www.google.com' }
+  2: { id:3, parent:2 , compannyName: 'ITk',companyName_si: 'kඅඅඅඅඅඅඅ',companyName_ta: 'ஸkளனளநநநஸ',address:'colombo3',address_si:'colomboSi',address_ta:'colomboTa',phnIntercom:'0774824321',phnVIP:'0774123456',phnDirect:'987456123',phnExtensipm:'10',fax:'0774824325',email:'roshan86web@gmail.com',url: 'www.google.com' }
+
+
+

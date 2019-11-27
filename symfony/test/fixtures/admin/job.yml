@@ -1,0 +1,17 @@
+JobCategory:
+  CAT_001: { desc: 'job cat1' }
+  CAT_002: { desc: 'job cat2' }
+SalaryGrade:
+  SG_001: { name: 'salary grade1' }
+  SG_002: { name: 'salary grade2' }
+SalaryCurrencyDetail:
+  SCD_001: { currencyId: USD, minSalary: 1000, salaryStep: 100, maxSalary: 3000, salaryGradeCode: SAL020 }
+  SCD_002: { currencyId: CAD, minSalary: 1100, salaryStep: 200, maxSalary: 3200, salaryGradeCode: SAL020 }
+EmployeeStatus:
+  ES_001: { name: 'status 1' }
+JobSpecifications:
+  JS_001: { name: 'name 1', desc: 'desc 1', duties: 'duties 1' }
+  JS_002: { name: 'name 2', desc: 'desc 2', duties: 'duties 2' }
+JobTitle:
+  JT_001: { name: 'some name1', desc: 'funny desc1', comment: 'my comment1', salaryGradeCode: SAL020, jobSpecId: 1 }
+  JT_002: { name: 'some name2', desc: 'funny desc2', comment: 'my comment2', salaryGradeCode: SAL020, jobSpecId: 1 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.21" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isnull_1446_0</property>
+            <property name="value">emp_name_1446</property>
+        </structure>
+        <structure>
+            <property name="name">emp_name_1446_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1450_1</property>
+            <property name="value">emp_id_1450</property>
+        </structure>
+        <structure>
+            <property name="name">emp_id_1450_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1452_2</property>
+            <property name="value">eval_name_1452</property>
+        </structure>
+        <structure>
+            <property name="name">eval_name_1452_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

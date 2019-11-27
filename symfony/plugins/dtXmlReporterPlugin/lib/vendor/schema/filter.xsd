@@ -1,0 +1,317 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:db="http://docbook.org/ns/docbook">
+
+  <!-- Global elements -->
+  <xs:element name="filters">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Container for all <db:link linkend="element.filter"><db:tag>filter</db:tag></db:link>s and additional <db:link linkend="element.criteria"><db:tag>criteria</db:tag></db:link>
+        </db:para>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element ref="filter"/>
+          <xs:element ref="criteria"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="filter">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Container for filter <db:link linkend="sec.widgets">widgets</db:link>. Widgets define controls for the user interface and how they should affect the <db:link linkend="element.query">query</db:link>
+        </db:para>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="tableSelect"/>
+        <xs:element ref="select"/>
+        <xs:element ref="sfDate"/>
+        <xs:element ref="checkbox"/>
+      </xs:choice>
+      <xs:attribute name="label" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Label for filter
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="criteria">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Specify <db:emphasis>additional</db:emphasis> query tags to add to either a query or group of queries. 
+          <db:varname>toGroup</db:varname> and <db:varname>toQuery</db:varname> are mutually exclusive.
+        </db:para>
+        <db:note>
+          <db:para>
+            The query tags within a criteria tag are not currently validated.
+          </db:para>
+        </db:note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:any processContents="skip"/>
+      </xs:sequence>
+      <xs:attribute name="toGroup" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            <db:para>
+              Apply to all queries in this group. Groups are defined using the <db:link linkend="element.inGroup"><db:tag>inGroup</db:tag></db:link>
+            </db:para>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="toQuery" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Apply to specific query
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="tableSelect">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Combo or drop-down-select widget that uses a database table for its options
+        </db:para>
+        <db:example>
+          <db:title><db:tag>tableSelect</db:tag> example</db:title>
+          <db:programlisting>
+            <![CDATA[
+            <tableSelect name="table_select_1" fromTable="my_table" keyField="id" valueField="CONCAT(first_name,' ',last_name)">
+              <criteria toQuery="my_query">
+                <where field="m.id" valueFromWidget="true"/>
+              </criteria>
+            </tableSelect>
+            ]]>
+          </db:programlisting>
+        </db:example>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:any processContents="lax"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Unique name for widget
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="fromTable" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Table to select from
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="keyField" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            <db:para>
+              Field to use as the "key" for the select options, this value is the one 
+              picked up with the <db:link linkend="type.where.attribute.valueFromWidget"><db:tag>valueFromWidget</db:tag></db:link>
+              <db:tag>where</db:tag> attribute.
+            </db:para>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="valueField" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            <db:para>
+              Field to use as the value for the select options, i.e. that which is displayed to the user.
+            </db:para>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="addWildcard" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            <db:para>
+              Include an option, "-", to ignore this criteria.
+            </db:para>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="select">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          Combo or drop-down-select widget
+        </db:para>
+        <db:example>
+          <db:title><db:tag>select</db:tag> example</db:title>
+          <db:programlisting>
+            <![CDATA[
+            <select name="range" addWildcard="true">
+              <option key="1" value="62.197.*">
+                <criteria toGroup="blocks">
+                  <where field="ip" operator="like">62.197.%</where>
+                </criteria>
+              </option>
+              <option key="2" value="79.135.*">
+                <criteria toGroup="blocks">
+                  <where field="ip" operator="like">79.135.%</where>
+                </criteria>
+              </option>
+            </select>
+            ]]>
+          </db:programlisting>
+        </db:example>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="option" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              <db:para>
+                Select option
+              </db:para>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="criteria" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="key" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <db:para>
+                    Key for this option
+                  </db:para>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="value" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <db:para>
+                    Value for this option, i.e. what the user will see.
+                  </db:para>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="criteria" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Unique name for widget
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="addWildcard" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            <db:para>
+              Include an option, "-", to ignore this criteria.
+            </db:para>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sfDate">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          This widget is a wrapper for the <db:ulink url="http://www.symfony-project.org">Symfony</db:ulink> date widget
+        </db:para>
+        <db:example>
+          <db:title><db:tag>sfDate</db:tag> example</db:title>
+          <db:programlisting>
+            <![CDATA[
+            <sfDate name="period_from">
+              <criteria toQuery="contract">
+                <where field="t.date" operator="&gt;=" valueFromWidget="true"/>
+              </criteria>
+            </sfDate>
+            ]]>
+          </db:programlisting>
+        </db:example>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:any processContents="lax"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Unique name for widget
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="checkbox">
+    <xs:annotation>
+      <xs:documentation>
+        <db:para>
+          A checkbox widget
+        </db:para>
+        <db:example>
+          <db:title><db:tag>tableSelect</db:tag> example</db:title>
+          <db:programlisting>
+            <![CDATA[
+            <checkbox name="missing_emails">
+              <on>
+                <criteria query="customer">     
+                  <where field="email" operator="is" valueAsSql="true">null</where>
+                </criteria>
+              </on>
+            </checkbox>
+            ]]>
+          </db:programlisting>
+        </db:example>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="on">
+          <xs:annotation>
+            <xs:documentation>
+              Contains criteria to execute when checkbox is in the ON state
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+              <xs:any processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Unique name for widget
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<filters>
+  <filter label="Some label">
+    <select name="arbitary_name" addWildcard="true">
+      <option key="1" value="Add a select field to query 'foobar'">
+        <criteria toQuery="foobar">
+          <select as="yet-another-field">f.blah</select>
+        </criteria>
+      </option>
+      <option key="2" value="Filter the results a bit">
+        <criteria toQuery="foobar">
+          <where field="foo" operator="&gt;">5</where>
+        </criteria>
+      </option>
+    </select>
+  </filter>
+</filters>
+

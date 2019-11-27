@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2008-12-18T22:47:25Z" product-name="messages">
+    <header/>
+    <body>
+    <trans-unit id="1">
+        <source>Define Disciplinary Action type</source>
+        <target>Disciplinary Action type Summary</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Offence Summry</source>
+        <target>Define Offence</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Please Select the Case File</source>
+        <target>Please Select the Case File</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Pending Incident Summery</source>
+        <target>Pending Incident Summery</target>
+     </trans-unit>
+     <trans-unit id="116">
+        <source>New Incident Report</source>
+        <target>Incident Reporting</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Inquiry</source>
+        <target>Incident Inquiry</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Pending Inquiry Summery</source>
+        <target>Pending Inquiry Summery</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Define New Disciplinary Action Type</source>
+        <target>Define New Disciplinary Action Type</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>There should be at least one Offence to be  selected</source>
+        <target>There should be at least one Offence to be  selected</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Define New Offence</source>
+        <target>Define New Offence</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Define Disciplinary Sub Types</source>
+        <target>Define Disciplinary Sub Types</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Please Select at least one employee</source>
+        <target>Please Select at least one employee</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>preliminary investigation</source>
+        <target>Preliminary Investigation</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Action Type</source>
+        <target>Disciplinary Type</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>New Disciplinary Action Type Define</source>
+        <target>Edit Disciplinary type</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident reported date should be greater than to from date</source>
+        <target>Incident reported date should be greater than to from date</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Close Incident Summary</source>
+        <target>Closed Incident Summary</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Further Actions Required</source>
+        <target>Further Actions without Interdiction</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>If Interdicted</source>
+        <target>Further Actions with Interdiction</target>
+      </trans-unit>      
+    </body>
+  </file>
+</xliff>

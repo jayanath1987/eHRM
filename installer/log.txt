@@ -1,0 +1,47 @@
+Client Info
+
+User Agent : Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
+Remote Address : 127.0.0.1
+
+Server Info
+
+Host : localhost
+PHP Version : 5.3.2-1ubuntu4.7
+Server : Apache/2.2.14 (Ubuntu)
+Admin : webmaster@localhost
+
+Document Root : /var/www
+ROOT_PATH : /var/www/eSamurdhiHRM
+
+eHRM Installation Log
+
+Tue, 22 Feb 2011 14:43:45 +0530 DB Creation - Starting
+Tue, 22 Feb 2011 14:43:45 +0530 DB Creation - Done
+Tue, 22 Feb 2011 14:43:45 +0530 DB Creation - No Errors
+Tue, 22 Feb 2011 14:43:47 +0530 Fill Data Phase 1 - Starting
+Tue, 22 Feb 2011 14:43:47 +0530 Fill Data Phase 1 - Connected to the DB Server
+Tue, 22 Feb 2011 14:43:47 +0530 Fill Data Phase 1 - Selected the DB
+Tue, 22 Feb 2011 14:43:47 +0530 Fill Data Phase 1 - Reading DB Script
+Tue, 22 Feb 2011 14:43:47 +0530 Fill Data Phase 1 - Opened DB Script
+Tue, 22 Feb 2011 14:43:47 +0530 Fill Data Phase 1 - Read DB script
+Tue, 22 Feb 2011 14:43:47 +0530 Fill Data Phase 1 - There are 463 Statements in the DB script
+Tue, 22 Feb 2011 14:45:05 +0530 Fill Data Phase 1 - Done
+Tue, 22 Feb 2011 14:45:05 +0530 Fill Data Phase 1 - No Errors
+Tue, 22 Feb 2011 14:45:07 +0530 Fill Data Phase 2 - Starting
+Tue, 22 Feb 2011 14:45:07 +0530 Fill Data Phase 2 - Connected to the DB Server
+Tue, 22 Feb 2011 14:45:07 +0530 Fill Data Phase 2 - Selected the DB
+Tue, 22 Feb 2011 14:45:07 +0530 Fill Data Phase 2 - Reading DB Script
+Tue, 22 Feb 2011 14:45:07 +0530 Fill Data Phase 2 - Opened DB Script
+Tue, 22 Feb 2011 14:45:07 +0530 Fill Data Phase 2 - Read DB script
+Tue, 22 Feb 2011 14:45:07 +0530 Fill Data Phase 2 - There are 251 Statements in the DB script
+Tue, 22 Feb 2011 14:45:16 +0530 Fill Data Phase 2 - Done
+Tue, 22 Feb 2011 14:45:16 +0530 Fill Data Phase 2 - No Errors
+Tue, 22 Feb 2011 14:45:18 +0530 Create DB user - Starting
+Tue, 22 Feb 2011 14:45:18 +0530 Create DB user - Done
+Tue, 22 Feb 2011 14:45:18 +0530 Create DB user - No Errors
+Tue, 22 Feb 2011 14:45:20 +0530 Create eHRM user - Starting
+Tue, 22 Feb 2011 14:45:20 +0530 Create eHRM user - Done
+Tue, 22 Feb 2011 14:45:20 +0530 Create eHRM user - No Errors
+Tue, 22 Feb 2011 14:45:22 +0530 Write Conf - Starting
+Tue, 22 Feb 2011 14:45:23 +0530 Write Conf - Done
+Tue, 22 Feb 2011 14:45:23 +0530 Write Conf - No Errors

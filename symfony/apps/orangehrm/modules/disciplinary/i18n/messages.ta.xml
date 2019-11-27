@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="EN" target-language="ta" datatype="plaintext" original="messages" date="2009-12-08T13:58:35Z" product-name="messages">
+        <header/>
+        <body>
+            <trans-unit id="1">
+                <source>Edit</source>
+                <target>திருத்து</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Reset</source>
+                <target>மீட்டமை</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add</source>
+                <target>சேர்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Delete</source>
+                <target>நீக்கு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Save</source>
+                <target>சேமிக்க</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Hide</source>
+                <target>மறை</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search By</source>
+                <target>மூலம் தேட</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>--Select--</source>
+                <target>- தேர்ந்தெடு -</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search For:</source>
+                <target>தேட:</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search</source>
+                <target>සොයන්න</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Fields marked with an asterisk * are required</source>
+                <target>ஒரு நட்சத்திர குறியீடு உள்ளவை தேவை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Do you really want to delete?</source>
+                <target>உண்மையில் நீங்கள் நீக்க விரும்புகிறீர்களா?</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Successfully Added</source>
+                <target>வெற்றிகரமாக சேர்க்கப்பட்டது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Successfully Updated</source>
+                <target>வெற்றிகரமாக புதுப்பிக்கப்பட்டது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Successfully Deleted</source>
+                <target>வெற்றிகரமாக நீக்கப்பட்டது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Select at least one record to delete</source>
+                <target>நீக்க குறைந்தது ஒரு பதிவு தேர்வு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>This field contains invalid characters.</source>
+                <target>இந்த புலம் செல்லாத எழுத்துகள் உள்ளன.</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Organization Info : General</source>
+                <target>அமைப்பு தகவல்: பொது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Organization Name</source>
+                <target>நிறுவனத்தின் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division Name</source>
+                <target>பிரிவு பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Organization Head</source>
+                <target>நிறுவனத்தின் தலைமை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Address</source>
+                <target>முகவரி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Country</source>
+                <target>நாடு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Telephone (Intercom)</source>
+                <target>தொலைபேசி (இண்டர்காம்)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Telephone (VIP)</source>
+                <target>தொலைபேசி (விஐபி)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Telephone (Direct Line)</source>
+                <target>தொலைபேசி (நேரடி வரி)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Telephone (Extension)</source>
+                <target>தொலைபேசி (விரிவாக்கம்)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Fax</source>
+                <target>தொலைப்பிரதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Email</source>
+                <target>மின்னஞ்சல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>URL</source>
+                <target>URL</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Organization Info : Organization Structure</source>
+                <target>அமைப்பு தகவல்: நிறுவன கட்டமைப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Please define Organization General Information first!</source>
+                <target>முதல் அமைப்பு பொது தகவல் வரையறுக்க தயவு செய்து!</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division Head</source>
+                <target>பிரிவு தலைவர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Organization Name is required</source>
+                <target>நிறுவனத்தின் பெயர் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Length should be less than 200 characters</source>
+                <target>நீளம் 200 எழுத்துகள் விட குறைவாக இருக்க வேண்டும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Length should be less than 200 characters</source>
+                <target>நீளம் 200 எழுத்துகள் விட குறைவாக இருக்க வேண்டும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Length should be less than 200 characters</source>
+                <target>நீளம் 200 எழுத்துகள் விட குறைவாக இருக்க வேண்டும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid e-Mail</source>
+                <target>செல்லாத மின்னஞ்சல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid URL</source>
+                <target>செல்லாத URL</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add a Sub Division to Division</source>
+                <target>பிரிவு ஒரு உப பிரிவு சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Are you sure you want to delete Sub Division?</source>
+                <target>நீங்கள் உப பிரிவு நீக்க வேண்டும் என்பதில் உறுதியாக இருக்கிறீர்களா?</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Languages</source>
+                <target>மொழிகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Language ID</source>
+                <target>மொழி அடையாள</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Language Name</source>
+                <target>மொழி பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Language name is required</source>
+                <target>மொழி பெயர் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Language name can contain only characters</source>
+                <target>மொழி பெயர் மட்டுமே எழுத்துக்களை கொண்டுள்ளன</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Skills</source>
+                <target>திறன்கள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Skill ID</source>
+                <target>திறமை ஐடி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Skill Name</source>
+                <target>திறமை பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Education</source>
+                <target>கல்வி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Education ID</source>
+                <target>கல்வி ஐடி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Education Name</source>
+                <target>கல்வி பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Grades</source>
+                <target>தரங்களாக</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Grade Name</source>
+                <target>கிரேடு பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Grade</source>
+                <target>கிரேடு சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Classes</source>
+                <target>வகுப்புகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Class Name</source>
+                <target>வர்க்கம் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Class</source>
+                <target>வகுப்பு சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Attachment Type</source>
+                <target>இணைப்பு வகை சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Update Class</source>
+                <target>வகுப்பு மேம்படுத்த</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Update Grade</source>
+                <target>தரம் மேம்படுத்த</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Attachment Type</source>
+                <target>இணைப்பு வகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Services</source>
+                <target>சேவைகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Service</source>
+                <target>சேவை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Services</source>
+                <target>சேவைகள் சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Services Name</source>
+                <target>சேவைகள் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Designation</source>
+                <target>பதவி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Designation</source>
+                <target>பதவி சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Edit Designation</source>
+                <target>பதவி திருத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Designation Name</source>
+                <target>பதவி பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division Name (Sinhala)</source>
+                <target>பிரிவு பெயர் (சிங்களம்)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division Name (Tamil)</source>
+                <target>பிரிவு பெயர் (தமிழ்)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Address (Sinhala)</source>
+                <target>முகவரி (சிங்களம்)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Address (Tamil)</source>
+                <target>முகவரி (தமிழ்)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Users</source>
+                <target>பயனர்கள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Valid Employee is required</source>
+                <target>செல்லுபடியாகும் பணியாளர் தேவை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Users</source>
+                <target>பயனர்கள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>User ID</source>
+                <target>பயனர் ID</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>User Name</source>
+                <target>பயனர் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Employee</source>
+                <target>பணியாளர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Password</source>
+                <target>கடவுச்சொல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Status</source>
+                <target>அந்தஸ்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Capability</source>
+                <target>செயல்திறன்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Confirm Password is required</source>
+                <target>உறுதிபடுத்தவும் கடவுச்சொல் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Enabled</source>
+                <target>செயல்படுத்தப்பட்டது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Change Password</source>
+                <target>கடவுச்சொல் மாற்ற</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Current Password</source>
+                <target>தற்போதைய கடவுச்சொல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>New Password</source>
+                <target>புதிய கடவுச்சொல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>New password does not match please. Type again</source>
+                <target>புதிய கடவுச்சொல்லை தயவு செய்து பொருந்தவில்லை. மீண்டும் தட்டச்சு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Confirm Password</source>
+                <target>கடவுச்சொல் உறுதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>You have successfully changed your password</source>
+                <target>நீங்கள் வெற்றிகரமாக உங்கள் கடவுச்சொல்லை மாற்ற வேண்டும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Current Password is Incorrect</source>
+                <target>தற்போதைய கடவுச்சொல் தவறானது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Edit Job Title</source>
+                <target>வேலை தலைப்பு திருத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Job Title</source>
+                <target>வேலை தலைப்பு சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Job Title</source>
+                <target>வேலை தலைப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Define EB Exam</source>
+                <target>EB தேர்வு வரையறுக்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>EB Exam Name</source>
+                <target>EB தேர்வு பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Service Name</source>
+                <target>சேவை பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>EB Exam Name</source>
+                <target>EB தேர்வு பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>EB Exams</source>
+                <target>EB தேர்வுகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid Telephone (Intercom) number</source>
+                <target>தவறான தொலைபேசி (இண்டர்காம்) எண்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid Telephone (VIP) number</source>
+                <target>தவறான தொலைபேசி (விஐபி) எண்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid Telephone (Direct Line) number</source>
+                <target>தவறான தொலைபேசி (நேரடி வரி) எண்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid Telephone (Extension) number</source>
+                <target>தவறான தொலைபேசி (விரிவாக்கம்) எண்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid Fax number</source>
+                <target>செல்லாத தொலைநகல் எண்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Company Name</source>
+                <target>நிறுவனத்தின் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Company Head</source>
+                <target>நிறுவனத்தின் தலைமை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Company Info : General</source>
+                <target>நிறுவன தகவல்: பொது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Company Info : Company Structure</source>
+                <target>நிறுவன தகவல்: நிறுவன கட்டமைப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Edit Service</source>
+                <target>சேவை திருத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Carder Plan</source>
+                <target>Carder திட்டம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division/Department</source>
+                <target>பிரிவு / துறை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Actual</source>
+                <target>உண்மையான</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Approved</source>
+                <target>ஒப்புதல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Excess</source>
+                <target>மிகுதியான</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Vacancies</source>
+                <target>காலியிடங்கள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disabled</source>
+                <target>முடக்கப்பட்டுள்ளது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division code</source>
+                <target>பிரிவு குறியீடு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>ID</source>
+                <target>ஐடி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Role</source>
+                <target>பங்கு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Remove</source>
+                <target>நீக்கு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division Head(s)</source>
+                <target>பிரிவு தலைவர் (கள்)</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Basic Salary</source>
+                <target>அடிப்படை சம்பளம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Scale Years</source>
+                <target>அளவிலான ஆண்டுகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Increment Amount</source>
+                <target>சம்பள உயர்வு தொகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Increment Rate</source>
+                <target>சம்பள உயர்வு விகிதம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Salary</source>
+                <target>சம்பளம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add to Grid</source>
+                <target>கட்டத்திற்கு சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Level Summary</source>
+                <target>நிலை சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Define Level</source>
+                <target>நிலை வரையறுக்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Level</source>
+                <target>நிலை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Edit Level</source>
+                <target>நிலை திருத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Job Role Summary</source>
+                <target>வேலை பாத்திரம் சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Job Role</source>
+                <target>வேலை பாத்திரம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>User Name is required</source>
+                <target>பயனர் பெயர் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>User Name should be at least five characters long</source>
+                <target>பயனர் பெயர் குறைந்தது ஐந்து எழுத்துக்களாவது இருக்க வேண்டும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Invalid character in the User Name</source>
+                <target>பயனர் பெயர் தவறான எழுத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Password is required</source>
+                <target>கடவுச்சொல் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Password should be at least four characters long</source>
+                <target>கடவுச்சொல் குறைந்தது நான்கு எழுத்துக்களாவது இருக்க வேண்டும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Confirm Password is required</source>
+                <target>உறுதிபடுத்தவும் கடவுச்சொல் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Password not match</source>
+                <target>கடவுச்சொல் பொருந்தவில்லை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Valid Employee is required</source>
+                <target>செல்லுபடியாகும் பணியாளர் தேவை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Increment Rate</source>
+                <target>சம்பள உயர்வு விகிதம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Increment Amount</source>
+                <target>சம்பள உயர்வு தொகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Back</source>
+                <target>மீண்டும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Years</source>
+                <target>ஆண்டுகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Submit</source>
+                <target>Submit '</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Province</source>
+                <target>மாகாணம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>District</source>
+                <target>மாவட்டம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Division</source>
+                <target>பிரிவு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Zone</source>
+                <target>மண்டலம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Wasam</source>
+                <target>Wasam</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary Type Summary</source>
+                <target>ஒழுங்கு வகை சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Action Type</source>
+                <target>அதிரடி வகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Please Select the Case File</source>
+                <target>வழக்கு கோப்பை தேர்ந்தெடுங்கள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Pending Incident Summery</source>
+                <target>நிலுவையில் சம்பவம் Summery</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Define Disciplinary type</source>
+                <target>ஒழுங்குமுறை வகை வரையறை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary Type</source>
+                <target>ஒழுங்குமுறை அமைப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary Action Type is required</source>
+                <target>ஒழுங்கு அதிரடி வகை தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Offence Summary</source>
+                <target>Offence சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Offence</source>
+                <target>Offence</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Action type</source>
+                <target>அதிரடி வகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Offence List</source>
+                <target>Offence பட்டியல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Action taken by</source>
+                <target>அதிரடி எடுக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Action taken date</source>
+                <target>அதிரடி தேதி எடுக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Is Closed</source>
+                <target>மூடப்பட்டு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case Closed</source>
+                <target>கேஸ் குளோஸ்ட்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Further Actions</source>
+                <target>மேலும் செயல்கள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>New Incident Report</source>
+                <target>புதிய நிகழ்வு அறிக்கை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Pending Inquiry Summery</source>
+                <target>நிலுவையில் விசாரணை Summery</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Action Details</source>
+                <target>அதிரடி விவரம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Level</source>
+                <target>நிலை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Comment</source>
+                <target>இறுதி கருத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Inquiry Officer</source>
+                <target>விசாரணை அலுவலர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Prosecuting Officer</source>
+                <target>அதிகாரி வழக்கு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Defending Officer</source>
+                <target>அதிகாரி பாதுகாத்தல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case File Produce Date</source>
+                <target>வழக்கு கோப்பு விளைச்சலை தேதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Inquiry</source>
+                <target>சம்பவம் விசாரணை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Closed Incident Summery</source>
+                <target>மூடிய சம்பவம் Summery</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary Action Type is required</source>
+                <target>ஒழுங்கு அதிரடி வகை தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>No special characters are allowed</source>
+                <target>இல்லை சிறப்பு எழுத்துக்குறிகள் மட்டுமே அனுமதிக்கப்படும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Type and Incident Sub Type should be selected.</source>
+                <target>சம்பவம் வகை மற்றும் சம்பவ உட்பிரிவு வகை தேர்வு.</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>There is no Offences in this Disciplinary Type</source>
+                <target>இந்த ஒழுங்குமுறை அமைப்பு எந்த Offences உள்ளது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Define New Offence</source>
+                <target>புதிய Offence வரையறுக்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary Sub Type Summary</source>
+                <target>ஒழுங்கு உட்பிரிவு வகை சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Please select at least one employee</source>
+                <target>குறைந்தது ஒரு பணியாளர் தேர்வு செய்யவும்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Reporting</source>
+                <target>சம்பவம் அறிக்கை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Date</source>
+                <target>சம்பவம் தேதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reported By</source>
+                <target>அறிவிக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident</source>
+                <target>சம்பவம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Employee Involved</source>
+                <target>பணியாளர் ஈடுபாடு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Time</source>
+                <target>சம்பவம் நேரம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Emp ID</source>
+                <target>EMP ஐடி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Emp Name</source>
+                <target>EMP பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Designation</source>
+                <target>பதவி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Section</source>
+                <target>பகுதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Employee</source>
+                <target>பணியாளர் சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Pending Incident Summary</source>
+                <target>நிலுவையில் சம்பவ சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reported By</source>
+                <target>அறிவிக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Date</source>
+                <target>சம்பவம் தேதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Summary</source>
+                <target>சம்பவம் சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Status</source>
+                <target>அந்தஸ்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident</source>
+                <target>சம்பவம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Close Incident Summary</source>
+                <target>நெருங்கிய சம்பவ சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary Action Types</source>
+                <target>ஒழுங்கு நடவடிக்கை வகைகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Sub Types</source>
+                <target>துணை வகைகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Sub Type</source>
+                <target>துணை வகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Pending Inquiry Summary</source>
+                <target>நிலுவையில் விசாரணை சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action taken by</source>
+                <target>இறுதி அதிரடி எடுக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action taken date</source>
+                <target>இறுதி அதிரடி தேதி எடுக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case File</source>
+                <target>வழக்கு கோப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Define Disciplinary Sub Types</source>
+                <target>ஒழுங்குமுறை உட்பிரிவு வகைகள் வரையறுக்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Pending Inquiry Summary</source>
+                <target>நிலுவையில் விசாரணை சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Inquiry Summary</source>
+                <target>விசாரணை சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Type</source>
+                <target>சம்பவம் வகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Sub Type</source>
+                <target>சம்பவம் உட்பிரிவு வகை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Inquiry Officer name</source>
+                <target>விசாரணை அலுவலர் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Preliminary Inquiry Officer's Comments</source>
+                <target>பூர்வாங்க விசாரணை அதிகாரி கருத்துக்கள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>History Information</source>
+                <target>வரலாறு தகவல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action</source>
+                <target>இறுதி அதிரடி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>History</source>
+                <target>வரலாறு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Remove</source>
+                <target>நீக்கு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Minor Incident</source>
+                <target>சிறு சம்பவம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Major Incident</source>
+                <target>முக்கிய நிகழ்வு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Prosecuting Officer name</source>
+                <target>அலுவலர் பெயர் வழக்கு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Defending Officer name</source>
+                <target>அலுவலர் பெயர் பாதுகாத்தல்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case File Produced Date</source>
+                <target>வழக்கு கோப்பு தேதி தாயாரிப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case File</source>
+                <target>வழக்கு கோப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case Finalized</source>
+                <target>வழக்கு முடிவு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action Taken By</source>
+                <target>இறுதி அதிரடி எடுக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action Taken</source>
+                <target>இறுதி நடவடிக்கை எடுத்துள்ளது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action Taken Date</source>
+                <target>இறுதி அதிரடி தேதி எடுக்கப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Go to Disciplinary Actions Page</source>
+                <target>ஒழுங்குமுறை செயல்கள் பக்கம் செல்ல</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Preliminary Investigation</source>
+                <target>பூர்வாங்க விசாரணை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Charge Sheet</source>
+                <target>குற்ற அறிக்கை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Summary</source>
+                <target>சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary History</source>
+                <target>ஒழுங்குமுறை வரலாறு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>New Disciplinary Action Type Define</source>
+                <target>புதிய ஒழுங்கு நடவடிக்கை வகை வரையறுத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action Summary</source>
+                <target>இறுதி அதிரடி சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Add Final Action</source>
+                <target>இறுதி அதிரடி சேர்க்க</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Edit Final Action</source>
+                <target>இறுதி அதிரடி திருத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Final Action Code</source>
+                <target>இறுதி அதிரடி கோட்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Major</source>
+                <target>பெரிய</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Minor</source>
+                <target>சிறிய</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Investigate</source>
+                <target>விசாரணை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reported Date</source>
+                <target>அறிக்கை தேதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident From Date</source>
+                <target>தேதி வரம்பு சம்பவம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident To Date</source>
+                <target>இன்றுவரை சம்பவம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reported Time</source>
+                <target>அறிவிக்கப்பட்ட நேரம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident From Time</source>
+                <target>நேரம் வரம்பு சம்பவம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident To Time</source>
+                <target>நேரம் சம்பவம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Investigation / Audit Feedback</source>
+                <target>விசாரணை / தணிக்கை கருத்து</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Comments Inquiry</source>
+                <target>Comments விசாரணை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>If Appeal</source>
+                <target>மேல்முறையீடு எனில்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Appeal Date</source>
+                <target>தேதி மேல்முறையீடு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Comments Appeal Board</source>
+                <target>Comments அப்பீல் வாரியம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Comments from Labour Tribunal or Labour Commissioner or Amusement Human Rights</source>
+                <target>தொழிலாளர் அமைப்பு அல்லது தொழிலாளர் ஆணையர் அல்லது அம்யூஸ்மென்ட் மனித உரிமைகள் இருந்து comments</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reported Date</source>
+                <target>அறிக்கை தேதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reported Time</source>
+                <target>அறிவிக்கப்பட்ட நேரம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Emp NIC No.</source>
+                <target>EMP தேசிய அடையாள அட்டை இல்லை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Section</source>
+                <target>பகுதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Explanation</source>
+                <target>விளக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Disciplinary Types</source>
+                <target>ஒழுங்கு வகைகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Employee No</source>
+                <target>பணியாளர் இல்லை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Employee NIC No.</source>
+                <target>பணியாளர் தேசிய அடையாள அட்டை இல்லை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Closed</source>
+                <target>மூடப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Ongoing</source>
+                <target>வளா</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Major / Minor</source>
+                <target>பெரிய / சிறிய</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident Major/Minor</source>
+                <target>சம்பவம் மேஜர் / மைனர்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Close Status</source>
+                <target>நெருங்கிய தகுதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Charge Sheet Issued</source>
+                <target>கட்டணம் தாள் வழங்கப்பட்டது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Explanation</source>
+                <target>விளக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Interdicted</source>
+                <target>Interdicted</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Further Action</source>
+                <target>மேலும் அதிரடி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Further Actions Required</source>
+                <target>மேலும் செயல்கள் தேவைப்பட்ட</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>If Interdicted</source>
+                <target>Interdicted என்றால்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Update Disciplinary Sub Types</source>
+                <target>ஒழுங்குமுறை உட்பிரிவு வகைகள் மேம்படுத்த</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Inquiry Summary</source>
+                <target>விசாரணை சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Incident reported date should be greater than to from date</source>
+                <target>சம்பவம் தேதி தேதியிலிருந்து விட அதிகமாக இருக்க வேண்டும் அறிக்கை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reinstatement Summary</source>
+                <target>மறுநியமனம் சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reinstatement</source>
+                <target>மறுநியமனம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Employee Number</source>
+                <target>பணியாளர் எண்ணிக்கை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>EPF Number</source>
+                <target>பி எண்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reinstatement Date</source>
+                <target>மறுநியமனம் தேதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Grade</source>
+                <target>கிரேடு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Grade Slot</source>
+                <target>கிரேடு துளை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Work Station</source>
+                <target>நிலையம் வேலை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>No invalid characters are allowed</source>
+                <target>இல்லை தவறான எழுத்துக்கள் அனுமதி</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case File</source>
+                <target>வழக்கு கோப்பு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Case Finalized</source>
+                <target>வழக்கு முடிவு</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Reinstatement</source>
+                <target>மறுநியமனம்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Special characters are not allowed</source>
+                <target>சிறப்பு எழுத்துகள் அனுமதி இல்லை</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>This field is required</source>
+                <target>இந்த புலம் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Maximum 200 characters</source>
+                <target>அதிகபட்ச 200 எழுத்துகள்</target>
+            </trans-unit>
+            <trans-unit id="116">
+                <source>Maximum length should be 100 characters</source>
+                <target>அதிகபட்ச நீளம் 100 எழுத்துகள் இருக்க வேண்டும்</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="EN" target-language="ta" datatype="plaintext" original="messages" date="2009-12-08T13:58:35Z" product-name="messages">
+        <header/>
+        <body>
+            <trans-unit id="1">
+                <source>Document Type Summary</source>
+                <target>ஆவன வகைச் சுருக்கம் </target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Document Type</source>
+                <target>ஆவன வகை</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Document Type</source>
+                <target>ஆவன வகை சேர்த்தல்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Document Type Name</source>
+                <target>ஆவன வகைப் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Attachment Documents Summary</source>
+                <target>இணைக்கப்பட்டுள்ள ஆவன சுருக்கம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Document Title</source>
+                <target>ஆவணத் தலைப்பு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Add Attachment Documents</source>
+                <target>இணைப்பு ஆவணங்களைச் சேர்த்தல் </target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Document Title Name</source>
+                <target>ஆவணத் தலைப்புப் பெயர்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Keywords</source>
+                <target>திரவுற்சொற்கள் </target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Upload Document</source>
+                <target>ஆவணத்தை ஏற்றுதல்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Publish Date</source>
+                <target>னளனளபிரகனப்படுத்தும் திகதி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Knowledge Base</source>
+                <target>அறிவுக்களஞ்சியம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search Within</source>
+                <target>இட்கிடையே தேடுதல்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Search In</source>
+                <target>இல் தேடுதல்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Document Type Required</source>
+                <target>ஆவன வகை தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Document Type is required in English</source>
+                <target>ஆவன வகை ஆங்கிலத்தில் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Key Words</source>
+                <target>திரவுற்சொற்கள் </target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Key words (separated using , )</source>
+                <target>(  , மூலம் பிரிக்கப்பட்டுள்ளது)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Keywords are required in English</source>
+                <target>திரவுற்சொற்கள் ஆங்கிலத்தில் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Keywords are required in Sinhala</source>
+                <target>திரவுற்சொற்கள் சிங்களத்தில் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Keywords are required in Tamil</source>
+                <target>திரவுற்சொற்கள் தமிழில் தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Attachment Required</source>
+                <target>இணைப்பு தேவைப்படுகிறது </target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Maximum 500 Characters</source>
+                <target>500 சொற்களுக்கு   மட்டுப்படுத்தப்பட்டுள்ளது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Posted Date</source>
+                <target>அனுப்பப்பட்ட திகதி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Updated Date</source>
+                <target>நிகழ்நிலைக்கு கொண்டு வந்த திகதி</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>All Time</source>
+                <target>அனைத்து நேரம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Last 10 days</source>
+                <target>இறுதி 10 நாட்கள்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Last 30 days</source>
+                <target>இறுதி 30 நாட்கள்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Last 90 days</source>
+                <target>இறுதி 90 நாட்கள்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Last year</source>
+                <target>இறுதி வருடம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Attachment</source>
+                <target>இணைப்பு</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>view</source>
+                <target>பார்த்தல்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>all</source>
+                <target>அனைத்தும்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Knowledge Share</source>
+                <target>அறிவுப்பரிமாற்றம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>This is required</source>
+                <target>இது தேவைப்படுகிறது</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Key words (separated using comma , )</source>
+                <target>திரவுற்சொற்கள்  (  , மூலம் பிரிக்கப்பட்டுள்ளது)</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Content</source>
+                <target>உள்ளடக்கம்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Edit Document Type</source>
+                <target>ஆவன வகையை புதுப்பித்தல்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Please select the Search Within</source>
+                <target>தயவு செய்து தேடும் எல்லையை தெரிவு செய்யவும்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Please select the Serach In</source>
+                <target>இல் தேடுவதை தெரிவு செய்யவும்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Edit Attachment Documents</source>
+                <target>சேர்க்கப்பட்டுள்ள ஆவணங்களை புதுப்பிக்கவும்</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>Update Date</source>
+                <target>நிகழ்நிளைப்படுத்தும் திகதி</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
+

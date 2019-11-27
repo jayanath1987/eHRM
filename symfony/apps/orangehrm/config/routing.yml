@@ -1,0 +1,701 @@
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+employee_list:
+  url:   /pim/list/*
+  param: { module: pim, action: employeeList }
+  with_wildcard_routes: true
+  
+employee_search:
+  url:   /pim/searchEmployee/*
+  param: { module: pim, action: searchEmployee }
+  with_wildcard_routes: true
+
+trainPartisummry:
+  url:   /training/participateSummery/*
+  param: { module: training, action: participateSummery }
+  with_wildcard_routes: true
+
+report_view:
+  url:   /report/viewReport/*
+  param: { module: report, action: viewReport }
+  with_wildcard_routes: true
+
+trainsummryHistory:
+  url:   /training/trainingHistory/*
+  param: { module: training, action: trainingHistory }
+  with_wildcard_routes: true
+
+grade_list:
+  url:   /admin/listGrade/*
+  param: { module: admin, action: listGrade }
+  with_wildcard_routes: true
+
+class_list:
+  url:   /admin/listClass/*
+  param: { module: admin, action: listClass }
+  with_wildcard_routes: true
+
+attachtype_list:
+  url:   /admin/listAttachtype/*
+  param: { module: admin, action: listAttachtype }
+  with_wildcard_routes: true
+
+report_data_view:
+  url:   /report/viewCustomReport/*
+  param: { module: report, action: viewCustomReport }
+  with_wildcard_routes: true
+
+report_show:
+  url:   /report/viewCustomReport/*
+  param: { module: report, action: viewCustomReport }
+  with_wildcard_routes: true
+
+report_define:
+  url:   /report/defineReport/*
+  param: { module: report, action: defineReport }
+  with_wildcard_routes: true
+
+trans_reason:
+  url:   /transfer/TransferReason/*
+  param: { module: transfer, action: TransferReason }
+  with_wildcard_routes: true
+
+report_save:
+  url:   /report/saveReport/*
+  param: { module: report, action: saveReport }
+  with_wildcard_routes: true
+
+pendingT:
+  url:   /training/Adminapp/*
+  param: { module: training, action: Adminapp }
+  with_wildcard_routes: true
+
+courseList:
+  url:   /training/CourseList/*
+  param: { module: training, action: CourseList }
+  with_wildcard_routes: true
+
+trainRecordSummery:
+  url:   /training/SummeryTrainRecord/*
+  param: { module: training, action: SummeryTrainRecord }
+  with_wildcard_routes: true
+
+trainsummry:
+  url:   /training/trainsummery/*
+  param: { module: training, action: trainsummery }
+  with_wildcard_routes: true
+
+trainDirectory:
+  url:   /training/TraininDirectory/*
+  param: { module: training, action: TraininDirectory }
+  with_wildcard_routes: true
+
+transr_request:
+  url:   /transfer/TransferRequest/*
+  param: { module: transfer, action: TransferRequest }
+  with_wildcard_routes: true
+
+transfer:
+  url:   /transfer/TransferDetail/*
+  param: { module: transfer, action: TransferDetail }
+  with_wildcard_routes: true
+
+report_add:
+  url:   /report/addReport/*
+  param: { module: report, action: addReport }
+  with_wildcard_routes: true
+
+report_edit:
+  url:   /report/editReport/*
+  param: { module: report, action: addReport }
+  with_wildcard_routes: true
+
+location_list:
+  url:   /admin/listCompanylocation/*  
+  param: { module: admin, action: listCompanylocation }
+  with_wildcard_routes: true
+
+comproperty_list:
+  url:   /admin/listCompanyProporty/*  
+  param: { module: admin, action: listCompanyProperty }
+  with_wildcard_routes: true
+
+trainsummery_list:
+  url:   /training/trainsummery/*
+  param: { module: training, action: trainsummery}
+  with_wildcard_routes: true
+
+newtrainingSummery:
+  url:   /training/Newregister/*
+  param: { module: training, action: Newregister }
+  with_wildcard_routes: true
+
+
+edittrainapprove:
+  url:   /training/EditAdminApp/*
+  param: { module: training, action: EditAdminApp }
+  with_wildcard_routes: true
+
+
+Benifit:
+  url:   /wbm/Benifit/*
+  param: { module: wbm, action: Benifit }
+  with_wildcard_routes: true
+
+Promotion:
+  url:   /promotion/ListPromotion/*
+  param: { module: promotion, action: listPromotion }
+  with_wildcard_routes: true
+
+PromotionMethod:
+  url:   /promotion/promotionMethod/*
+  param: { module: promotion, action: promotionMethod }
+  with_wildcard_routes: true
+
+PromotionChecklist:
+  url:   /promotion/promotioncklist/*
+  param: { module: promotion, action: promotioncklist }
+  with_wildcard_routes: true
+
+Probationlist:
+  url:   /promotion/probationlist/*
+  param: { module: promotion, action: probationlist }
+  with_wildcard_routes: true
+
+Dis_action_type:
+  url:   /disciplinary/actiontype/*
+  param: { module: disciplinary, action: actiontype }
+  with_wildcard_routes: true
+
+offenceName:
+  url:   /disciplinary/actions/*
+  param: { module: disciplinary, action: actions}
+  with_wildcard_routes: true
+
+summerylevel0:
+  url:   /disciplinary/incidents/*
+  param: { module: disciplinary, action: incidents}
+  with_wildcard_routes: true
+
+summerydisclose:
+  url:   /disciplinary/ClosedIncidents/*
+  param: { module: disciplinary, action: ClosedIncidents}
+  with_wildcard_routes: true
+
+FinalAction:
+  url:   /disciplinary/FinalAction/*
+  param: { module: disciplinary, action: FinalAction}
+  with_wildcard_routes: true
+  
+Disbusement:
+  url:   /wbm/Disbusement/*
+  param: { module: wbm, action: Disbusement }
+  with_wildcard_routes: true
+
+BenifitType:
+  url:   /wbm/BenifitType/*
+  param: { module: wbm, action: BenifitType }
+  with_wildcard_routes: true
+
+defineInstitute:
+  url:   /training/defineinstitute/*
+  param: { module: training, action: defineinstitute }
+  with_wildcard_routes: true
+
+Retirement:
+  url:   /retirement/retirement/*
+  param: { module: retirement, action: retirement }
+  with_wildcard_routes: true
+
+Attendance:
+  url:   /attendance/Process/*
+  param: { module: attendance, action: Process }
+  with_wildcard_routes: true
+
+PFdef:
+  url:   /PF/DocumentType/*
+  param: { module: PF, action: DocumentType }
+  with_wildcard_routes: true
+
+knwDoc:
+  url:   /knw/DocumentType/*
+  param: { module: knw, action: DocumentType }
+  with_wildcard_routes: true
+
+knwAttacDetail:
+  url:   /knw/Attachment/*
+  param: { module: knw, action: Attachment }
+  with_wildcard_routes: true
+
+knw:
+  url:   /knw/Knowledgebase/*
+  param: { module: knw, action: Knowledgebase }
+  with_wildcard_routes: true
+
+LeaveDoc:
+  url:   /Leave/DocumentType/*
+  param: { module: Leave, action: DocumentType }
+  with_wildcard_routes: true
+
+LeaveEntitlement:
+  url:   /Leave/Entitlement/*
+  param: { module: Leave, action: Entitlement }
+  with_wildcard_routes: true
+
+Leave:
+  url:   /Leave/Leave/*
+  param: { module: Leave, action: Leave }
+  with_wildcard_routes: true
+
+LeaveSearch:
+  url:   /Leave/LeaveSearch/*
+  param: { module: Leave, action: LeaveSearch }
+  with_wildcard_routes: true
+
+LeaveHolyday:
+  url:   /Leave/Holyday/*
+  param: { module: Leave, action: Holyday }
+  with_wildcard_routes: true
+
+category_list:
+  url:   /admin/listJobCategory/*  
+  param: { module: admin, action: listJobCategory }
+  with_wildcard_routes: true
+
+salerygrade_list:
+  url:   /admin/listSaleryGrade/*  
+  param: { module: admin, action: listSaleryGrade }
+  with_wildcard_routes: true
+
+empstatus_list:
+  url:   /admin/listEmployeeStatus/*  
+  param: { module: admin, action: listEmployeeStatus }
+  with_wildcard_routes: true
+
+jobspec_list:
+  url:   /admin/listJobSpecifications/*  
+  param: { module: admin, action: listJobSpecifications }
+  with_wildcard_routes: true
+
+jobtitle_list:
+  url:   /admin/listJobTitle/*  
+  param: { module: admin, action: listJobTitle }
+  with_wildcard_routes: true
+
+jobservice_list:
+  url:   /admin/listJobService/*
+  param: { module: admin, action: listJobService }
+  with_wildcard_routes: true
+
+license_list:
+  url:   /admin/listLicenses/*  
+  param: { module: admin, action: listLicenses }
+  with_wildcard_routes: true
+
+education_list:
+  url:   /admin/listEducation/*  
+  param: { module: admin, action: listEducation }
+  with_wildcard_routes: true
+
+skill_list:
+  url:   /admin/listSkill/*  
+  param: { module: admin, action: listSkill }
+  with_wildcard_routes: true
+  
+language_list:
+  url:   /admin/listLanguage/*  
+  param: { module: admin, action: listLanguage }
+  with_wildcard_routes: true
+
+deleteMembershipType_list:
+  url:   /admin/listMembershipType/*  
+  param: { module: admin, action: listMembershipType }
+  with_wildcard_routes: true
+
+membershipType_list:
+  url:   /admin/listMembershipType/*  
+  param: { module: admin, action: listMembershipType }
+  with_wildcard_routes: true
+
+membership_list:
+  url:   /admin/listMembership/*  
+  param: { module: admin, action: listMembership }
+  with_wildcard_routes: true
+
+nationality_list:
+  url:   /admin/listNationality/*  
+  param: { module: admin, action: listNationality }
+  with_wildcard_routes: true
+  
+ethnicRace_list:
+  url:   /admin/listEthnicRace/*  
+  param: { module: admin, action: listEthnicRace }
+  with_wildcard_routes: true
+
+project_list:
+  url:   /admin/listProject/*  
+  param: { module: admin, action: listProject }
+  with_wildcard_routes: true
+
+customer_list:
+  url:   /admin/listCustomer/*  
+  param: { module: admin, action: listCustomer }
+  with_wildcard_routes: true
+
+
+customExport_list:
+  url:   /admin/listCustomExport/*
+  param: { module: admin, action: listCustomExport }
+  with_wildcard_routes: true
+
+customImport_list:
+  url:   /admin/listCustomImport/*
+  param: { module: admin, action: listCustomImport }
+  with_wildcard_routes: true
+
+customfield_list:
+  url:   /admin/listCustomFields/*  
+  param: { module: admin, action: listCustomFields }
+  with_wildcard_routes: true
+
+usergroup_list:
+  url:   /admin/listUserGroup/*  
+  param: { module: admin, action: listUserGroup }
+  with_wildcard_routes: true
+
+user_list:
+  url:   /admin/listUser/*  
+  param: { module: admin, action: listUser }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+
+capability:
+  url:   /security/capability/*
+  param: { module: security, action: capability }
+
+unlock_Request:
+  url:   /security/unlockRecords/*
+  param: { module: security, action: unlockRecords }
+
+ebexam_list:
+  url:   /admin/listDefineEbexam/*
+  param: { module: admin, action: listDefineEbexam }
+
+planList:
+  url:   /training/TrainingPlanList/*
+  param: { module: training, action: TrainingPlanList }
+
+pendingInqSummary:
+  url:   /disciplinary/PendingInqSummary/*
+  param: { module: disciplinary, action: PendingInqSummary }
+  
+Dis_insident_sum:
+  url:   /disciplinary/IncidentSummary/*
+  param: { module: disciplinary, action: IncidentSummary }
+  
+Dis_pen_insident_sum:
+  url:   /disciplinary/PendingInqSummary/*
+  param: { module: disciplinary, action: PendingInqSummary }
+
+historyDisp:
+  url:   /disciplinary/empDisHistory/*
+  param: { module: disciplinary, action: empDisHistory }
+  
+report_list:
+  url:   /report/viewReportList/*
+  param: { module: report, action: viewReportList }
+  with_wildcard_routes: true
+
+empdisAct_list:
+  url:   /pim/disciplinaryAction/*
+  param: { module: pim, action: disciplinaryAction }
+  with_wildcard_routes: true
+
+trainRecordSummeryAdmin:
+  url:   /training/SummeryTrainRecordAdmin/*
+  param: { module: training, action: SummeryTrainRecordAdmin}
+  with_wildcard_routes: true
+
+NewTransferRequestAdmin:
+  url:   /Transfer/NewTransferRequestAdmin/*
+  param: { module: Transfer, action: NewTransfer }
+  with_wildcard_routes: true
+
+JobRoleSummery:
+  url:   /admin/JobRole/*
+  param: { module: admin, action: JobRole }
+  with_wildcard_routes: true
+
+Level:
+  url:   /admin/Level/*
+  param: { module: admin, action: Level }
+  with_wildcard_routes: true
+
+pendingTDivSec:
+  url:   /training/AdminappDivSec/*
+  param: { module: training, action: AdminappDivSec }
+  with_wildcard_routes: true
+
+pendingTHRTeam:
+  url:   /training/AdminappHRTeam/*
+  param: { module: training, action: AdminappHRTeam }
+  with_wildcard_routes: true
+
+pendingTHRAdmin:
+  url:   /training/AdminappHRAdmin/*
+  param: { module: training, action: AdminappHRAdmin }
+  with_wildcard_routes: true
+
+DutyGroup:
+  url:   /performance/DutyGroup/*
+  param: { module: performance, action: DutyGroup }
+  with_wildcard_routes: true
+
+Duty:
+  url:   /performance/Duty/*
+  param: { module: performance, action: Duty }
+  with_wildcard_routes: true
+
+Rate:
+  url:   /performance/Rate/*
+  param: { module: performance, action: Rate }
+  with_wildcard_routes: true
+
+Evaluation:
+  url:   /performance/CompanyEvaluationInfo/*
+  param: { module: performance, action: CompanyEvaluationInfo }
+  with_wildcard_routes: true
+
+EvaluationDetails :
+  url:   /performance/Evaluation/*
+  param: { module: performance, action: Evaluation }
+  with_wildcard_routes: true
+
+AssingEmployee:
+  url:   /performance/AssingEmployee/*
+  param: { module: performance, action: AssingEmployee }
+  with_wildcard_routes: true
+
+SDOEvaluation:
+  url:   /performance/SDOEvaluation/*
+  param: { module: performance, action: SDOEvaluation }
+  with_wildcard_routes: true
+
+wfgrpapp:
+  url:   /workflow/approvalGroupsSummary/*
+  param: { module: workflow, action: approvalGroupsSummary }
+  with_wildcard_routes: true
+
+VacancyRequest:
+  url:  /recruitment/VacancyRequestWork/*
+  param: { module: recruitment, action: VacancyRequestWork }
+  with_wildcard_routes: true
+
+HRVacancyRequest:
+  url:  /recruitment/HRVacancyRequest/*
+  param: { module: recruitment, action: HRVacancyRequest }
+  with_wildcard_routes: true
+
+DGVacancyRequest:
+  url:  /recruitment/DGVacancyRequest/*
+  param: { module: recruitment, action: DGVacancyRequest }
+  with_wildcard_routes: true
+
+OverallVacancyRequest:
+ url:  /recruitment/OverallVacancyRequest/*
+ param: { module: recruitment, action: OverallVacancyRequest }
+ with_wildcard_routes: true
+    
+VacancyRequisition:
+  url:  /recruitment/VacancyRequisition/*
+  param: { module: recruitment, action: VacancyRequisition }
+  with_wildcard_routes: true
+ 
+Advertisement:
+  url:  /recruitment/Advertisement/*
+  param: { module: recruitment, action: Advertisement }
+  with_wildcard_routes: true
+  
+Candidate:
+  url:  /recruitment/Candidate/*
+  param: { module: recruitment, action: Candidate }
+  with_wildcard_routes: true
+ 
+CandidateInterview:
+  url:  /recruitment/CandidateInterview/*
+  param: { module: recruitment, action: CandidateInterview }
+  with_wildcard_routes: true
+  
+FinalizedVacancy:
+  url:  /recruitment/FinalizedVacancy/*
+  param: { module: recruitment, action: FinalizedVacancy }
+  with_wildcard_routes: true
+
+HRCandidateInterview:  
+  url:  /recruitment/HRCandidateInterview/*
+  param: { module: recruitment, action: HRCandidateInterview }
+  with_wildcard_routes: true
+  
+DGCandidateInterview:  
+  url:  /recruitment/DGCandidateInterview/*
+  param: { module: recruitment, action: DGCandidateInterview }
+  with_wildcard_routes: true
+  
+LoanType:  
+  url:  /loan/LoanType/*
+  param: { module: loan, action: LoanType }
+  with_wildcard_routes: true  
+  
+LoanApplication:  
+  url:  /loan/AppliedLoan/*
+  param: { module: loan, action: AppliedLoan }
+  with_wildcard_routes: true   
+  with_wildcard_routes: true
+
+LoanHistoryandStatus:
+  url:  /loan/LoanHistoryandStatus/*
+  param: { module: loan, action: LoanHistoryandStatus }
+  with_wildcard_routes: true   
+  with_wildcard_routes: true
+
+LoanSettlement:
+  url:  /loan/LoanSettlement/*
+  param: { module: loan, action: LoanSettlement }
+  with_wildcard_routes: true   
+  with_wildcard_routes: true
+
+VoteDetails:  
+  url:  /payroll/VoteDetails/*
+  param: { module: payroll, action: VoteDetails }
+  with_wildcard_routes: true  
+  
+EmployeePayrollInformation:  
+  url:  /payroll/EmployeePayrollInformation/*
+  param: { module: payroll, action: EmployeePayrollInformation }
+  with_wildcard_routes: true    
+
+TtypeDetails:
+  url:  /payroll/TransActiontypeSummary/*
+  param: { module: payroll, action: TransActiontypeSummary }
+  with_wildcard_routes: true
+
+TtypeDetailsSummary:
+  url:  /payroll/TransActionDetailSummary/*
+  param: { module: payroll, action: TransActionDetailSummary }
+  with_wildcard_routes: true
+
+SalarayIncrement:  
+  url:  /payroll/SalarayIncrement/*
+  param: { module: payroll, action: SalarayIncrement }
+  with_wildcard_routes: true 
+  
+employee_search_loan:
+  url:   /loan/searchEmployee/*
+  param: { module: loan, action: searchEmployee }
+  with_wildcard_routes: true  
+  
+OtherInstitution:  
+  url:  /promotion/OtherInstitution/*
+  param: { module: promotion, action: OtherInstitution }
+  with_wildcard_routes: true   
+  
+Reinstatement:  
+  url:  /disciplinary/Reinstatement/*
+  param: { module: disciplinary, action: Reinstatement }
+  with_wildcard_routes: true 
+  
+Diciplinary_employee_search:
+  url:   /disciplinary/searchEmployee/*
+  param: { module: disciplinary, action: searchEmployee }
+  with_wildcard_routes: true  
+  
+BankDetails:
+  url:   /payroll/BankDetails/*
+  param: { module: payroll, action: BankDetails }
+  with_wildcard_routes: true   
+   
+BranchDetails:
+  url:   /payroll/BranchDetails/*
+  param: { module: payroll, action: BranchDetails }
+  with_wildcard_routes: true    
+  
+noticeAdmin:
+  url:   /admin/listNotice/*
+  param: { module: admin, action: ListNotice}
+  with_wildcard_routes: true 
+  
+HistoryPromotion:
+  url:   /promotion/HistoryPromotion/*
+  param: { module: promotion, action: HistoryPromotion }
+  with_wildcard_routes: true
+  
+BankDiskette:
+  url:   /payroll/BankDiskette/*
+  param: { module: payroll, action: BankDiskette }
+  with_wildcard_routes: true     
+  
+BankDisketteProcess:
+  url:   /payroll/BankDisketteProcess/*
+  param: { module: payroll, action: BankDisketteProcess }
+  with_wildcard_routes: true    
+
+transrRequestAdmin:
+  url:   /transfer/TransferRequestAdmin/*
+  param: { module: transfer, action: TransferRequestAdmin }
+  with_wildcard_routes: true
+  
+SalarayIncrementCancel:  
+  url:  /payroll/SalarayIncrementCancel/*
+  param: { module: payroll, action: SalarayIncrementCancel }
+  with_wildcard_routes: true   
+  
+SecurityPayrollCapability:
+  url:   /security/PayprocessCapabilityList/*
+  param: { module: security, action: PayprocessCapabilityList }  
+  with_wildcard_routes: true
+
+EducationType:
+  url:   /admin/EducationType/*
+  param: { module: admin, action: EducationType }
+  
+EducationSubject:
+  url:   /admin/EducationSubject/*
+  param: { module: admin, action: EducationSubject }    
+
+OONote:
+  url:   /Leave/OONote/*
+  param: { module: Leave, action: OONote }
+  with_wildcard_routes: true  
+
+EvaluationRate:
+  url:   /evaluation/Rate/*
+  param: { module: evaluation, action: Rate }
+  with_wildcard_routes: true  
+  
+EvaluationCompany:
+  url:   /evaluation/CompanyEvaluationInfo/*
+  param: { module: evaluation, action: CompanyEvaluationInfo }
+  with_wildcard_routes: true  
+  
+EvalFunctionTask:
+  url:   /evaluation/EvalFunctionTask/*
+  param: { module: evaluation, action: EvalFunctionTask }
+  with_wildcard_routes: true   
+  
+DefineEmployeeEvaluation:
+  url:   /evaluation/DefineEmployeeEvaluation/*
+  param: { module: evaluation, action: DefineEmployeeEvaluation }
+  with_wildcard_routes: true    
+  
+ViewEmployeeEvaluation:
+  url:   /evaluation/ViewEmployeeEvaluation/*
+  param: { module: evaluation, action: ViewEmployeeEvaluation }
+  with_wildcard_routes: true      

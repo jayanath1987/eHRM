@@ -1,0 +1,8349 @@
+Employee:
+  tableName: vw_hs_hr_employee
+  columns:
+    emp_number:
+      name: emp_number as empNumber
+      type: integer(4)
+      primary: true
+    employee_id:
+      name: employee_id as employeeId
+      type: string(50)
+    title_code: integer(2)
+    emp_initials: string(30)
+    emp_initials_si: string(30)
+    emp_initials_ta: string(30)
+    emp_names_of_initials: string(120)
+    emp_names_of_initials_si: string(120)
+    emp_names_of_initials_ta: string(120)
+    emp_firstname:
+      name: emp_firstname as firstName
+      type: string(100)
+      default: ''
+      notnull: true
+    emp_firstname_si:
+      name: emp_firstname_si as firstName_si
+      type: string(100)
+    emp_firstname_ta:
+      name: emp_firstname_ta as firstName_ta
+      type: string(100)
+    emp_lastname:
+      name: emp_lastname as lastName
+      type: string(100)
+      default: ''
+      notnull: true
+    emp_lastname_si:
+      name: emp_lastname_si as lastName_si
+      type: string(100)
+    emp_lastname_ta:
+      name: emp_lastname_ta as lastName_ta
+      type: string(100)
+    emp_display_name: string(200)
+    emp_display_name_si: string(200)
+    emp_display_name_ta: string(200)
+    emp_app_letter_no: string(20)
+    emp_personal_file_no: string(25)
+    ethnic_race_code: string(13)
+    service_code: integer(4)
+    grade_code: integer(4)
+    slt_scale_year: integer(10)
+    level_code: integer(4)
+    nation_code: string(13)
+    gender_code: integer(2)
+    class_code: integer(4)
+    marst_code: integer(2)
+    emp_married_date: date
+    job_title_code: string(13)
+    act_job_title_code: string(13)
+    work_station:
+      default: null
+      type: integer(4)
+    act_work_station:
+      default: null
+      type: integer(6)
+    emp_nic_no: string(20)
+    emp_nic_date: date
+    emp_status: string(13)
+    rlg_code: integer(2)
+    lang_code: string(13)
+    cou_code: string(2)
+    emp_birthday: date(25)
+    emp_birth_location: string(50)
+    emp_birth_location_si: string(50)
+    emp_birth_location_ta: string(50)
+    emp_passport_no: string(20)
+    emp_attendance_no: string(20)
+    emp_other_file_no: string(20)
+    emp_salary_no: string(20)
+    emp_barcode_no: string(20)
+    emp_public_app_date: date
+    emp_public_com_date: date
+    emp_app_date: date
+    emp_com_date: date
+    emp_rec_method: integer(2)
+    emp_rec_method_desc: string(100)
+    emp_rec_method_desc_si: string(100)
+    emp_rec_method_desc_ta: string(100)
+    emp_rec_medium: integer(2)
+    emp_active_hrm_flg: integer(2)
+    emp_active_att_flg: integer(2)
+    emp_active_pr_flg: integer(2)
+    emp_wop_flg: integer(2)
+    emp_wop_no: string(20)
+    emp_confirm_flg: integer(2)     
+    emp_confirm_date:
+      type: date
+      default: null      
+    emp_prob_ext_flg: integer(2)
+    emp_prob_from_date: date
+    emp_prob_to_date: date
+    emp_salary_scale: string(100)
+    emp_salary_scale_si: string(100)
+    emp_salary_scale_ta: string(100)
+    emp_basic_salary: float(2147483647)
+    emp_salary_inc_date: date
+    terminated_date: date(25)
+    termination_reason: string(256)    
+    emp_pension_no: string(25)
+    emp_resign_date: date
+    emp_retirement_date: date
+    hie_code_1: integer(6)
+    hie_code_2: integer(6)
+    hie_code_3: integer(6)
+    hie_code_4: integer(6)
+    hie_code_5: integer(6)
+    hie_code_6: integer(6)
+    hie_code_7: integer(6)
+    hie_code_8: integer(6)
+    hie_code_9: integer(6)
+    hie_code_10: integer(6)
+    act_hie_code_1: integer(6)
+    act_hie_code_2: integer(6)
+    act_hie_code_3: integer(6)
+    act_hie_code_4: integer(6)
+    act_hie_code_5: integer(6)
+    act_hie_code_6: integer(6)
+    act_hie_code_7: integer(6)
+    act_hie_code_8: integer(6)
+    act_hie_code_9: integer(6)
+    act_hie_code_10: integer(6)
+    emp_ldap_flag: integer(2)
+    emp_ispaydownload: integer(1)
+  relations:
+    subDivision:
+      class: CompanyStructure
+      local: work_station
+      foreign: id
+      type: one
+    jobTitle:
+      class: JobTitle
+      local: job_title_code
+      foreign: jobtit_code
+      type: one
+    actjobTitle:
+      class: JobTitle
+      local: act_job_title_code
+      foreign: jobtit_code
+      type: one
+    employeeStatus:
+      class: EmployeeStatus
+      local: emp_status
+      foreign: estat_code
+      type: one
+    supervisors:
+      class: Employee
+      local: erep_sub_emp_number
+      foreign: erep_sup_emp_number
+      refClass: ReportTo
+      foreignAlias: subordinates
+    dependents:
+      class: EmpDependent
+      local: emp_number
+      foreign: emp_number
+      type: many
+    emergencyContacts:
+      class: EmpEmergencyContact
+      local: emp_number
+      foreign: emp_number
+      type: many
+    immigrationDocuments:
+      class: EmpPassport
+      local: emp_number
+      foreign: emp_number
+      type: many
+    workExperience:
+      class: EmpWorkExperience
+      local: emp_number
+      foreign: emp_number
+      type: many
+    educationList:
+      class: EmployeeEducation
+      local: emp_number
+      foreign: emp_number
+      type: many
+    skills:
+      class: EmployeeSkill
+      local: emp_number
+      foreign: emp_number
+      type: many
+    languages:
+      class: EmployeeLanguage
+      local: emp_number
+      foreign: emp_number
+      type: many
+    licenses:
+      class: EmployeeLicense
+      local: emp_number
+      foreign: emp_number
+      type: many
+    memberships:
+      class: EmployeeMemberDetail
+      local: emp_number
+      foreign: emp_number
+      type: many
+    salaryDetails:
+      class: EmpBasicsalary
+      local: emp_number
+      foreign: emp_number
+      type: many
+    directDebits:
+      class: EmpDirectdebit
+      local: emp_number
+      foreign: emp_number
+      type: many
+    locationHistoryItems:
+      class: EmpLocationHistory
+      local: emp_number
+      foreign: emp_number
+      type: many
+    jobTitleHistoryItems:
+      class: EmpJobtitleHistory
+      local: emp_number
+      foreign: emp_number
+      type: many
+    subdivisionHistoryItems:
+      class: EmpSubdivisionHistory
+      local: emp_number
+      foreign: emp_number
+      type: many
+    contracts:
+      class: EmpContract
+      local: emp_number
+      foreign: emp_number
+      type: many
+    attachments:
+      class: EmpAttachment
+      local: emp_number
+      foreign: emp_number
+      type: many
+    picture:
+      class: EmpPicture
+      local: emp_number
+      foreign: emp_number
+      type: one
+    reportTo:
+      class: ReportTo
+      local: empNumber
+      foreign: erep_sub_emp_number
+      type: many
+    ServiceDetails:
+      class: ServiceDetails
+      local: service_code
+      foreign: service_code
+      type: one
+    Grade:
+      class: Grade
+      local: grade_code
+      foreign: grade_code
+      type: one
+    GradeSlot:
+      class: GradeSlot
+      local: slt_scale_year
+      foreign: slt_id
+      type: one
+    EmpTitle:
+      class: EmpTitle
+      local: title_code
+      foreign: title_code
+      type: one
+    Gender:
+      class: Gender
+      local: gender_code
+      foreign: gender_code
+      type: one
+    MaritalStatus:
+      class: MaritalStatus
+      local: marst_code
+      foreign: marst_code
+      type: one
+    Religion:
+      class: Religion
+      local: rlg_code
+      foreign: rlg_code
+      type: one
+    PreferedLanguage:
+      class: PreferedLanguage
+      local: lang_code
+      foreign: lang_code
+      type: one
+    EmpClass:
+      class: EmpClass
+      local: class_code
+      foreign: class_code
+      type: one
+    EmpContact:
+      class: EmpContact
+      local: emp_number
+      foreign: emp_number
+      type: one
+    EMPEBExam:
+      class: EMPEBExam
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Users:      
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Level:
+      class: Level
+      local: level_code
+      foreign: level_code
+      type: one
+    actsubDivision:
+      class: CompanyStructure
+      local: act_work_station
+      foreign: id
+      type: one
+    hie_code_1:
+      class: CompanyStructure
+      local: hie_code_1
+      foreign: id
+      type: one
+    hie_code_2:
+      class: CompanyStructure
+      local: hie_code_2
+      foreign: id
+      type: one
+    hie_code_3:
+      class: CompanyStructure
+      local: hie_code_3
+      foreign: id
+      type: one
+    hie_code_4:
+      class: CompanyStructure
+      local: hie_code_4
+      foreign: id
+      type: one
+    hie_code_5:
+      class: CompanyStructure
+      local: hie_code_5
+      foreign: id
+      type: one
+    hie_code_6:
+      class: CompanyStructure
+      local: hie_code_6
+      foreign: id
+      type: one
+    hie_code_7:
+      class: CompanyStructure
+      local: hie_code_7
+      foreign: id
+      type: one
+    hie_code_8:
+      class: CompanyStructure
+      local: hie_code_8
+      foreign: id
+      type: one
+    hie_code_9:
+      class: CompanyStructure
+      local: hie_code_9
+      foreign: id
+      type: one
+    hie_code_10:
+      class: CompanyStructure
+      local: hie_code_10
+      foreign: id
+      type: one
+    act_hie_code_1:
+      class: CompanyStructure
+      local: act_hie_code_1
+      foreign: id
+      type: one
+    act_hie_code_2:
+      class: CompanyStructure
+      local: act_hie_code_2
+      foreign: id
+      type: one
+    act_hie_code_3:
+      class: CompanyStructure
+      local: act_hie_code_3
+      foreign: id
+      type: one
+    act_hie_code_4:
+      class: CompanyStructure
+      local: act_hie_code_4
+      foreign: id
+      type: one
+    act_hie_code_5:
+      class: CompanyStructure
+      local: act_hie_code_5
+      foreign: id
+      type: one
+    act_hie_code_6:
+      class: CompanyStructure
+      local: act_hie_code_6
+      foreign: id
+      type: one
+    act_hie_code_7:
+      class: CompanyStructure
+      local: act_hie_code_7
+      foreign: id
+      type: one
+    act_hie_code_8:
+      class: CompanyStructure
+      local: act_hie_code_8
+      foreign: id
+      type: one
+    act_hie_code_9:
+      class: CompanyStructure
+      local: act_hie_code_9
+      foreign: id
+      type: one
+    act_hie_code_10:
+      class: CompanyStructure
+      local: act_hie_code_10
+      foreign: id
+      type: one
+    PayrollEmployee:  
+      local: emp_number
+      foreign: emp_number   
+
+EmployeeMaster:
+  tableName: hs_hr_employee
+  columns:
+    emp_number:
+      name: emp_number as empNumber
+      type: integer(4)
+      primary: true
+    employee_id:
+      name: employee_id as employeeId
+      type: string(50)
+    title_code: integer(2)
+    emp_initials: string(30)
+    emp_initials_si: string(30)
+    emp_initials_ta: string(30)
+    emp_names_of_initials: string(120)
+    emp_names_of_initials_si: string(120)
+    emp_names_of_initials_ta: string(120)
+    emp_firstname:
+      name: emp_firstname as firstName
+      type: string(100)
+      default: ''
+      notnull: true
+    emp_firstname_si:
+      name: emp_firstname_si as firstName_si
+      type: string(100)
+    emp_firstname_ta:
+      name: emp_firstname_ta as firstName_ta
+      type: string(100)
+    emp_lastname:
+      name: emp_lastname as lastName
+      type: string(100)
+      default: ''
+      notnull: true
+    emp_lastname_si:
+      name: emp_lastname_si as lastName_si
+      type: string(100)
+    emp_lastname_ta:
+      name: emp_lastname_ta as lastName_ta
+      type: string(100)
+    emp_display_name: string(200)
+    emp_display_name_si: string(200)
+    emp_display_name_ta: string(200)
+    emp_app_letter_no: string(20)
+    emp_personal_file_no: string(20)
+    ethnic_race_code: string(13)
+    service_code: integer(4)
+    grade_code: integer(4)
+    slt_scale_year: integer(10)
+    level_code: integer(4)
+    nation_code: string(13)
+    gender_code: integer(2)
+    class_code: integer(4)
+    marst_code: integer(2)
+    emp_married_date: date
+    job_title_code: string(13)
+    act_job_title_code: string(13)
+    work_station:
+      default: null
+      type: integer(4)
+    act_work_station:
+      default: null
+      type: integer(6)
+    emp_nic_no: string(20)
+    emp_nic_date: date
+    emp_status: string(13)
+    rlg_code: integer(2)
+    lang_code: string(13)
+    cou_code: string(2)
+    emp_birthday: date(25)
+    emp_birth_location: string(50)
+    emp_birth_location_si: string(50)
+    emp_birth_location_ta: string(50)
+    emp_passport_no: string(20)
+    emp_attendance_no: string(20)
+    emp_other_file_no: string(20)
+    emp_salary_no: string(20)
+    emp_barcode_no: string(20)
+    emp_public_app_date: date
+    emp_public_com_date: date
+    emp_app_date: date
+    emp_com_date: date
+    emp_rec_method: integer(2)
+    emp_rec_method_desc: string(100)
+    emp_rec_method_desc_si: string(100)
+    emp_rec_method_desc_ta: string(100)
+    emp_rec_medium: integer(2)
+    emp_active_hrm_flg: integer(2)
+    emp_active_att_flg: integer(2)
+    emp_active_pr_flg: integer(2)
+    emp_wop_flg: integer(2)
+    emp_wop_no: string(20)
+    emp_confirm_flg: integer(2)
+    emp_confirm_date:
+      type: date
+      default: null
+    emp_prob_ext_flg: integer(2)
+    emp_prob_from_date: date
+    emp_prob_to_date: date
+    emp_salary_scale: string(100)
+    emp_salary_scale_si: string(100)
+    emp_salary_scale_ta: string(100)
+    emp_basic_salary: float(2147483647)
+    emp_salary_inc_date: date
+    terminated_date: date(25)
+    termination_reason: string(256)
+    emp_pension_no: string(25)
+    emp_resign_date: date
+    emp_retirement_date: date
+    hie_code_1: integer(6)
+    hie_code_2: integer(6)
+    hie_code_3: integer(6)
+    hie_code_4: integer(6)
+    hie_code_5: integer(6)
+    hie_code_6: integer(6)
+    hie_code_7: integer(6)
+    hie_code_8: integer(6)
+    hie_code_9: integer(6)
+    hie_code_10: integer(6)
+    act_hie_code_1: integer(6)
+    act_hie_code_2: integer(6)
+    act_hie_code_3: integer(6)
+    act_hie_code_4: integer(6)
+    act_hie_code_5: integer(6)
+    act_hie_code_6: integer(6)
+    act_hie_code_7: integer(6)
+    act_hie_code_8: integer(6)
+    act_hie_code_9: integer(6)
+    act_hie_code_10: integer(6)
+    emp_ldap_flag: integer(2)
+    emp_ispaydownload: integer(1)
+  relations:
+    subDivision:
+      class: CompanyStructure
+      local: work_station
+      foreign: id
+      type: one
+    jobTitle:
+      class: JobTitle
+      local: job_title_code
+      foreign: jobtit_code
+      type: one
+    actjobTitle:
+      class: JobTitle
+      local: act_job_title_code
+      foreign: jobtit_code
+      type: one
+    employeeStatus:
+      class: EmployeeStatus
+      local: emp_status
+      foreign: estat_code
+      type: one
+    supervisors:
+      class: Employee
+      local: erep_sub_emp_number
+      foreign: erep_sup_emp_number
+      refClass: ReportTo
+      foreignAlias: subordinates
+    dependents:
+      class: EmpDependent
+      local: emp_number
+      foreign: emp_number
+      type: many
+    emergencyContacts:
+      class: EmpEmergencyContact
+      local: emp_number
+      foreign: emp_number
+      type: many
+    immigrationDocuments:
+      class: EmpPassport
+      local: emp_number
+      foreign: emp_number
+      type: many
+    workExperience:
+      class: EmpWorkExperience
+      local: emp_number
+      foreign: emp_number
+      type: many
+    educationList:
+      class: EmployeeEducation
+      local: emp_number
+      foreign: emp_number
+      type: many
+    skills:
+      class: EmployeeSkill
+      local: emp_number
+      foreign: emp_number
+      type: many
+    languages:
+      class: EmployeeLanguage
+      local: emp_number
+      foreign: emp_number
+      type: many
+    licenses:
+      class: EmployeeLicense
+      local: emp_number
+      foreign: emp_number
+      type: many
+    memberships:
+      class: EmployeeMemberDetail
+      local: emp_number
+      foreign: emp_number
+      type: many
+    salaryDetails:
+      class: EmpBasicsalary
+      local: emp_number
+      foreign: emp_number
+      type: many
+    directDebits:
+      class: EmpDirectdebit
+      local: emp_number
+      foreign: emp_number
+      type: many
+    locationHistoryItems:
+      class: EmpLocationHistory
+      local: emp_number
+      foreign: emp_number
+      type: many
+    jobTitleHistoryItems:
+      class: EmpJobtitleHistory
+      local: emp_number
+      foreign: emp_number
+      type: many
+    subdivisionHistoryItems:
+      class: EmpSubdivisionHistory
+      local: emp_number
+      foreign: emp_number
+      type: many
+    contracts:
+      class: EmpContract
+      local: emp_number
+      foreign: emp_number
+      type: many
+    attachments:
+      class: EmpAttachment
+      local: emp_number
+      foreign: emp_number
+      type: many
+    picture:
+      class: EmpPicture
+      local: emp_number
+      foreign: emp_number
+      type: one
+    reportTo:
+      class: ReportTo
+      local: empNumber
+      foreign: erep_sub_emp_number
+      type: many
+    ServiceDetails:
+      class: ServiceDetails
+      local: service_code
+      foreign: service_code
+      type: one
+    Grade:
+      class: Grade
+      local: grade_code
+      foreign: grade_code
+      type: one
+    GradeSlot:
+      class: GradeSlot
+      local: slt_scale_year
+      foreign: slt_id
+      type: one
+    EmpTitle:
+      class: EmpTitle
+      local: title_code
+      foreign: title_code
+      type: one
+    Gender:
+      class: Gender
+      local: gender_code
+      foreign: gender_code
+      type: one
+    MaritalStatus:
+      class: MaritalStatus
+      local: marst_code
+      foreign: marst_code
+      type: one
+    Religion:
+      class: Religion
+      local: rlg_code
+      foreign: rlg_code
+      type: one
+    PreferedLanguage:
+      class: PreferedLanguage
+      local: lang_code
+      foreign: lang_code
+      type: one
+    EmpClass:
+      class: EmpClass
+      local: class_code
+      foreign: class_code
+      type: one
+    EmpContact:
+      class: EmpContact
+      local: emp_number
+      foreign: emp_number
+      type: one
+    EMPEBExam:
+      class: EMPEBExam
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Users:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Level:
+      class: Level
+      local: level_code
+      foreign: level_code
+      type: one
+    actsubDivision:
+      class: CompanyStructure
+      local: act_work_station
+      foreign: id
+      type: one
+    hie_code_1:
+      class: CompanyStructure
+      local: hie_code_1
+      foreign: id
+      type: one
+    hie_code_2:
+      class: CompanyStructure
+      local: hie_code_2
+      foreign: id
+      type: one
+    hie_code_3:
+      class: CompanyStructure
+      local: hie_code_3
+      foreign: id
+      type: one
+    hie_code_4:
+      class: CompanyStructure
+      local: hie_code_4
+      foreign: id
+      type: one
+    hie_code_5:
+      class: CompanyStructure
+      local: hie_code_5
+      foreign: id
+      type: one
+    hie_code_6:
+      class: CompanyStructure
+      local: hie_code_6
+      foreign: id
+      type: one
+    hie_code_7:
+      class: CompanyStructure
+      local: hie_code_7
+      foreign: id
+      type: one
+    hie_code_8:
+      class: CompanyStructure
+      local: hie_code_8
+      foreign: id
+      type: one
+    hie_code_9:
+      class: CompanyStructure
+      local: hie_code_9
+      foreign: id
+      type: one
+    hie_code_10:
+      class: CompanyStructure
+      local: hie_code_10
+      foreign: id
+      type: one
+    act_hie_code_1:
+      class: CompanyStructure
+      local: act_hie_code_1
+      foreign: id
+      type: one
+    act_hie_code_2:
+      class: CompanyStructure
+      local: act_hie_code_2
+      foreign: id
+      type: one
+    act_hie_code_3:
+      class: CompanyStructure
+      local: act_hie_code_3
+      foreign: id
+      type: one
+    act_hie_code_4:
+      class: CompanyStructure
+      local: act_hie_code_4
+      foreign: id
+      type: one
+    act_hie_code_5:
+      class: CompanyStructure
+      local: act_hie_code_5
+      foreign: id
+      type: one
+    act_hie_code_6:
+      class: CompanyStructure
+      local: act_hie_code_6
+      foreign: id
+      type: one
+    act_hie_code_7:
+      class: CompanyStructure
+      local: act_hie_code_7
+      foreign: id
+      type: one
+    act_hie_code_8:
+      class: CompanyStructure
+      local: act_hie_code_8
+      foreign: id
+      type: one
+    act_hie_code_9:
+      class: CompanyStructure
+      local: act_hie_code_9
+      foreign: id
+      type: one
+    act_hie_code_10:
+      class: CompanyStructure
+      local: act_hie_code_10
+      foreign: id
+      type: one
+    PayrollEmployee:  
+      local: emp_number
+      foreign: emp_number  
+      
+EmpLocation:
+  tableName: hs_hr_emp_locations
+  columns:
+    emp_number as empNumber:
+      type: integer(4)
+      primary: true
+    loc_code:
+      type: string(13)
+      primary: true
+      
+EmpDependent:
+  tableName: hs_hr_emp_dependents
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    ed_seqno as seqno:
+      type: decimal(2)
+      primary: true
+    ed_name as name:
+      type: string(100)
+      default: ''
+    ed_name_si as name_si:
+      type: string(100)
+      default: ''
+    ed_name_ta as name_ta:
+      type: string(100)
+      default: ''
+    rel_code: integer(4)
+    ed_birthday as birthday:
+      type: date
+    ed_workplace as workplace:
+      type: string(200)
+      default: ''
+    ed_workplace_si as workplace_si:
+      type: string(200)
+      default: ''
+    ed_workplace_ta as workplace_ta:
+      type: string(200)
+      default: ''
+    ed_education_center as education_center:
+      type: string(100)
+      default: ''
+    ed_education_center_si as education_center_si:
+      type: string(100)
+      default: ''
+    ed_education_center_ta as education_center_ta:
+      type: string(100)
+      default: ''
+    ed_address as address:
+      type: string(200)
+      default: ''
+    ed_address_si as address_si:
+      type: string(200)
+      default: ''
+    ed_address_ta as address_ta:
+      type: string(200)
+      default: ''
+    ed_comments as comments:
+      type: string(200)
+      default: ''
+    ed_comments_si as comments_si:
+      type: string(200)
+      default: ''
+    ed_comments_ta as comments_ta:
+      type: string(200)
+      default: ''
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    EmpRelationship:
+      local: rel_code
+      foreign: rel_code
+      type: one
+
+EmpChild:
+  tableName: hs_hr_emp_children
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    ec_seqno as seqno:
+      type: decimal(2)
+      primary: true
+    ec_name as name:
+      type: string(100)
+      default: ''
+    ec_date_of_birth as dob: date(25)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+      
+EmpEmergencyContact:
+  tableName: hs_hr_emp_emergency_contacts
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    eec_seqno as seqno:
+      type: decimal(2)
+      primary: true
+    eec_name as name:
+      type: string(100)
+      default: ''
+    eec_name_si as name_si:
+      type: string(100)
+      default: ''
+    eec_name_ta as name_ta:
+      type: string(100)
+      default: ''
+    eec_relationship as relationship:
+      type: string(100)
+      default: ''
+    eec_relationship_si as relationship_si:
+      type: string(100)
+      default: ''
+    eec_relationship_ta as relationship_ta:
+      type: string(100)
+      default: ''
+    eec_address as address:
+      type: string(200)
+      default: ''
+    eec_address_si as address_si:
+      type: string(200)
+      default: ''
+    eec_address_ta as address_ta:
+      type: string(200)
+      default: ''
+    eec_home_no as home_phone:
+      type: string(100)
+      default: ''
+    eec_mobile_no as mobile_phone:
+      type: string(100)
+      default: ''
+    eec_office_no as office_phone:
+      type: string(100)
+      default: ''
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+      
+EmpPassport:
+  tableName: hs_hr_emp_passport
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    ep_seqno as seqno:
+      type: decimal(2)
+      primary: true
+    ep_passport_num as number:
+      type: string(100)
+      default: ''
+      notnull: true
+    ep_i9_status as i9_status:
+      type: string(100)
+      default: ''
+    ep_passportissueddate as passport_issue_date: timestamp(25)
+    ep_passportexpiredate as passport_expire_date: timestamp(25)
+    ep_comments as comments: string(255)
+    ep_passport_type_flg as type_flag : integer(2)
+    ep_i9_review_date as i9_review_date: date(25)
+    cou_code as country: string(6)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+      
+EmpUsTax:
+  tableName: hs_hr_emp_us_tax
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    tax_federal_exceptions as federal_exceptions:
+      type: integer(4)
+      default: '0'
+    tax_state_exceptions as state_exceptions:
+      type: integer(4)
+      default: '0'
+    tax_federal_status as federal_status: string(13)
+    tax_state as state: string(13)
+    tax_state_status as state_status: string(13)
+    tax_unemp_state as unemp_state: string(13)
+    tax_work_state as work_state: string(13)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+      foreignType: one
+      foreignAlias: usTax
+      
+EmpWorkExperience:
+  tableName: hs_hr_emp_work_experience
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    eexp_seqno:
+      type: decimal(10)
+      primary: true
+    eexp_company: string(100)
+    eexp_company_si: string(100)
+    eexp_company_ta: string(100)
+    eexp_jobtitle: string(100)
+    eexp_jobtitle_si: string(100)
+    eexp_jobtitle_ta: string(100)
+    eexp_from_date: date
+    eexp_to_date: date
+    eexp_comments: string(200)
+    eexp_comments_si: string(200)
+    eexp_comments_ta: string(200)
+    eexp_internal_flg: integer(4)
+    eexp_years: integer(3)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+EmpJobtitleHistory:
+  tableName: hs_hr_emp_jobtitle_history
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(4)
+      notnull: true
+    code:
+      type: string(15)
+      notnull: true
+    name: string(250)
+    start_date: timestamp(25)
+    end_date: timestamp(25)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+EmpSubdivisionHistory:
+  tableName: hs_hr_emp_subdivision_history
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(4)
+      notnull: true
+    code:
+      type: string(15)
+      notnull: true
+    name: string(250)
+    start_date: timestamp(25)
+    end_date: timestamp(25)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+EmpLocationHistory:
+  tableName: hs_hr_emp_location_history
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(4)
+      notnull: true
+    code:
+      type: string(15)
+      notnull: true
+    name: string(250)
+    start_date: timestamp(25)
+    end_date: timestamp(25)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+EmpContract:
+  tableName: hs_hr_emp_contract_extend
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    econ_extend_id as contract_id:
+      type: decimal(10)
+      primary: true
+    econ_extend_start_date as start_date: timestamp(25)
+    econ_extend_end_date as end_date: timestamp(25)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+EmpAttachment:
+  tableName: hs_hr_emp_attachment
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    eattach_id as attach_id:
+      type: decimal(10)
+      primary: true
+    eattach_type_id as attach_type_id:
+      type: integer(10)
+    eattach_size as size:
+      type: integer(4)
+      default: '0'
+    eattach_desc as description: string(200)
+    eattach_filename as filename: string(100)
+    eattach_attachment as attachment: blob(2147483647)
+    eattach_type as file_type: string(50)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    EmpAttahmentType:
+      local: attach_type_id
+      foreign: eattach_type_id
+      type: one
+
+EmpAttahmentType:
+  tableName: hs_hr_emp_attachment_type
+  columns:
+    eattach_type_id:
+      type: integer(10)
+      primary: true
+    eattach_type_name:
+      type: string(100)
+    eattach_type_name_si:
+      type: string(100)
+    eattach_type_name_ta:
+      type: string(100)
+
+EmpPicture:
+  tableName: hs_hr_emp_picture
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    epic_picture as picture: blob(2147483647)
+    epic_filename as filename: string(100)
+    epic_type as file_type: string(50)
+    epic_file_size as size: string(20)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+Location:
+  tableName: hs_hr_location
+  columns:
+    loc_code:
+      type: string(13)
+      primary: true
+    loc_name: string(100)
+    loc_country: string(3)
+    loc_state: string(50)
+    loc_city: string(50)
+    loc_add: string(100)
+    loc_zip: string(10)
+    loc_phone: string(30)
+    loc_fax: string(30)
+    loc_comments: string(100)
+  relations:    
+    Employees:
+      class: Employee
+      local: loc_code
+      foreign: emp_number
+      refClass: EmpLocation
+      foreignAlias: employees
+
+Country:
+  tableName: hs_hr_country
+  columns:
+    cou_code:
+      type: string(2)
+      fixed: true
+      primary: true
+    name:
+      type: string(80)
+      default: ''
+      notnull: true
+    cou_name:
+      type: string(80)
+      default: ''
+      notnull: true
+    cou_name_si:
+      type: string(80)
+      default: ''
+    cou_name_ta:
+      type: string(80)
+      default: ''
+    iso3:
+      type: string(3)
+      fixed: true
+    numcode: integer(2)
+
+EmpRoleGroup:
+  tableName: hs_hr_emp_role_group
+  columns:
+    role_group_id:
+      type: integer(4)
+      primary: true
+    role_group_name:
+      type: string(200)
+    role_group_name_si:
+      type: string(200)
+    role_group_name_ta:
+      type: string(200)
+
+CompanyStructure:
+  tableName: hs_hr_compstructtree
+  columns:
+    comp_code:
+       type: string(200)
+       notnull: true
+    title:
+      type: string(200)
+      notnull: true
+    title_si:
+      type: string(200)
+      notnull: false
+    title_ta:
+      type: string(200)
+      notnull: false   
+    id:
+      type: integer(4)
+      primary: true
+    parnt:
+      type: integer(4)
+      default: '0'
+      notnull: true
+    comp_address:
+      name: comp_address as address
+      type: string(200)
+      notnull: false
+    comp_address_si:
+      name: comp_address_si as address_si
+      type: string(200)
+      notnull: false
+    comp_address_ta:
+      name: comp_address_ta as address_ta
+      type: string(200)
+      notnull: false
+    comp_phone_intercom:
+      name: comp_phone_intercom as phone_intercom
+      type: string(30)
+      notnull: false
+    comp_phone_vip:
+      name: comp_phone_vip as phone_vip
+      type: string(30)
+      notnull: false
+    comp_phone_direct_line:
+      name: comp_phone_direct_line as phone_direct_line
+      type: string(30)
+      notnull: false
+    comp_phone_extension:
+      name: comp_phone_extension as phone_extension
+      type: string(30)
+      notnull: false
+    comp_fax:
+      name: comp_fax as fax
+      type: string(30)
+      notnull: false
+    comp_email:
+      name: comp_email as email
+      type: string(100)
+      notnull: false
+    comp_url:
+      name: comp_url as url
+      type: string(200)
+      notnull: false
+    emp_number:
+      type: integer(7)
+      notnull: false
+    def_level:
+      type: integer(4)
+    comp_location_code:
+      type: string(30)
+    comp_reference_code:
+      type: string(20)
+    comp_isfunctional:
+      type: integer(1)
+  relations:
+    employees:
+      class: Employee
+      local: id
+      foreign: work_station
+      type: many
+      foreignAlias: subDivision
+    divisionHead:
+      class: Employee
+      local: emp_number
+      foreign: empNumber
+      type: one
+    transfer:
+      class: Transfer
+      local: id
+      foreign: trans_div_id
+      type: many
+    CompanyStructureLevels:
+      local: def_level
+      foreign: def_level
+      type: one
+
+CompanyStructureDetails:
+  tableName: hs_hr_compstructtree_details
+  columns:
+    id:
+      type: integer(6)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    role_group_id:
+      type: integer(4)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    CompanyStructure:
+      local: id
+      foreign: id
+      type: one
+    EmpRoleGroup:
+      local: role_group_id
+      foreign: role_group_id
+      type: one
+
+EmployeeStatus:
+  tableName: hs_hr_empstat
+  columns:
+    estat_code:
+      name: estat_code as id
+      type: string(13)
+      primary: true
+    estat_name: 
+      name: estat_name as name
+      type: string(100)
+    estat_name_si:
+      name: estat_name_si 
+      type: string(100)
+    estat_name_ta:
+      name: estat_name_ta 
+      type: string(100)
+  relations:
+    employees:
+      class: Employee
+      local: estat_code
+      foreign: emp_status
+      type: many
+    jobTitles:
+      class: JobTitle
+      local: estat_code
+      foreign: jobtit_code
+      refClass: JobTitleEmployeeStatus
+      foreignAlias: employeeStatuses
+      type: many
+      
+UniqueId:
+  tableName: hs_hr_unique_id
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    last_id:
+      type: integer(4)
+      unsigned: 1
+      notnull: true
+    table_name:
+      type: string(50)
+      notnull: true
+    field_name:
+      type: string(50)
+      notnull: true
+      
+JobTitle:
+  tableName: hs_hr_job_title
+  columns:
+    jobtit_code:
+      name: jobtit_code as id
+      type: string(13)
+      primary: true
+    jobtit_name:
+      name: jobtit_name as name 
+      type: string(100)
+    jobtit_name_si:
+      name: jobtit_name_si as name_si
+      type: string(100)
+    jobtit_name_ta:
+      name: jobtit_name_ta as name_ta
+      type: string(100)
+  relations:
+    employees:
+      class: Employee
+      local: jobtit_code
+      foreign: job_title_code
+      type: many    
+    employeeStatuses:
+      class: EmployeeStatus
+      local: jobtit_code
+      foreign: estat_code
+      refClass: JobTitleEmployeeStatus
+      foreignAlias: jobTitles
+      type: many
+    JobTitleEmployeeStatus:
+      local: id
+      foreign: jobtit_code
+      type: many
+    CarderPlan:
+      local: jobtit_code
+      foreign: jobtit_code
+      type: one
+      
+ReportTo:
+  tableName: hs_hr_emp_reportto
+  columns:
+    erep_sup_emp_number:
+      name: erep_sup_emp_number as supervisorId
+      type: integer(4)
+      primary: true
+    erep_sub_emp_number:
+      name: erep_sub_emp_number as subordinateId
+      type: integer(4)
+      primary: true
+    erep_reporting_mode:
+      name: erep_reporting_mode as reportingMode
+      type: integer(2)
+      primary: true
+  relations:
+    supervisor:
+      class: EmployeeMaster
+      local: erep_sup_emp_number
+      foreign: emp_number
+      foreignAlias: ReportToSub
+      type: one
+      foreignType: many
+    subordinate:
+      class: EmployeeMaster
+      local: erep_sub_emp_number
+      foreign: emp_number
+      foreignAlias: ReportToSup
+      type: one
+      foreignType: many   
+      
+CompanyGeninfo:
+  tableName: hs_hr_geninfo
+  columns:
+    code:
+      type: string(13)
+      primary: true
+    geninfo_keys: string(200)
+    geninfo_values: string(800)
+
+Province:
+  tableName: hs_hr_province
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    province_name:
+      type: string(40)
+      default: ''
+      notnull: true
+    province_code:
+      type: string(2)
+      fixed: true
+      default: ''
+      notnull: true
+    cou_code:
+      type: string(2)
+      fixed: true
+      default: us
+      notnull: true
+ 
+CompanyProperty:
+  tableName: hs_hr_comp_property
+  columns:
+    prop_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    prop_name:
+      type: string(250)
+      notnull: true
+    emp_id: integer(4)
+ 
+JobCategory:
+  tableName: hs_hr_eec
+  columns:
+    eec_code:
+      type: string(13)
+      primary: true
+    eec_desc: string(50)
+  relations:
+    Employee:
+      local: eec_code
+      foreign: eeo_cat_code
+      type: many
+ 
+SalaryGrade:
+  tableName: hs_pr_salary_grade
+  columns:
+    sal_grd_code:
+      type: string(13)
+      primary: true
+    sal_grd_name: string(60)    
+  relations:
+    EmpBasicsalary:
+      local: sal_grd_code
+      foreign: sal_grd_code
+      type: many    
+    SalaryCurrencyDetail:
+      local: sal_grd_code
+      foreign: sal_grd_code
+      type: many
+
+JobSpecifications:
+  tableName: hs_hr_job_spec
+  columns:
+    jobspec_id:
+      type: integer(4)
+      primary: true
+    jobspec_name: string(50)
+    jobspec_desc: string(2147483647)
+    jobspec_duties: string(2147483647)
+      
+Education:
+  tableName: hs_hr_education
+  columns:
+    edu_code:
+      type: string(13)
+      primary: true
+    edu_name: string(100)
+    edu_name_si: string(100)
+    edu_name_ta: string(100)
+  relations:
+    EmployeeEducation:
+      local: edu_code
+      foreign: edu_code
+      type: many
+
+EmployeeEducation:
+  tableName: hs_hr_emp_education
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    edu_code:
+      type: string(13)
+      primary: true
+    edu_institute: string(100)
+    edu_institute_si: string(100)
+    edu_institute_ta: string(100)
+    edu_stream: string(100)
+    edu_stream_si: string(100)
+    edu_stream_ta: string(100)
+    edu_index_no: string(50)
+    edu_start_date: date
+    edu_end_date: date
+    edu_year: decimal(4)
+    edu_confirmed_flg: integer(1)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Education:
+      class: Education
+      local: edu_code
+      foreign: edu_code
+      type: one
+
+Licenses:
+  tableName: hs_hr_licenses
+  columns:
+    licenses_code:
+      type: string(13)
+      primary: true
+    licenses_desc: string(50)
+  relations:
+    EmployeeLicense:
+      local: licenses_code
+      foreign: licenses_code
+      type: many
+
+EmployeeLicense:
+  tableName: hs_hr_emp_licenses
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    lic_seqno:
+      type: decimal(2)
+      primary: true
+    lic_number: string(50)
+    lic_type: string(100)
+    lic_type_si: string(100)
+    lic_type_ta: string(100)
+    lic_issue_date: date
+    lic_expiry_date: date
+  relations:
+    Employee:
+      local: empNumber
+      foreign: empNumber
+      type: one
+
+Skill:
+  tableName: hs_hr_skill
+  columns:
+    skill_code:
+      type: string(13)
+      primary: true
+    skill_name: string(120)
+    skill_name_si: string(120)
+    skill_name_ta: string(120)
+  relations:
+    EmployeeSkill:
+      local: skill_code
+      foreign: skill_code
+      type: many
+
+EmployeeSkill:
+  tableName: hs_hr_emp_skill
+  columns:
+    emp_number:
+      type: integer(4)
+      default: '0'
+      notnull: true
+      primary: true
+    skill_code:
+      type: string(13)
+      default: ''
+      notnull: true
+      primary: true
+    eskill_years:
+      type: string(150)
+      default: '0'
+    eskill_comments: string(200)
+    eskill_comments_si: string(200)
+    eskill_comments_ta: string(200)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Skill:
+      class: Skill
+      local: skill_code
+      foreign: skill_code
+      type: one
+
+Language:
+  tableName: hs_hr_language
+  columns:
+    lang_code:
+      type: string(13)
+      primary: true
+    lang_name: string(120)
+    lang_name_si: string(120)
+    lang_name_ta: string(120)
+  relations:
+    EmployeeLanguage:
+      local: lang_code
+      foreign: lang_code
+      type: many
+ 
+EmployeeLanguage:
+  tableName: hs_hr_emp_language
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    lang_code:
+      type: string(13)
+      primary: true
+    emplang_type:
+      type: integer(2)
+      primary: true
+    emplang_competency:
+      type: integer(2)
+      default: '0'
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Language:
+      local: lang_code
+      foreign: lang_code
+      type: one
+ 
+MembershipType:
+  tableName: hs_hr_membership_type
+  columns:
+    membtype_code:
+      type: string(13)
+      primary: true
+    membtype_name: string(120)
+  relations:
+    EmployeeMemberDetail:
+      local: membtype_code
+      foreign: membtype_code
+      type: many
+    Membership:
+      local: membtype_code
+      foreign: membtype_code
+      type: many
+
+Membership:
+  tableName: hs_hr_membership
+  columns:
+    membship_code:
+      type: string(13)
+      primary: true
+    membtype_code: string(13)
+    membship_name: string(120)
+  relations:
+    MembershipType:
+      local: membtype_code
+      foreign: membtype_code
+      type: one
+    EmployeeMemberDetail:
+      local: membship_code
+      foreign: membship_code
+      type: many
+ 
+EmployeeMemberDetail:
+  tableName: hs_hr_emp_member_detail
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    membship_code:
+      type: string(13)
+      primary: true
+    membtype_code:
+      type: string(13)
+      primary: true
+    ememb_subscript_amount as subscription:
+      type: decimal(15)
+      scale: false
+    ememb_subscript_ownership as ownership: string(20)
+    ememb_commence_date as commence_date: timestamp(25)
+    ememb_renewal_date as renewal_date: timestamp(25)
+  relations:
+    MembershipType:
+      local: membtype_code
+      foreign: membtype_code
+      type: one
+    Membership:
+      local: membship_code
+      foreign: membship_code
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+EmpBasicsalary:
+  tableName: hs_hr_emp_basicsalary
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    sal_grd_code:
+      type: string(13)
+      primary: true
+    currency_id:
+      type: string(6)
+      primary: true
+    ebsal_basic_salary as basic_salary: string(100)
+    payperiod_code: string(13)
+  relations:
+    salaryGrade:
+      class: SalaryGrade
+      local: sal_grd_code
+      foreign: sal_grd_code
+      type: one
+    currencyType:
+      class: CurrencyType
+      local: currency_id
+      foreign: currency_id
+      type: one
+    employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number
+      type: one
+    payperiod:
+      class: Payperiod
+      local: payperiod_code
+      foreign: payperiod_code
+      type: one
+
+CurrencyType:
+  tableName: hs_hr_currency_type
+  columns:
+    code:
+      type: integer(4)
+      default: '0'
+      notnull: true
+    currency_id as id:
+      type: string(3)
+      fixed: true
+      primary: true
+    currency_name as name:
+      type: string(70)
+      default: ''
+      notnull: true
+  relations:
+    EmpBasicsalary:
+      local: currency_id
+      foreign: currency_id
+      type: many
+    SalaryCurrencyDetail:
+      local: currency_id
+      foreign: currency_id
+      type: many
+
+SalaryCurrencyDetail:
+  tableName: hs_pr_salary_currency_detail
+  columns:
+    sal_grd_code:
+      type: string(13)
+      primary: true
+    currency_id:
+      type: string(6)
+      primary: true
+    salcurr_dtl_minsalary as min_salary: float(2147483647)
+    salcurr_dtl_stepsalary as salary_step: float(2147483647)
+    salcurr_dtl_maxsalary as max_salary: float(2147483647)
+  relations:
+    CurrencyType:
+      local: currency_id
+      foreign: currency_id
+      type: one
+    SalaryGrade:
+      local: sal_grd_code
+      foreign: sal_grd_code
+      type: one
+
+Payperiod:
+  tableName: hs_hr_payperiod
+  columns:
+    payperiod_code as code:
+      type: string(13)
+      primary: true
+    payperiod_name as name: string(100)
+  relations:
+    EmpBasicsalary:
+      local: payperiod_code
+      foreign: payperiod_code
+      type: many
+
+EmpDirectdebit:
+  tableName: hs_hr_emp_directdebit
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    dd_seqno as seqno:
+      type: decimal(2)
+      primary: true
+    dd_routing_num as routing_num:
+      type: integer(4)
+      notnull: true
+    dd_account as account:
+      type: string(100)
+      default: ''
+      notnull: true
+    dd_amount as amount:
+      type: decimal(11)
+      notnull: true
+      scale: false
+    dd_account_type as account_type:
+      type: string(20)
+      default: ''
+      notnull: true
+    dd_transaction_type as transaction_type:
+      type: string(20)
+      default: ''
+      notnull: true
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+      
+Nationality:
+  tableName: hs_hr_nationality
+  columns:
+    nat_code:
+      type: string(13)
+      primary: true
+    nat_name: string(120)
+    nat_name_si: string(120)
+    nat_name_ta: string(120)
+  relations:
+    Employee:
+      local: nat_code
+      foreign: nation_code
+      type: many
+
+EthnicRace:
+  tableName: hs_hr_ethnic_race
+  columns:
+    ethnic_race_code:
+      type: string(13)
+      primary: true
+    ethnic_race_desc: string(50)
+    ethnic_race_desc_si: string(50)
+    ethnic_race_desc_ta: string(50)
+  relations:
+    Employee:
+      local: ethnic_race_code
+      foreign: ethnic_race_code
+      type: many
+
+Customer:
+  tableName: hs_hr_customer
+  columns:
+    customer_id:
+      type: integer(4)
+      primary: true
+    deleted:
+      type: integer(1)
+      default: '0'
+    name: string(100)
+    description: string(250)
+  relations:
+    Project:
+      local: customer_id
+      foreign: customer_id
+      type: many
+      
+Project:
+  tableName: hs_hr_project
+  columns:
+    project_id:
+      type: integer(4)
+      primary: true
+    customer_id:
+      type: integer(4)
+      primary: true
+    deleted:
+      type: integer(1)
+      default: '0'
+    name: string(100)
+    description: string(250)
+  relations:
+    Customer:
+      local: customer_id
+      foreign: customer_id
+      type: one
+    ProjectActivity:
+      local: project_id
+      foreign: project_id
+      type: many
+    ProjectAdmin:
+      local: project_id
+      foreign: project_id
+      type: many
+  
+ 
+ProjectActivity:
+  tableName: hs_hr_project_activity
+  columns:
+    activity_id:
+      type: integer(4)
+      primary: true
+    project_id:
+      type: integer(4)
+      notnull: true
+    deleted:
+      type: integer(1)
+      default: '0'
+    name: string(100)
+  relations:
+    Project:
+      local: project_id
+      foreign: project_id
+      type: one
+
+ProjectAdmin:
+  tableName: hs_hr_project_admin
+  columns:
+    project_id:
+      type: integer(4)
+      primary: true
+    emp_number:
+      type: integer(4)
+      primary: true
+  relations:
+    Project:
+      local: project_id
+      foreign: project_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one 
+
+CustomFields:
+  tableName: hs_hr_custom_fields
+  columns:
+    field_num:
+      type: integer(4)
+      primary: true
+    name:
+      type: string(250)
+      notnull: true
+    type:
+      type: integer(4)
+      notnull: true
+    extra_data: string(250)
+ 
+JobTitleEmployeeStatus:
+  tableName: hs_hr_jobtit_empstat
+  columns:
+    jobtit_code:
+      type: string(13)
+      primary: true
+    estat_code:
+      type: string(13)
+      primary: true
+  relations:
+    JobTitle:
+      local: jobtit_code
+      foreign: id
+      type: one
+    EmployeeStatus:
+      local: estat_code
+      foreign: id
+      type: one
+
+UserGroup:
+  tableName: hs_hr_user_group
+  columns:
+    userg_id:
+      type: string(36)
+      primary: true
+    userg_repdef:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+    userg_name: string(45)
+  relations:
+    EmployeeUsergroup:
+      local: userg_id
+      foreign: userg_id
+      type: many
+    Users:
+      local: userg_id
+      foreign: userg_id
+      type: many
+      
+Users:
+  tableName: hs_hr_users
+  columns:
+    id:
+      type: string(36)
+      primary: true
+    user_name:
+      type: string(20)
+      default: ''
+    is_admin:
+      type: string(3)
+      fixed: true    
+    user_password: string(32)    
+    emp_number: integer(4)    
+    date_entered: date(25)
+    date_modified: date(25)
+    modified_user_id: string(36)
+    created_by: string(36)    
+    status: string(25)            
+    sm_capability_id: integer(50)   
+    userg_id: string(36)
+    user_prefered_language: string(25)
+    def_level: integer(20)
+  relations:
+    modifiedUser:
+      class: Users
+      local: modified_user_id
+      foreign: id
+      type: one
+    createdUser:
+      class: Users
+      local: id
+      foreign: created_by
+      type: many
+    userGroup:
+      class: UserGroup
+      local: userg_id
+      foreign: userg_id
+      type: one
+    employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number
+      type: one
+    capability:
+      local: sm_capability_id
+      foreign: sm_capability_id
+      type: one
+    CompanyStructureLevels:
+      local: def_level
+      foreign: def_level
+      type: one
+
+EmployeeUsergroup:
+  tableName: hs_hr_emprep_usergroup
+  columns:
+    userg_id:
+      type: string(13)
+      primary: true
+    rep_code:
+      type: string(13)
+      primary: true
+  relations:
+    UserGroup:
+      local: userg_id
+      foreign: userg_id
+      type: one
+
+ModuleRights:
+  tableName: hs_hr_rights
+  columns:
+    userg_id:
+      type: string(36)
+      primary: true
+    mod_id:
+      type: string(36)
+      primary: true
+    addition:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+    editing:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+    deletion:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+    viewing:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+  relations:
+    UserGroup:
+      local: userg_id
+      foreign: userg_id
+      type: one
+    Module:
+      local: mod_id
+      foreign: mod_id
+      type: one
+
+Module:
+  tableName: hs_hr_module
+  columns:
+    mod_id:
+      type: string(36)
+      primary: true
+    name: string(45)
+    module_name_si: string(100)
+    module_name_ta: string(100)
+    owner: string(45)
+    owner_email: string(100)
+    version: string(36)
+    description: string(2147483647)
+  relations:
+    ModuleRights:
+      local: mod_id
+      foreign: mod_id
+      type: many
+    WfModule:
+      local: mod_id
+      foreign: wfmod_id
+      type: one
+
+MailNotification:
+  tableName: hs_hr_mailnotifications
+  columns:
+    user_id:
+      type: string(36)
+      notnull: true
+      primary: true
+    notification_type_id:
+      type: integer(4)
+      notnull: true
+      primary: true
+    status:
+      type: integer(4)
+      notnull: true
+  relations:
+    Users:
+      local: user_id
+      foreign: id
+      type: one   
+
+CurrencyType:
+  tableName: hs_hr_currency_type
+  columns:
+    code:
+      type: integer(4)
+      default: '0'
+      notnull: true
+    currency_id:
+      type: string(3)
+      fixed: true
+      primary: true
+    currency_name:
+      type: string(70)
+      default: ''
+      notnull: true
+
+CustomExport:
+  tableName: hs_hr_custom_export
+  columns:
+    export_id:
+      type: integer(4)
+      primary: true
+    name:
+      type: string(250)
+      notnull: true
+    fields: string(2147483647)
+    headings: string(2147483647)
+
+CustomImport:
+  tableName: hs_hr_custom_import
+  columns:
+    import_id:
+      type: integer(4)
+      primary: true
+    name:
+      type: string(250)
+      notnull: true
+    has_heading:
+      type: integer(1)
+      default: '0'
+    fields: string(2147483647)
+
+EmployeeReport:
+  tableName: hs_hr_empreport
+  columns:
+    rep_code as reportCode:
+      type: string(13)
+      primary: true
+    rep_name as reportName:
+      type: string(50)
+    rep_cridef_str as reportCriteria:
+      type: string(500)
+    rep_flddef_str as reportFields:
+      type: string(500)
+  relations:
+    EmployeeUsergroup:
+      local: rep_code
+      foreign: rep_code
+      type: many
+      
+DaysOff:
+  tableName: hs_hr_weekends
+  columns:
+    day:
+      type: integer(4)
+      primary: true
+    length:
+      type: integer(4)
+      notnull: true
+
+Weekends:
+  tableName: hs_hr_weekends
+  columns:
+    day:
+      type: integer(4)
+      primary: true
+    length:
+      type: integer(4)
+      notnull: true
+
+WorkShift:
+  tableName: hs_hr_workshift
+  columns:
+    workshift_id:
+      type: integer(4)
+      primary: true
+    name:
+      type: string(250)
+      notnull: true
+    hours_per_day:
+      type: decimal(4)
+      notnull: true
+      scale: false
+  relations:
+    EmployeeWorkShift:
+      local: workshift_id
+      foreign: workshift_id
+      type: many
+
+Holiday:
+  tableName: hs_hr_holidays
+  columns:
+    holiday_id:
+      type: integer(4)
+      primary: true
+    recurring:
+      type: integer(1)
+      default: '0'
+    description: string(2147483647)
+    date: date(25)
+    length: integer(4)
+
+EmployeeWorkShift:
+  tableName: hs_hr_employee_workshift
+  columns:
+    workshift_id:
+      type: integer(4)
+      primary: true
+    emp_number:
+      type: integer(4)
+      primary: true
+  relations:
+    WorkShift:
+      local: workshift_id
+      foreign: workshift_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: empNumber
+      type: one
+
+Transfer:
+  tableName: hs_hr_transfer
+  columns:
+    trans_id:
+      type: integer(8)
+      primary: true
+    trans_letter_ld:
+      type: string(100)
+    trans_emp_number:
+      type: integer(7)    
+    trans_currentdiv_id:
+      type: integer(6)
+    trans_div_id:
+      type: integer(6)
+      notnull: false
+    trans_location:
+      type: string(100)
+    trans_mutual:
+      type: string(10)
+      notnull: false
+    trans_mu_name:
+      type: integer(7)
+    trans_effect_date:
+      type: string(25)
+    trans_reason_id:
+      type: integer(4)
+    trans_comment:
+      type: string(200)
+    trans_prefer_div_id :
+      type: integer(6)     
+  relations:
+     TransferReason:
+       local: trans_reason_id
+       foreign: trans_reason_id
+       type: one
+     Employee:
+       local: trans_emp_number
+       foreign: empNumber
+       type: one
+     TransferType:
+       local: trans_type_id
+       foreign: trans_type_id
+       type: one
+     CompanyStructure:
+      local: trans_currentdiv_id
+      foreign: id
+      type: one
+     TransferPreferCompanyStructure:
+      class: CompanyStructure
+      local: trans_prefer_div_id 
+      foreign: id
+      type: one      
+     TransferCompanyStructure:
+      class: CompanyStructure
+      local: trans_div_id 
+      foreign: id
+      type: one
+     TransferAttach:
+      local: trans_id
+      foreign: trans_id
+      type: one
+     MutualEmployee:
+      class: Employee 
+      local: trans_mu_name
+      foreign: empNumber
+      type: one  
+
+TransferReason:
+  tableName: hs_hr_trans_reason
+  columns:
+    trans_reason_id:
+      type: integer(8)
+      primary: true
+    trans_reason_en:
+      type: string(100)
+    trans_reason_si:
+      type: string(100)
+    trans_reason_ta:
+      type: string(100)
+
+ 
+ServiceDetails:
+  tableName: hs_hr_service
+  columns:
+    service_code:
+      type: integer(4)
+      primary: true
+    service_name:
+      type: string(100)
+    service_name_si:
+      type: string(100)
+      default: ''
+    service_name_ta:
+      type: string(100)
+      default: ''
+       
+Grade:
+  tableName: hs_hr_grade
+  columns:
+    grade_code:
+      type: integer(4)
+      primary: true
+    grade_name:
+      type: string(100)
+    grade_name_si:
+      type: string(100)
+    grade_name_ta:
+      type: string(100)
+
+GradeSlot:
+  tableName: hs_hr_grade_slot
+  columns:
+    slt_id:
+      type: integer(10)
+    grade_code:
+      type: integer(4)
+      primary: true
+    slt_scale_year:
+      type: integer(10)
+      primary: true
+    slt_amount:
+      type: float(20,2)
+    emp_basic_salary:
+      type: float(20,2)
+  relations:
+    Grade:
+      local: grade_code
+      foreign: grade_code
+      type: one
+    Employee:
+      local: slt_id
+      foreign: slt_scale_year
+      type: one
+
+Level:
+  tableName: hs_hr_level
+  columns:
+    level_code:
+      type: integer(4)
+      primary: true
+    level_name:
+      type: string(100)
+    level_name_si:
+      type: string(100)
+    level_name_ta:
+      type: string(100)
+
+Promotion:
+  tableName: hs_hr_promotion
+  columns:
+    prm_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(7)
+    service_code:
+      type: integer(4)
+    grade_code:
+      type: integer(4)
+    jobtit_code:
+      type: string(13)
+    estat_code:
+      type: string(13)
+    prm_effective_date:
+      type: date(25)
+    prm_divition:
+      type: integer(6)
+    prm_prev_grade:
+      type: integer(4)
+    prm_prev_jobtit_code:
+      type: string(13)
+    prm_prev_emp_status:
+      type: string(13)
+    prm_prev_work_station:
+      type: integer(6)
+    prm_comment:
+      type: string(200)
+    prm_method_id:
+      type: integer(4)
+    class_code:
+      type: integer(4)
+    slt_id:
+      type: integer(10)
+    level_code:
+      type: integer(4) 
+    emp_salary_inc_date:
+      type: date
+    prm_prev_class_code:
+      type: integer(4)
+    prm_prev_slt_id:
+      type: integer(10)
+    prm_prev_level_code:
+      type: integer(4) 
+    prm_prev_emp_salary_inc_date 	:
+      type: date  
+    prm_commencement_date:
+      type: date
+    prm_prev_service_code:
+      type: integer(4)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: empNumber
+      type: one
+    ServiceDetails:
+      class: ServiceDetails
+      local: service_code
+      foreign: service_code
+      type: one
+    Grade:
+      local: grade_code
+      foreign: grade_code
+      type: one
+    JobTitle:
+      local: jobtit_code
+      foreign: jobtit_code
+      type: one
+    EmployeeStatus:
+      local: estat_code
+      foreign: estat_code
+      type: one
+    CompanyStructure:
+      local: prm_divition
+      foreign: id
+      type: one
+    cGrade:
+      class: Grade
+      local: prm_prev_grade
+      foreign: grade_code
+      type: one
+    cJobTitle:
+      class: JobTitle
+      local: prm_prev_jobtit_code
+      foreign: jobtit_code
+      type: one
+    cEmployeeStatus:
+      class: EmployeeStatus
+      local: prm_prev_emp_status
+      foreign: estat_code
+      type: one
+    cCompanyStructure:
+      class: CompanyStructure
+      local: prm_prev_work_station
+      foreign: id
+      type: one
+    PromotionMethod:
+      local: prm_method_id
+      foreign: prm_method_id
+      type: one
+    EmpClass:
+      class: EmpClass
+      local: class_code
+      foreign: class_code
+      type: one
+    cEmpClass:
+      class: EmpClass
+      local: prm_prev_class_code
+      foreign: class_code
+      type: one
+    GradeSlot:
+      class: GradeSlot
+      local: slt_id
+      foreign: slt_id
+      type: one
+    cGradeSlot:
+      class: GradeSlot
+      local: prm_prev_slt_id
+      foreign: slt_id
+      type: one
+    Level:
+      class: Level
+      local: level_code
+      foreign: level_code
+      type: one
+    cLevel:
+      class: Level
+      local: prm_prev_level_code
+      foreign: level_code
+      type: one
+    cServiceDetails:
+      class: ServiceDetails
+      local: prm_prev_service_code
+      foreign: service_code
+      type: one      
+    
+
+PromotionMethod:
+  tableName: hs_hr_promotion_method
+  columns:
+    prm_method_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    prm_method_comment_en:
+      type: string(200)
+    prm_method_comment_si:
+      type: string(200)
+    prm_method_comment_ta:
+      type: string(200)
+
+TransferRequest:
+  tableName: hs_hr_transfer_request
+  columns:
+    trans_req_id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(7)
+    id:
+      type: string(75)
+    trans_req_location_pref1:
+      type: string(75)
+    trans_req_location_pref2:
+      type: string(75)
+    trans_req_location_pref3:
+      type: string(75)
+    trans_req_admincommnet:
+      type: string(200)
+    trans_req_usercommnet:
+      type: string(200)
+    trans_req_status:
+      type: string(1)
+    wfmain_id:
+      type: integer(50)
+    wfmain_sequence:
+      type: integer(50)
+    def_level:
+      type: integer(4)
+    trans_req_isapproved:
+      type: string(1)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: empNumber
+      type: one
+    Users:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    Transfer:
+      local: emp_number
+      foreign: trans_emp_number
+      type: one
+    CompanyStructure:
+      local: id
+      foreign: id
+      type: one  
+    CompanyStructureLevels:
+      local: def_level
+      foreign: def_level
+      type: one
+    WfMain:
+      local: wfmain_id
+      foreign: wfmain_id
+      type: one
+
+TransferAttach:
+  tableName: hs_hr_trans_attach
+  columns:
+    trans_attach_id:
+      type: integer(6)
+      primary: true
+    trans_attach_name:
+      type: string(100)
+    trans_attach_type:
+      type: string(100)
+    trans_attach_content:
+      type: blob(2147483647)
+    trans_id:
+      type: integer(8)
+  relations:
+    Transfer:
+      local: trans_id
+      foreign: trans_id
+      type: one
+
+TrainingInstitute:
+  tableName: hs_hr_td_institute
+  columns:
+    td_inst_id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    td_inst_name_en:
+      type: string(75)
+    td_inst_name_si:
+      type: string(75)
+    td_inst_name_ta:
+      type: string(75)
+  
+
+PromotionCkecklist:
+  tableName: hs_hr_promotion_ckecklist
+  columns:
+    prm_checklist_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    prm_checklist_name_en:
+      type: string(200)
+    prm_checklist_name_si:
+      type: string(200)
+    prm_checklist_name_ta:
+      type: string(200)
+
+
+PromotionAttachment:
+  tableName: hs_hr_prm_attachment
+  columns:
+    prm_attach_id:
+      type: integer(20)
+      primary: true
+    prm_id:
+      type: integer(20)
+      primary: true
+    prm_attach_filename:
+      type: string(200)
+    prm_attach_size:
+      type: integer(11)
+    prm_attach_attachment:
+      type: blob(2147483647)
+    prm_attach_type:
+      type: string(100)
+  relations:
+    Promotion:
+      local: prm_id
+      foreign: prm_id
+      type: one
+
+PromotionCnfAttachment:
+  tableName: hs_hr_prm_cnf_attachment
+  columns:
+    prm_cnf_attach_id:
+      type: integer(20)
+      primary: true
+    prm_id:
+      type: integer(20)
+      primary: true
+    prm_cnf_attach_filename:
+      type: string(200)
+    prm_cnf_attach_size:
+      type: integer(11)
+    prm_cnf_attach_attachment:
+      type: blob(2147483647)
+    prm_cnf_attach_type:
+      type: string(50)
+  relations:
+    Promotion:
+      local: prm_id
+      foreign: prm_id
+      type: one
+
+PromotionChecklistDetail:
+  tableName: hs_hr_promotion_ckecklist_detail
+  columns:
+    emp_number:
+      type: integer(20)
+      primary: true
+    prm_checklist_id:
+      type: integer(4)
+      primary: true
+    prm_value:
+      type: string(1)
+    prm_complete_date:
+      type: date
+    prm_comment:
+      type: string(200)    
+    prm_ovr_comment:
+      type: string(200)        
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    PromotionCkecklist:
+      local: prm_checklist_id
+      foreign: prm_checklist_id
+      type: one
+
+TrainingCourse:
+  tableName: hs_hr_td_course
+  columns:
+    td_course_id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    td_inst_id:
+      type: integer(6)
+    td_course_code:
+      type: string(10)
+    td_course_year:
+      type: integer(10)
+    td_course_name_en:
+      type: string(100)
+    td_course_name_si:
+      type: string(100)
+    td_course_name_ta:
+      type: string(100)
+    lang_code:
+      type: string(13)
+    td_course_venue_en:
+      type: string(200)
+    td_course_venue_si:
+      type: string(200)
+    td_course_venue_ta:
+      type: string(200)
+    td_course_fromdate:
+      type: date(25)
+    td_course_todate:
+      type: date(25)
+    td_course_fromtime:
+      type: string(25)
+    td_course_totime:
+      type: string(25)
+    td_course_objective_en:
+      type: string(200)
+    td_course_objective_si:
+      type: string(200)
+    td_course_objective_ta:
+      type: string(200)
+    td_course_whom_en:
+      type: string(200)
+    td_course_whom_si:
+      type: string(200)
+    td_course_whom_ta:
+      type: string(200)
+    td_course_content_en:
+      type: string(200)
+    td_course_content_si:
+      type: string(200)
+    td_course_content_ta:
+      type: string(200)
+    td_course_gencom_en:
+      type: string(200)
+    td_course_gencom_si:
+      type: string(200)
+    td_course_gencom_ta:
+      type: string(200)
+    td_course_fees:
+      type: string(20)
+    td_course_fees_per_head:
+      type: string(20)
+    td_course_fees_additional:
+      type: string(20)
+    level_code:
+      type: integer(4)
+    td_course_resouse_person:
+      type: string(100)
+    td_approval_type:
+      type: string(1)      
+  relations:
+    TrainingInstitute:
+      local: td_inst_id
+      foreign: td_inst_id
+      type: one
+    Language:
+      local: lang_code
+      foreign: lang_code
+      type: one
+    Level:
+      local: level_code
+      foreign: level_code
+      type: one
+
+TrainingPlan:
+  tableName: hs_hr_td_tarining_plan
+  columns:
+    td_plan_id:
+      type: integer(25)
+      primary: true
+    td_plan_month:
+      type: string(50)
+    td_plan_year:
+      type: string(4)
+    td_inst_id:
+      type: integer(6)
+    td_course_id:
+      type: integer(6)
+    td_plan_training_summery:
+      type: string(200)
+    td_plan_training_frowhom:
+      type: string(200)
+    td_plan_resource_person:
+      type: string(200)
+    level_code:
+      type: integer(4)
+  relations:
+    Level:
+      local: level_code
+      foreign: level_code
+      type: one
+    TrainingInstitute:
+      local: td_inst_id
+      foreign: td_inst_id
+      type: one  
+    TrainingCourse:
+      local: td_course_id
+      foreign: td_course_id
+      type: one      
+      
+RetirementExtension:
+  tableName: hs_hr_ret_retirement
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    ret_id:
+      type: integer(20)
+      primary: true
+    from_date:
+      type: date(25)
+    to_date:
+      type: date(25)
+    clause:
+      type: string(20)
+    comment:
+      type: string(200)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+TrainAssign:
+  tableName: hs_hr_td_assignlist
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    td_course_id:
+      type: integer(7)
+      primary: true
+    td_asl_isattend:
+      type: string(10)     
+    td_asl_isapproved:
+      type: string(10)      
+    td_asl_ispending:
+      type: string(10)      
+    td_asl_conductperson:
+      type:  string(75)      
+    td_asl_duration:
+      type: string(50)      
+    td_asl_conductdate:
+      type: string(50)      
+    td_asl_remarks:
+      type: string(200)      
+    td_asl_effectiveness:
+      type: string(200)      
+    td_asl_adminremarks:
+      type: string(200)      
+    td_asl_content:
+      type: string(200)
+    td_asl_isadcommented:
+      type: string(10)      
+    td_asl_isempfb:
+      type: string(10)      
+    td_asl_comment:
+      type: string(200)     
+    td_asl_year:
+      type: string(20)      
+    td_asl_admincomment:
+      type: string(200)      
+    td_asl_status:
+      type: string(1)     
+    wfmain_id:
+      type: integer(50)
+    wfmain_sequence:
+      type: integer(50)
+    app_emp_number:
+      type: integer(7)   
+    app_position:  
+      type: string(1)  
+    td_approval_type:  
+      type: string(1)       
+  relations:
+    Employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number
+      type: one
+    TrainingCourse:
+      local: td_course_id
+      foreign: td_course_id
+      type: one
+    WfMain:
+      local: wfmain_id
+      foreign: wfmain_id
+      type: one
+    AppEmployee:
+      class: Employee
+      local: app_emp_number
+      foreign: emp_number
+      type: one      
+      
+EmpTitle:
+  tableName: hs_hr_title
+  columns:
+    title_code:
+      type: integer(2)
+      primary: true
+    title_name:
+      type: string(30)
+    title_name_si:
+      type: string(30)
+      default: ''
+    title_name_ta:
+      type: string(30)
+      default: ''
+
+EmpRelationship:
+  tableName: hs_hr_relationship
+  columns:
+    rel_code:
+      type: integer(4)
+      primary: true
+    rel_name:
+      type: string(50)
+    rel_name_si:
+      type: string(50)
+      default: ''
+    rel_name_ta:
+      type: string(50)
+      default: ''
+
+Gender:
+  tableName: hs_hr_gender
+  columns:
+    gender_code:
+      type: integer(2)
+      primary: true
+    gender_name:
+      type: string(30)
+    gender_name_si:
+      type: string(30)
+      default: ''
+    gender_name_ta:
+      type: string(30)
+      default: ''
+
+MaritalStatus:
+  tableName: hs_hr_marital_status
+  columns:
+    marst_code:
+      type: integer(2)
+      primary: true
+    marst_name:
+      type: string(30)
+    marst_name_si:
+      type: string(30)
+      default: ''
+    marst_name_ta:
+      type: string(30)
+      default: ''
+
+Religion:
+  tableName: hs_hr_religion
+  columns:
+    rlg_code:
+      type: integer(2)
+      primary: true
+    rlg_name:
+      type: string(30)
+    rlg_name_si:
+      type: string(30)
+      default: ''
+    rlg_name_ta:
+      type: string(30)
+      default: ''
+
+EmpClass:
+  tableName: hs_hr_class
+  columns:
+    class_code:
+      type: integer(4)
+      primary: true
+    class_name:
+      type: string(100)
+    class_name_si:
+      type: string(100)      
+    class_name_ta:
+      type: string(100)
+      
+
+ConcurrencyControl:
+  tableName: hs_hr_concurrency_control
+  columns:
+    con_table_name:
+      type: string(100)
+      primary: true
+    con_table_key:
+      type: string(100)
+      primary: true
+    con_activity_id:
+      type: integer(4)
+      primary: true
+    con_created_date: date
+    con_created_by: string(36)
+  relations:
+    FormLockDetails:
+      local: con_table_name
+      foreign: con_table_name
+      type: one
+
+EmpContact:
+  tableName: hs_hr_emp_contact
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    con_off_addLine1: string(100)
+    con_off_addLine1_si: string(100)
+    con_off_addLine1_ta: string(100)
+    con_off_addLine2: string(100)
+    con_off_addLine2_si: string(100)
+    con_off_addLine2_ta: string(100)
+    con_off_del_postoffice: string(100)
+    con_off_del_postoffice_si: string(100)
+    con_off_del_postoffice_ta: string(100)
+    con_off_postal_code: string(50)
+    con_off_country: string(100)    
+    con_off_intercom: string(20)        
+    con_off_vip: string(20)
+    con_off_direct: string(20)
+    con_off_ext: string(20)
+    con_off_fax: string(20)
+    con_off_email: string(100)
+    con_off_url: string(100)
+    con_res_addLine1: string(100)
+    con_res_addLine1_si: string(100)
+    con_res_addLine1_ta: string(100)
+    con_res_addLine2: string(100)
+    con_res_addLine2_si: string(100)
+    con_res_addLine2_ta: string(100)
+    con_res_del_postoffice: string(100)
+    con_res_del_postoffice_si: string(100)
+    con_res_del_postoffice_ta: string(100)
+    con_res_postal_code: string(50)
+    con_res_div_sectretariat: string(100)
+    con_res_div_sectretariat_si: string(100)
+    con_res_div_sectretariat_ta: string(100)
+    con_res_policesation: string(100)
+    con_res_policesation_si: string(100)
+    con_res_policesation_ta: string(100)
+    con_res_district: string(100)
+    con_res_district_si: string(100)
+    con_res_district_ta: string(100)                        
+    con_res_phone: string(20)
+    con_res_fax: string(20)
+    con_res_mobile: string(20)
+    con_res_email: string(100)
+    con_per_addLine1: string(100)
+    con_per_addLine1_si: string(100)
+    con_per_addLine1_ta: string(100)
+    con_per_addLine2: string(100)
+    con_per_addLine2_si: string(100)
+    con_per_addLine2_ta: string(100)
+    con_per_del_postoffice: string(100)
+    con_per_del_postoffice_si: string(100)
+    con_per_del_postoffice_ta: string(100)
+    con_per_postal_code: string(50)
+    con_per_div_sectretariat: string(50)
+    con_per_div_sectretariat_si: string(100)
+    con_per_div_sectretariat_ta: string(100)
+    con_per_policesation: string(100)
+    con_per_policesation_si: string(100)
+    con_per_policesation_ta: string(100)
+    con_per_district: string(100)
+    con_per_district_si: string(100)
+    con_per_district_ta: string(100)                       
+    con_per_phone: string(20)
+    con_per_fax: string(20)
+    con_per_mobile: string(20)
+    con_per_email: string(100)
+    con_oth_addLine1: string(100)
+    con_oth_addLine2: string(100)
+    con_oth_addLine2_si: string(100)
+    con_oth_addLine2_ta: string(100)
+    con_oth_addLine1_si: string(100)
+    con_oth_addLine1_ta: string(100)
+    con_oth_postal_code: string(50)
+    con_oth_del_postoffice: string(100)
+    con_oth_del_postoffice_si: string(100)
+    con_oth_del_postoffice_ta: string(100)
+    con_oth_div_sectretariat: string(100)
+    con_oth_div_sectretariat_si: string(100)
+    con_oth_div_sectretariat_ta: string(100)
+    con_oth_policesation: string(100)
+    con_oth_policesation_si: string(100)
+    con_oth_policesation_ta: string(100)
+    con_oth_district: string(100)
+    con_oth_district_si: string(100)
+    con_oth_district_ta: string(100)    
+    con_oth_phone: string(20)
+    con_oth_fax: string(20)
+    con_oth_mobile: string(20)
+    con_oth_email: string(100)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+ServiceHistory:
+  tableName: hs_hr_emp_service_history
+  columns:
+    esh_code:
+      type: integer(11)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    esh_name: string(100)
+    esh_name_si: string(100)
+    esh_name_ta: string(100)
+    esh_designation: string(100)
+    esh_designation_si: string(100)
+    esh_designation_ta: string(100)
+    esh_district: string(50)    
+    esh_from_date: date
+    esh_to_date: date
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    District:
+      local: esh_district
+      foreign: district_id
+
+BenifitType:
+  tableName: hs_hr_wbm_benifit_type
+  columns:
+    bt_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    bt_name:
+      type: string(200)
+    bt_name_si:
+      type: string(200)
+    bt_name_ta:
+      type: string(200)
+
+BenifitSubType:
+  tableName: hs_hr_wbm_benifit_sub_type
+  columns:
+    bst_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    bt_id:
+      type: integer(4)
+    bst_name:
+      type: string(200)
+    bst_name_si:
+      type: string(200)
+    bst_name_ta:
+      type: string(200)
+  relations:
+    BenifitType:
+      local: bt_id
+      foreign: bt_id
+      type: one
+
+Benifit:
+  tableName: hs_hr_wbm_benifit
+  columns:
+    ben_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(7)
+    bt_id:
+      type: integer(4)
+    bst_id:
+      type: integer(4)
+    ben_date:
+      type: date(25)
+    ben_comment:
+      type: string(200)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    BenifitType:
+      local: bt_id
+      foreign: bt_id
+      type: one
+    BenifitSubType:
+      local: bst_id
+      foreign: bst_id
+      type: one
+
+AttendanceDay:
+  tableName: hs_hr_atn_day
+  columns:
+    adt_day:
+      type: string(10)
+      primary: true
+    dt_id:
+      type: integer(4)
+    adt_intime:
+      type: time(25)
+    adt_outtime:
+      type: time(25)
+  relations:
+    AttendanceDateType:
+      local: dt_id
+      foreign: dt_id
+      type: one
+
+AttendanceDateType:
+  tableName: hs_hr_atn_day_type
+  columns:
+    dt_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    dt_name:
+      type: string(200)
+    dt_name_si:
+      type: string(200)
+    dt_name_ta:
+      type: string(200)
+
+AttendanceClockDetails:
+  tableName: hs_hr_atn_clockdown
+  columns:
+    clk_no:
+      type: string(20)
+      primary: true
+    clk_date:
+      type: date(25)
+      primary: true
+    clk_time:
+      type: time(25)
+      primary: true
+    clk_status:
+      type: string(2)
+    clk_move:
+      type: string(5)
+
+Attendance:
+  tableName: hs_hr_atn_dailyattendance
+  columns:
+    clk_no:
+      type: string(20)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    atn_date:
+      type: date(25)
+      primary: true
+    atn_intime:
+      type: time(25)
+    atn_outtime:
+      type: time(25)
+    atn_latetime:
+      type: time(25)
+    atn_earlydeptime:
+      type: time(25)
+    atn_work_hours:
+      type: string(5)
+    dt_id:
+      type: integer(4)
+  relations:
+    AttendanceDateType:
+      local: dt_id
+      foreign: dt_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    cEmployee:
+      class: Employee
+      local: clk_no
+      foreign: emp_attendance_no
+      type: one
+    lEmployee:
+      class: LeaveApplication
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+AttendanceConfiguration:
+  tableName: hs_hr_atn_fieldformat
+  columns:
+    aff_id:
+      type: integer(4)
+      primary: true
+    aff_fieldname:
+      type: string(200)
+    aff_fieldstartposition:
+      type: string(3)
+    aff_fieldendposition:
+      type: string(3)
+    aff_fielddatatype:
+      type: string(20)
+    aff_fieldformat:
+      type: string(100)
+
+DisciplinaryActionType:
+  tableName: hs_hr_dis_action_type
+  columns:
+    dis_acttype_id:
+      type: integer(8)
+      primary: true
+      autoincrement: true
+    dis_acttype_name:
+      type: string(100)
+    dis_acttype_name_si:
+      type: string(100)
+    dis_acttype_name_ta:
+      type: string(100)
+
+Offence:
+  tableName: hs_hr_dis_offence
+  columns:
+    dis_offence_id:
+      type: integer(8)
+      primary: true
+      autoincrement: true
+    dis_acttype_id:
+      type: integer(8)
+    dis_offence_name:
+      type: string(100)
+    dis_offence_name_si:
+      type: string(100)
+    dis_offence_name_ta:
+      type: string(100)
+  relations:
+    DisciplinaryActionType:
+      local: dis_acttype_id
+      foreign: dis_acttype_id
+      type: one
+
+DisAttachment:
+  tableName: hs_hr_dis_attachment
+  columns:
+    dis_attach_id:
+      type: integer(8)
+      primary: true
+      autoincrement: true
+    dis_attach_name:
+      type: string(100)
+    dis_attach_type:
+      type: string(100)
+    dis_attach_content:
+      type: blob(5368709120)
+    dis_inc_id:
+      type: string(100)
+    dis_attach_category:
+      type: string(20)
+
+DisiplinaryFinalAction:
+  tableName: hs_hr_dis_finalaction
+  columns:
+    dis_fna_code:
+      type: integer(10)
+      primary: true
+      autoincrement: true
+    dis_fna_usercode:
+      type: string(10)
+    dis_fna_name:
+      type: string(200)
+    dis_fna_name_si:
+      type: string(200)
+    dis_fna_name_ta:
+      type: string(200)
+    dis_fna_type:
+      type: string(1)
+      
+DisEmployeeInvolved:
+  tableName: hs_hr_dis_involved_emp
+  columns:
+    dis_inc_id:
+      type: integer(20)
+      primary: true
+    emp_number:
+      type: integer(7)  
+      primary: true
+    dis_inv_type:
+      type: string(10)
+    dis_fna_code:
+      type: integer(10)
+  relations:
+    Incidents:
+      local: dis_inc_id
+      foreign: dis_inc_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    DisiplinaryFinalAction:
+      local: dis_fna_code
+      foreign: dis_fna_code
+      type: one
+      
+Incidents:
+  tableName: hs_hr_dis_incidents
+  columns:
+    dis_inc_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true    
+    dis_acttype_id:
+      type: integer(8)
+    dis_inc_level:
+      type: integer(6)
+    dis_inc_isclosed:
+      type: integer(4)
+    dis_inc_inq_officer:
+      type: string(100)
+    dis_inc_pro_officer:
+      type: string(100)
+    dis_inc_defe_officer:
+      type: string(100)
+    dis_inc_filedate:
+      type: date
+    dis_inc_date:
+      type: date
+    dis_inc_time:
+      type: string(100)
+    dis_inc_incident:
+      type: string(200)
+    dis_inc_incident_si:
+      type: string(200)
+    dis_inc_incident_ta:
+      type: string(200)
+    dis_inc_reportedby:
+      type: string(100)
+    dis_inc_prelim_com:
+      type: string(100)
+    dis_inc_finact_tknby:
+      type: string(100)
+    dis_inc_finact_tkn:
+      type: string(100)    
+    dis_inc_type:
+      type: string(50)     
+    dis_inc_prim_summary:
+      type: string(200)
+    dis_inc_finact_tkndate:
+      type: date
+    dis_inc_reporteddate:
+      type: date(25)
+    dis_inc_reportedtime:
+      type: string(100)
+    dis_inc_todate:
+      type: date(25)
+    dis_inc_totime:
+      type: string(100)
+    dis_inc_major_mionor_flg:
+      type: string(1)
+    dis_inc_investigation_auditfb:
+      type: string(200)
+    dis_inc_ifchargesheetissued_flg:
+      type: string(1)
+    dis_inc_chargesheet_comment:
+      type: string(200)
+    dis_inc_caseclosed_comment:
+      type: string(200)
+    dis_inc_furtheraction_flg:
+      type: string(1)
+    dis_inc_furtheraction_comment:
+      type: string(200)
+    dis_inc_intedicted_flg:
+      type: string(1)
+    dis_inc_intedicted_comment:
+      type: string(200)
+    dis_inc_inquery_comment:
+      type: string(200)
+    dis_fna_code:
+      type: integer(10)
+    dis_inc_finalaction_comment:
+      type: string(200)
+    dis_inc_appeal_flg:
+      type: string(1)
+    dis_inc_appeal_date:
+      type: date(25)
+    dis_inc_appeal_board_comment:
+      type: string(200)
+    dis_inc_appeal_labour_comment:
+      type: string(200)
+  relations:
+    DisciplinaryActionType:
+      local: dis_acttype_id
+      foreign: dis_acttype_id
+      type: one    
+    DisAttachment:
+      local: dis_attach_id
+      foreign: dis_attach_id
+      type: one
+    Offence:
+      local: dis_offence_id
+      foreign: dis_offence_id
+      type: one
+    Employee:
+      local: dis_inc_reportedby
+      foreign: emp_number
+      type: one
+    DisEmployeeInvolved : 
+      local: dis_inc_id
+      foreign: dis_inc_id
+      type: one
+    DisiplinaryFinalAction:
+      local: dis_fna_code
+      foreign: dis_fna_code
+      type: one
+
+    
+IncidentDetails:
+  tableName: hs_hr_dis_incidents_details
+  columns:
+    dis_inc_id:
+      type: integer(20)
+      primary: true
+    dis_indetail_level:
+      type: string(8)
+      primary: true
+    dis_indetail_takenby:
+      type: string(50)
+    dis_indetail_takendate:
+      type: date
+    dis_indetail_comment:
+      type: string(200)
+  relations:
+    Incidents:
+      local: dis_inc_id
+      foreign: dis_inc_id
+      type: one
+
+OffenceList:
+  tableName: hs_hr_dis_offence_list
+  columns:
+    dis_inc_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    dis_offence_id:
+      type: integer(8)
+      primary: true
+      autoincrement: true
+  relations:
+    Incidents:
+      local: dis_inc_id
+      foreign: dis_inc_id
+      type: one
+    Offence:
+      local: dis_offence_id
+      foreign: dis_offence_id
+      type: one
+
+KNWDocumentType:
+  tableName: hs_hr_knw_doctype
+  columns:
+    knw_doc_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    knw_doc_name:
+      type: string(200)
+    knw_doc_name_si:
+      type: string(200)
+    knw_doc_name_ta:
+      type: string(200)
+
+KNWAttachmentDetails:
+  tableName: hs_hr_knw_attach_details
+  columns:
+    knw_atd_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    knw_doc_id:
+      type: integer(20)
+      primary: true
+    knw_atd_title:
+      type: string(100)
+    knw_atd_title_si:
+      type: string(100)
+    knw_atd_title_ta:
+      type: string(100)
+    knw_atd_keyword:
+      type: string(1000)
+    knw_atd_keyword_si:
+      type: string(1000)
+    knw_atd_keyword_ta:
+      type: string(1000)
+    knw_atd_post_date:
+      type: date(25)
+    knw_atd_update_date:
+      type: date(25)
+  relations:
+    KNWDocumentType:
+      local: knw_doc_id
+      foreign: knw_doc_id
+      type: one
+
+KNWAttachment:
+  tableName: hs_hr_knw_attachment
+  columns:
+    knw_atd_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    knw_doc_id:
+      type: integer(20)
+      primary: true
+    knw_att_filename:
+      type: string(200)
+    knw_att_size:
+      type: integer(11)
+    knw_att_attachment:
+      type: blob(5368709120)
+    knw_att_type:
+      type: string(100)
+    knw_att_article:
+      type: blob(5368709120)
+  relations:
+    KNWDocumentType:
+      local: knw_doc_id
+      foreign: knw_doc_id
+      type: one
+    KNWAttachmentDetails:
+      local: knw_atd_id
+      foreign: knw_atd_id
+      type: one
+
+EBExam:
+  tableName: hs_hr_ebexam
+  columns:
+    ebexam_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true        
+    service_code:
+      type: string(100)
+    grade_code:
+      type: string(100)
+    ebexam_name:
+      type: string(200)
+    ebexam_name_si:
+      type: string(200)
+    ebexam_name_ta:
+      type: string(200)
+    ebexam_description:
+      type: string(200)
+  relations:
+    ServiceDetails:
+      local: service_code
+      foreign: service_code
+      type: one
+    Grade:
+      local: grade_code
+      foreign: grade_code
+      type: one
+    EMPEBExam:
+      local: ebexam_id
+      foreign: ebexam_id
+      type: one
+
+EMPEBExam:
+  tableName: hs_hr_emp_ebexam
+  columns:
+    ebexam_id:
+      type: integer(20)
+      primary: true      
+    employee_id:
+      type: integer(7)
+      primary: true
+    emp_ebexam_duedate:
+      type: date(25)
+    emp_ebexam_completedate:
+      type: date(25)
+    emp_ebexam_status:
+      type: string(10)
+    emp_ebexam_remarks:
+      type: string(200)
+    emp_ebexam_genaralcomment:
+      type: string(200)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    EBExam:
+      local: ebexam_id
+      foreign: ebexam_id
+      type: one
+
+
+ChecklistDetail:
+  tableName: hs_hr_ckecklist_detail
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    prm_checklist_id:
+      type: integer(4)
+      primary: true
+    value:
+      type: string(10)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    PromotionCkecklist:
+      local: prm_checklist_id
+      foreign: prm_checklist_id
+      type: one
+  
+EmpQuickLink:
+  tableName: hs_hr_emp_quicklink
+  columns:
+    qlk_id:
+      type: integer(20)
+      primary: true
+    qlk_name:
+      type: string(200)
+    qlk_name_si:
+      type: string(200)
+    qlk_name_ta:
+      type: string(200)
+    qlk_link:
+      type: string(500)
+    qlk_order:
+      type: integer(4)
+    qlk_active:
+      type: string(1)
+
+LeaveType:
+  tableName: hs_hr_leave_type
+  columns:
+    leave_type_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    leave_type_name:
+      type: string(200)
+    leave_type_name_si:
+      type: string(200)
+    leave_type_name_ta:
+      type: string(200)
+
+LeaveApplication:
+  tableName: hs_hr_leave_application
+  columns:
+    leave_app_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    leave_app_applied_date:
+      type: date(25)
+    emp_number:
+      type: integer(7)
+    leave_app_start_date:
+      type: date(25)
+    leave_app_end_date:
+      type: date(25)
+    leave_app_status:
+      type: string(50)
+    leave_type_id:
+      type: integer(4)
+    leave_app_reason:
+      type: integer(4)
+    leave_app_comment:
+      type: string(200)
+    leave_type_wf_id:
+      type: string(200)
+    leave_app_covemp_number:
+      type: integer(7)
+    leave_app_workdays:
+      type: float(2147483647)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    cEmployee:
+      class: Employee
+      local: leave_app_covemp_number
+      foreign: emp_number
+      type: one
+    LeaveType:
+      local: leave_type_id
+      foreign: leave_type_id
+      type: one
+    LeaveTypeConfig:
+      local: leave_type_wf_id
+      foreign: leave_type_wf_id
+      type: one
+    LeaveDetail:
+      local: leave_app_id
+      foreign: leave_app_id
+      type: one
+
+LeaveTypeConfig:
+  tableName: hs_hr_leave_type_config
+  columns:
+    leave_type_id:
+      type: integer(4)
+      primary: true
+    leave_type_description:
+      type: string(200)
+    leave_type_active_flg:
+      type: string(1)
+    leave_type_covering_employee_flg:
+      type: string(1)
+    leave_type_allow_halfday_flg:
+      type: string(1)
+    leave_type_maternity_leave_flg:
+      type: string(1)
+    leave_type_need_approval_flg:
+      type: string(1)
+    leave_type_short_leave_flg:
+      type: string(1)
+    leave_type_entitle_days:
+      type: float(2147483647)
+    leave_type_max_days_without_medi:
+      type: float(2147483647)
+    leave_type_need_to_apply_before:
+      type: float(2147483647)
+    leave_type_wf_id:
+      type: string(200)
+    leave_type_comment:
+      type: string(200) 
+  relations:
+    LeaveType:
+      local: leave_type_id
+      foreign: leave_type_id
+      type: one
+
+LeaveEntitlement:
+  tableName: hs_hr_leave_entitlement
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    leave_type_id:
+      type: integer(4)
+      primary: true
+    leave_ent_day:
+      type: float(2147483647)
+    leave_ent_taken:
+      type: float(2147483647)
+    leave_ent_sheduled:
+      type: float(2147483647)
+    leave_ent_remain:
+      type: float(2147483647)
+    leave_ent_year:
+      type: string(4)
+      primary: true
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    LeaveType:
+      local: leave_type_id
+      foreign: leave_type_id
+      type: one
+
+LeaveTypeConfigDetail:
+  tableName: hs_hr_leave_type_config_detail
+  columns:
+    estat_code:
+      type: string(13)
+      primary: true
+    leave_type_id:
+      type: integer(4)
+      primary: true
+  relations:
+    EmployeeStatus:
+      local: estat_code
+      foreign: id
+      type: one
+    LeaveTypeConfig:
+      local: leave_type_id
+      foreign: leave_type_id
+      type: one
+
+LeaveHoliday:
+  tableName: hs_hr_leave_holiday
+  columns:
+    leave_holiday_id:
+      type: integer(4)
+      primary: true
+    leave_holiday_name:
+      type: string(200)
+    leave_holiday_name_si:
+      type: string(200)
+    leave_holiday_name_ta:
+      type: string(200)
+    leave_holiday_date:
+      type: date(25)
+    leave_holiday_annual:
+      type: integer(1)
+    leave_holiday_fulorhalf:
+      type: integer(1)
+
+
+LeaveDetail:
+  tableName: hs_hr_leave_details
+  columns:
+    leave_app_id:
+      type: integer(20)
+      primary: true
+    leave_app_applied_date:
+      type: date(25)
+      primary: true
+    leave_dtl_amount:
+      type: float(2147483647)
+    leave_dtl_type:
+      type: string(1)
+  relations:
+    LeaveApplication:
+      local: leave_app_id
+      foreign: leave_app_id
+      type: one
+    
+
+capability:
+  tableName: hs_hr_sm_capability
+  columns:
+    sm_capability_id:
+      type: integer(50)
+      primary: true
+    sm_capability_name:
+      type: string(100)
+    sm_capability_name_si:
+      type: string(100)
+    sm_capability_name_ta:
+      type: string(100)
+    sm_capability_enable_flag:
+      type: string(10)
+  relations:
+    Users:
+      local: sm_capability_id
+      foreign: sm_capability_id
+      type: one
+
+mnucapability:
+  tableName: hs_hr_sm_mnucapability
+  columns:
+    sm_capability_id:
+      type: integer(50)
+      primary: true
+    sm_mnuitem_id:
+      type: string(50)
+      primary: true
+    sm_mnucapa_save:
+      type: string(25)
+    sm_mnucapa_add:
+      type: string(25)
+    sm_mnucapa_edit:
+      type: string(25)
+    sm_mnucapa_delete:
+      type: string(25)
+  relations:
+    menuitem:
+      local: sm_mnuitem_id
+      foreign: sm_mnuitem_id
+      type: one
+    capability:
+      local: sm_capability_id
+      foreign: sm_capability_id
+      type: one    
+
+menuitem:
+  tableName: hs_hr_sm_mnuitem
+  columns:
+    sm_mnuitem_id:
+      type: integer(50)
+      primary: true
+    sm_mnuitem_name:
+      type: string(100)
+    sm_mnuitem_name_si:
+      type: string(100)
+    sm_mnuitem_name_ta:
+      type: string(100)
+    sm_mnuitem_parent:
+      type: integer(20)
+    sm_mnuitem_level:
+      type: integer(20)
+    sm_mnuitem_webpage_url:
+      type: string(300)
+    sm_mnuitem_position:
+      type: string(100)
+    mod_id:
+      type: string(36)
+  relations:
+    Module:
+      local: mod_id
+      foreign: mod_id
+      type: one
+    mnucapability:
+      local: sm_mnuitem_id
+      foreign: sm_mnuitem_id
+      type: one
+      
+ReportCapability:
+  tableName: hs_hr_sm_rpt_capability
+  columns:
+    sm_capability_id:
+      type: integer(10)
+      primary: true
+    rn_rpt_id:
+      type: integer(10)
+      primary: true
+  relations:
+    ReportDetails:
+      local: rn_rpt_id
+      foreign: rn_rpt_id
+      type: one
+    capability:
+      local: sm_capability_id
+      foreign: sm_capability_id
+      type: one
+
+FormLockDetails:
+  tableName: hs_hr_formlock_details
+  columns:
+    frmlock_id:
+      type: integer(255)
+      primary: true
+    mod_id:
+      type: string(36)
+    con_table_name:
+      type: integer(200)
+    con_activity_id:
+      type: integer(4)
+    frmlock_form_name:
+      type: integer(200)  
+    frmlock_form_name_si:
+      type: integer(200) 
+    frmlock_form_name_ta:
+      type: integer(200)       
+  relations:
+    ConcurrencyControl:
+      local: con_table_name
+      foreign: con_table_name
+      type: one
+    Module:
+      local: mod_id
+      foreign: mod_id
+      type: one
+
+ReportDetails:
+  tableName: hs_hr_rn_report
+  columns:
+    rn_rpt_id:
+      type: integer(10)
+      primary: true
+    rn_rpt_name:
+      type: string(100)
+    rn_rpt_name_si:
+      type: string(100)
+    rn_rpt_name_ta:
+      type: string(100)
+    rn_rpt_path:
+      type: string(100)
+    mod_id:
+      type: string(36)
+  relations:
+    Module:
+      local: mod_id
+      foreign: mod_id
+      type: one
+      
+CarderPlan:
+  tableName: hs_hr_carderplan
+  columns:
+    id:
+      type: integer(7)
+      primary: true
+    jobtit_code:
+      type: string(13)
+      primary: true
+    carder_actual:
+      type: integer(10)      
+    carder_excess:
+      type: integer(10)
+    carder_vacancies:
+      type: integer(100)
+    carder_approved:
+      type: integer(10)
+  relations:
+    CompanyStructure:
+      local: id
+      foreign: id
+      type: one
+    JobTitle:
+      local: jobtit_code
+      foreign: jobtit_code
+      type: one
+
+CompanyStructureLevels:
+  tableName: hs_hr_company_structure_def
+  columns:
+    def_level:
+      type: integer(4)
+      primary: true
+    def_name:
+      type: string(100)
+    def_name_si:
+      type: string(100)
+    def_name_ta:
+      type: string(100)
+
+EmpDisAction:
+  tableName: hs_hr_emp_disciaction
+  columns:
+    emp_dis_id:
+      type: integer(20)
+      primary: true
+    emp_number:
+      type: string(7)
+    emp_dis_effectfrom:
+      type: date
+    emp_dis_effectto:
+      type: date
+    emp_dis_action:
+      type: string(100)
+    emp_dis_comment:
+      type: string(200)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+
+JobRole:
+  tableName: hs_hr_emp_job_role
+  columns:
+    jrl_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    jobtit_code:
+      type: string(13)
+    level_code:
+      type: integer(4)
+    service_code:
+      type: integer(4)  
+    jrl_name:
+      type: string(200)
+    jrl_name_si:
+      type: string(200)
+    jrl_name_ta:
+      type: string(200)
+  relations:
+    JobTitle:
+      local: jobtit_code
+      foreign: jobtit_code
+      type: one
+    Level:
+      local: level_code
+      foreign: level_code
+      type: one
+    ServiceDetails:
+      local: service_code
+      foreign: service_code
+      type: one
+   
+
+PerformanceDutyGroup:
+  tableName: hs_hr_perf_duty_group
+  columns:
+    dtg_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    dtg_code:
+      type: string(10)
+    dtg_name:
+      type: string(100)
+    dtg_name_si:
+      type: string(100)
+    dtg_name_ta:
+      type: string(100)
+    dtg_desc:
+      type: string(200)
+    dtg_desc_si:
+      type: string(200)
+    dtg_desc_ta:
+      type: string(200)
+
+PerformanceRate:
+  tableName: hs_hr_perf_rate
+  columns:
+    rate_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    rate_code:
+      type: string(10)
+    rate_name:
+      type: string(100)
+    rate_name_si:
+      type: string(100)
+    rate_name_ta:
+      type: string(100)
+    rate_desc:
+      type: string(200)
+    rate_desc_si:
+      type: string(200)
+    rate_desc_ta:
+      type: string(200)
+    rate_option:
+      type: string(1)
+
+PerformanceDuty:
+  tableName: hs_hr_perf_duty
+  columns:
+    dut_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    dut_code:
+      type: string(10)
+    dut_name:
+      type: string(100)
+    dut_name_si:
+      type: string(100)
+    dut_name_ta:
+      type: string(100)
+    dut_desc:
+      type: string(200)
+    dut_desc_si:
+      type: string(200)
+    dut_desc_ta:
+      type: string(200)
+    dtg_id:
+      type: integer(4)
+    rate_id:
+      type: integer(4)
+  relations:
+    PerformanceDutyGroup:
+      local: dtg_id
+      foreign: dtg_id
+      type: one
+    PerformanceRate:
+      local: rate_id
+      foreign: rate_id
+      type: one
+
+PerformanceRateDetails:
+  tableName: hs_hr_perf_rate_detail
+  columns:
+    rate_id:
+      type: integer(4)
+      primary: true
+    rdt_grade:
+      type: string(10)
+      primary: true
+    rdt_mark:
+      type: float(2147483647)
+      primary: true
+    rdt_description:
+      type: string(100)
+  relations:
+    PerformanceRate:
+      local: rate_id
+      foreign: rate_id
+      type: one
+
+PerformanceEvaluation:
+  tableName: hs_hr_perf_evaluation
+  columns:
+    eval_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_code:
+      type: string(10)
+    eval_name:
+      type: string(100)
+    eval_name_si:
+      type: string(100)
+    eval_name_ta:
+      type: string(100)
+    eval_desc:
+      type: string(200)
+    eval_desc_si:
+      type: string(200)
+    eval_desc_ta:
+      type: string(200)
+    eval_year:
+      type: string(4)
+    eval_active:
+      type: string(1)
+    rate_id:
+      type: integer(4)
+  relations:
+    PerformanceRate:
+      local: rate_id
+      foreign: rate_id
+      type: one
+
+PerformanceEvaluationDetail:
+  tableName: hs_hr_perf_evaluation_detail
+  columns:
+    eval_dtl_id:
+      type: integer(10)
+      primary: true
+      autoincrement: true
+    eval_id:
+      type: integer(4)
+    jobtit_code:
+      type: string(13)
+    level_code:
+      type: integer(4)
+    service_code:
+      type: integer(4)
+    eval_dtl_project_percentage:
+      type: string(10)
+    eval_dtl_duty_percentage:
+      type: string(10)
+    service_code: integer(4)
+  relations:
+    PerformanceEvaluation:
+      local: eval_id
+      foreign: eval_id
+      type: one
+    JobTitle:
+      local: jobtit_code
+      foreign: jobtit_code
+      type: one
+    Level:
+      local: level_code
+      foreign: level_code
+      type: one
+    ServiceDetails:
+      local: service_code
+      foreign: service_code
+      type: one
+
+PerformanceEvaluationJobRole:
+  tableName: hs_hr_perf_eval_job_role
+  columns:
+    eval_dtl_id:
+      type: integer(10)
+      primary: true
+    jrl_id:
+      type: integer(4)
+      primary: true
+  relations:
+    PerformanceEvaluationDetail:
+      local: eval_dtl_id
+      foreign: eval_dtl_id
+      type: one
+    JobRole:
+      local: jrl_id
+      foreign: jrl_id
+      type: one
+
+PerformanceEvaluationDuty:
+  tableName: hs_hr_perf_eval_duty
+  columns:
+    eval_dtl_id:
+      type: integer(10)
+      primary: true
+    dut_id:
+      type: integer(4)
+      primary: true
+    dut_weightage:
+      type: string(10)
+      primary: true
+  relations:
+    PerformanceEvaluationDetail:
+      local: eval_dtl_id
+      foreign: eval_dtl_id
+      type: one
+    PerformanceDuty:
+      local: dut_id
+      foreign: dut_id
+      type: one
+
+PerformanceEvaluationSupervisor:
+  tableName: hs_hr_perf_evaluation_supervisor
+  columns:
+    eval_id:
+      type: integer(4)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    sup_num:
+      type: integer(7)
+      default: null
+    eval_sup_flag:
+      type: string(1)
+    eval_type_id:
+      type: integer(4)      
+  relations:
+    PerformanceEvaluation:
+      local: eval_id
+      foreign: eval_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    SuperVice:
+      class: Employee
+      local: sup_num
+      foreign: emp_number
+      type: one
+    PerformanceEvaluationType:
+      local: eval_type_id
+      foreign: eval_type_id
+      type: one      
+
+
+PerformanceEvaluationType:
+  tableName: hs_hr_perf_evaluation_type
+  columns:
+    eval_type_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_type_name:
+      type: string(200)
+    eval_type_name_si:
+      type: string(200)
+    eval_type_name_ta:
+      type: string(200)
+
+PerformanceEvaluationEmployee:
+  tableName: hs_hr_perf_eval_employee
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    eval_id:
+      type: integer(4)
+      primary: true
+    eval_dtl_id:
+      type: integer(10)
+      primary: true
+    eval_emp_project_rate:
+      type: string(10)
+    eval_emp_duty_rate:
+      type: string(10)
+    eval_emp_duty_comment:
+      type: string(200)
+    eval_emp_overall_rate:
+      type: string(10)
+    eval_emp_overall_grade:
+      type: string(10)
+    eval_emp_overall_comment:
+      type: string(200)
+    eval_emp_sujested_overall_rate:
+      type: string(10)
+    eval_emp_sujested_overall_rate_comment:
+      type: string(200)
+    eval_emp_status:
+      type: string(1)
+    sup_emp_number:
+      type: integer(7)
+    eval_type_id:
+      type: integer(4)
+  relations:
+    PerformanceEvaluation:
+      local: eval_id
+      foreign: eval_id
+      type: one
+    EmployeeSubordinate:
+      class: Employee
+      local: emp_number
+      foreign: emp_number
+      type: one
+    PerformanceEvaluationDetail:
+      local: eval_dtl_id
+      foreign: eval_dtl_id
+      type: one
+    PerformanceEvaluationType:
+      local: eval_type_id
+      foreign: eval_type_id
+      type: one
+    EmployeeSupervisor:
+      class: Employee
+      local: sup_emp_number
+      foreign: emp_number
+      type: one
+
+PerformanceEvaluationProject:
+  tableName: hs_hr_perf_evaluation_project
+  columns:
+    eval_prj_id:
+      type: integer(10)
+      primary: true
+    eval_prj_name:
+      type: string(200)
+    eval_prj_name_si:
+      type: string(200)
+    eval_prj_name_ta:
+      type: string(200)
+    eval_prj_completed:
+      type: string(10)
+    eval_prj_user_code:
+      type: string(200)    
+
+PerformanceEvaluationEmployeeProject:
+  tableName: hs_hr_perf_eval_employee_project
+  columns:
+    eval_dtl_id:
+      type: integer(4)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    eval_prj_id:
+      type: integer(10)
+      primary: true
+    eval_prj_weight:
+      type: string(10)
+    eval_prj_comment:
+      type: string(200) 
+  relations:
+    PerformanceEvaluationDetail:
+      local: eval_dtl_id
+      foreign: eval_dtl_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    PerformanceEvaluationProject:
+      local: eval_prj_id
+      foreign: eval_prj_id
+      type: one
+
+PerformanceEvaluationEmployeeDuty:
+  tableName: hs_hr_perf_eval_employee_duty
+  columns:
+    eval_dtl_id:
+      type: integer(4)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    dut_id:
+      type: integer(4)
+      primary: true
+    eval_duty_rate:
+      type: string(10)
+    eval_duty_comment:
+      type: string(200)
+  relations:
+    PerformanceEvaluationDetail:
+      local: eval_dtl_id
+      foreign: eval_dtl_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    PerformanceDuty:
+      local: dut_id
+      foreign: dut_id
+      type: one
+
+PerformanceEmployeeProject:
+  tableName: hs_hr_perf_evaluation_project_employee
+  columns:
+    eval_prj_id:
+      type: integer(10)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+  relations:
+    PerformanceEvaluationProject:
+      local: eval_prj_id
+      foreign: eval_prj_id
+      type: one
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+WFGroupAppPerson:
+  tableName: hs_hr_wf_group_app_person
+  columns:
+    wfappgrp_code:
+      type: integer(50)
+      primary: true
+    wf_main_app_employee:
+      type: string(100)
+      primary: true
+  relations:
+    WfApprovalGroup:
+      local: wfappgrp_code
+      foreign: wfappgrp_code
+      type: one
+    Employee:
+      local: wf_main_app_employee
+      foreign: emp_number
+      type: one
+
+WfApprovalGroup:
+  tableName: hs_hr_wf_approval_group
+  columns:
+    wfappgrp_code:
+      type: string(50)
+      primary: true
+    wfappgrp_description:
+      type: string(200)
+    wfappgrp_description_si:
+      type: string(200)
+    wfappgrp_description_ta:
+      type: string(200)
+
+WfMainAppPerson:
+  tableName: hs_hr_wf_main_app_person
+  columns:
+    wfmain_id:
+      type: integer(50)
+      primary: true
+    wfmain_sequence:
+      type: integer(50)
+      primary: true
+    wf_main_app_employee:
+      type: string(200)
+      primary: true
+  relations:
+    WfMain:
+      local: wfmain_id
+      foreign: wfmain_id
+      type: one
+    Employee:
+      local: wf_main_app_employee
+      foreign: emp_number
+      type: one
+    
+WfMain:
+  tableName: hs_hr_wf_main
+  columns:
+    wfmain_id:
+      type: integer(50)
+      primary: true
+    wfmain_sequence:
+      type: integer(50)
+      primary: true
+    wfmain_app_date:
+      type: date(25)
+    wfmain_comments:
+      type: string(200)
+    wfmain_flow_id:
+      type: integer(50)
+    wfmain_iscomplete_flg:
+      type: integer(10)
+    wftype_code:
+      type: integer(50)
+    wfmain_approving_emp_number:
+      type: integer(200)
+    wfmain_orderid:
+      type: integer(50)
+    wfmain_application_date:
+      type: date(25)
+    wfmain_current_date:
+      type: date(25)
+    wfmain_is_hr_approved:
+      type: integer(10)
+    wfmain_previous_id:
+      type: string(50)
+  relations:
+    Employee:
+      local: wfmain_approving_emp_number
+      foreign: emp_number
+      type: one
+
+WfModule:
+  tableName: hs_hr_wf_module
+  columns:
+    wfmod_id:
+      type: integer(50)
+      primary: true
+    wfmod_name:
+      type: string(100)
+    wfmod_name_si:
+      type: string(100)
+    wfmod_name_ta:
+      type: string(100)
+    wfmod_view_name:
+      type: string(200)
+    wfmod_view_name:
+      type: string(200)
+  relations:
+    WfMain:
+      local: wfmain_id
+      foreign: wfmain_id
+      type: one
+    Module:
+      local: wfmod_id
+      foreign: mod_id
+      type: one
+
+WfApproval:
+  tableName: hs_hr_wf_approvel
+  columns:
+    wftype_code:
+      type: integer(20)
+      primary: true
+    wfa_sequence:
+      type: integer(20)
+      primary: true
+    wfapper_code:
+      type: string(20)
+    wfapper_iscompulsory_flg:
+      type: integer(10)
+    wfapper_lastlevel:
+      type: integer(10)
+    wfapper_allowchange:
+      type: string(10)
+
+WfAppPerson:
+  tableName: hs_hr_wf_approval_person
+  columns:
+    wfapper_decription:
+      type: string(200)      
+    wfapper_code:
+      type: string(20)
+      primary: true
+    wfapper_sqlquery:
+      type: string(2000)
+    wfapper_is_group_flg:
+      type: integer(10)
+  relations:
+    WfApproval:
+      local: wfapper_code
+      foreign: wfapper_code
+      type: one
+
+WfActingPersonApp:
+  tableName: hs_hr_wf_actingperson_approval
+  columns:
+    actapp_id:
+      type: integer(200)
+      primary: true
+    actapp_date:
+      type: string(20)
+    actapp_time:
+      type: time(400)
+    emp_number:
+      type: integer(10)
+    actapp_empnumber:
+      type: integer(7)
+
+Wftype:
+  tableName: hs_hr_wf_type
+  columns:
+    wftype_description:
+      type: string(200)
+    wftype_code:
+      type: integer(11)
+      primary: true
+    wftype_table_name:
+      type: string(11)
+    wftype_view_name:
+      type: string(100)
+    wftype_table_name:
+      type: string(11)
+    wfmod_id:
+      type: string(20)
+    wftype_class:
+      type: string(20)
+    wftype_method_name:
+      type: string(20)
+    wftype_redirect_url:
+      type: string(100)
+    wftype_canclemain_field:
+      type: string(20)
+    wftype_canclestatus_field:
+      type: string(20)
+    wftype_appmain_field:
+      type: string(20)
+    wftype_bulk_app_flg:
+      type: string(20)
+    wftype_sort_field_name:
+      type: string(20)
+  relations:
+    WfModule:
+      local: wfmod_id
+      foreign: wfmod_id
+      type: one
+    WfMain:
+      local: wftype_code
+      foreign: wftype_code
+      type: one
+    
+VacancyRequest:
+  tableName: hs_hr_rec_vacancy_request
+  columns:
+    rec_vac_req_id:
+      type: integer(10)
+      primary: true
+      notnull: true
+    emp_number:  
+      type: integer(7)
+      notnull: true
+    rec_vac_vacancy_title:
+      type: string(100)
+      notnull: true
+    rec_vac_vacancy_title_si:
+      type: string(100)
+    rec_vac_vacancy_title_ta:
+      type: string(100)
+    rec_vac_year:  
+      type: integer(3)
+      notnull: true
+    rec_vac_no_of_vacancies:  
+      type: integer(7)
+      notnull: true
+    rec_vac_no_of_vacancies_by_hr:  
+      type: integer(7)
+    rec_vac_no_of_vacancies_by_dg:  
+      type: integer(7)
+    rec_vac_is_submit:
+      type: integer(2)
+      default: '0'
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one   
+  
+VacancyRequisition:
+  tableName: hs_hr_rec_vacancy_requisition
+  columns:    
+     rec_req_id:
+      type: integer(7)
+      primary: true
+      notnull: true 
+     rec_req_ref_number:  
+      type: string(15)
+      notnull: true
+     rec_req_vacancy_title:   
+      type: string(100)
+      notnull: true 
+     rec_req_vacancy_title_si:
+      type: string(100) 
+      default: ''
+     rec_req_vacancy_title_ta:
+      type: string(100)
+      default: ''
+     rec_req_year:
+      type: integer(3)
+      notnull: true      
+     cmp_stur_id:
+      type: integer(3)
+      notnull: true 
+     grade_code: 
+      type: integer(4)
+      notnull: true 
+     jobtit_code:
+      type: string(13)
+      notnull: true 
+     report_to:
+      type: string(100)
+      notnull: true  
+     estat_code:
+      type: string(13)
+      notnull: true 
+     rec_req_qualification:
+      type: string(300)
+      notnull: true 
+     rec_req_qualification_si:
+      type: string(300) 
+     rec_req_qualification_ta:
+      type: string(300)
+     rec_req_opening_date:
+      type: date
+     rec_req_closing_date:
+      type: date 
+     rec_req_requested_vacancies:
+      type: integer(4)
+      notnull: true  
+     rec_req_approved_vacancies:
+      type: integer(4)
+      notnull: true 
+     rec_req_recruitment_type: 
+      type: string(100)
+      notnull: true 
+  relations:
+    CompanyStructure:
+      local: cmp_stur_id
+      foreign: id
+      type: one   
+    Grade:
+      local: grade_code
+      foreign: grade_code
+      type: one
+    JobTitle:
+      local: jobtit_code
+      foreign: jobtit_code
+      type: one
+    EmployeeStatus:
+      local: estat_code
+      foreign: estat_code
+      type: one 
+    WfMain:  
+      local: wfmain_id
+      foreign: wfmain_id
+      type: one
+      
+Advertisement:
+  tableName: hs_hr_rec_advertisement
+  columns: 
+    rec_adv_id: 
+      type: integer(7)
+      primary: true
+      notnull: true
+    rec_req_id:   
+      type: integer(7)
+      notnull: true 
+    rec_adv_desc:
+      type: string(400)
+      notnull: true 
+    rec_adv_desc_si:
+      type: string(400)
+    rec_adv_desc_ta:
+      type: string(400)
+    rec_adv_opening_date:
+      type: date
+      notnull: true 
+    rec_adv_closing_date:
+      type: date
+      notnull: true 
+  relations:
+    VacancyRequisition:
+      local: rec_req_id
+      foreign: rec_req_id
+      type: one   
+    AdvertisementAttachment:
+      local: rec_adv_id
+      foreign: rec_adv_id
+      type: one      
+
+AdvertisementAttachment:
+  tableName: hs_hr_rec_adv_attachment
+  columns: 
+     rec_adv_attach_id:
+       type: integer(20)
+       primary: true
+       notnull: true
+     rec_adv_attach_filename:
+       type: string(200)
+     rec_adv_attach_size:
+       type: string(11)
+     rec_adv_attach_attachment:
+       type: blob(2147483647)
+     rec_adv_attach_type:
+       type: string(1000)
+     rec_adv_id:
+       type: integer(4)
+       notnull: true 
+  relations:
+     Advertisement:
+      local: rec_adv_id
+      foreign: rec_adv_id
+      type: one
+
+Candidate:  
+  tableName: hs_hr_rec_candidate
+  columns: 
+     rec_can_id:
+      type: integer(7) 
+      primary: true
+      notnull: true
+     rec_req_id:
+      type: integer(10) 
+      notnull: true 
+     rec_can_reference_no:
+      type: integer(7) 
+      notnull: true 
+     rec_can_nic_number:
+      type: string(10) 
+      notnull: true  
+     rec_can_candidate_name:
+      type: string(200) 
+      notnull: true
+     rec_can_candidate_name_si:
+      type: string(200)       
+     rec_can_candidate_name_ta:
+      type: string(200)       
+     rec_can_tel_number:
+      type: string(20)
+      notnull: true
+     rec_can_address: 
+      type: string(200)
+      notnull: true
+     rec_can_address_si: 
+      type: string(200)
+     rec_can_address_ta: 
+      type: string(200)      
+     gender_code:
+      type: integer(2)
+      notnull: true 
+     rec_can_birthday:
+      type: date
+      notnull: true
+     rec_can_edu_qualification:
+      type: string(200)
+      notnull: true
+     rec_can_work_experiences:
+       type: string(200)
+       notnull: true
+     lang_code:
+       type: string(13)
+       notnull: true
+     rec_can_interview_marks:
+       type: string(5)
+       notnull: true 
+     rec_can_interview_status:
+       type: integer(2)
+       notnull: true
+       default: '0'
+     rec_can_interview_status_hr:
+       type: integer(2)
+       notnull: true
+       default: '0'
+     rec_can_interview_status_dg:
+       type: integer(2)
+       notnull: true
+       default: '0'
+  relations:
+    VacancyRequisition:
+     local: rec_req_id
+     foreign: rec_req_id
+     type: one  
+    Gender:
+     class: Gender
+     local: gender_code
+     foreign: gender_code
+     type: one 
+    Language:
+     class: Language
+     local: lang_code
+     foreign: lang_code
+     type: one 
+    Level:
+      local: level_code
+      foreign: level_code
+      type: one
+    CvAttachment:
+      local: rec_can_id
+      foreign: rec_can_id
+      type: one
+      
+CvAttachment:
+  tableName: hs_hr_rec_cv_attachment
+  columns: 
+     rec_cv_attach_id:
+       type: integer(20)
+       primary: true
+       notnull: true 
+     rec_cv_attach_filename:
+       type: string(200)
+       notnull: true 
+     rec_cv_attach_size:
+       type: string(11)
+       notnull: true 
+     rec_cv_attach_attachment:  
+       type: blob(2147483647)
+       notnull: true 
+     rec_cv_attach_type:
+       type: string(1000)
+       notnull: true 
+     rec_can_id:
+       type: integer(7) 
+       notnull: true 
+  relations:   
+      Candidate:         
+       local: rec_can_id
+       foreign: rec_can_id
+       type: one         
+          
+LoanType:
+   tableName: hs_ln_type
+   columns: 
+      ln_ty_number:
+         type: decimal(10,0)
+         primary: true
+         notnull: true 
+      elgrp_id:
+         type: decimal(10,0)
+      ln_ty_code:
+         type: string(13)
+      ln_ty_name:
+         type: string(20)
+      ln_ty_name_si:
+         type: string(20)
+      ln_ty_name_ta:
+        type: string(20)  
+      ln_ty_description:  
+        type: string(100)
+      ln_ty_description_si:  
+        type: string(100)
+      ln_ty_description_ta:  
+        type: string(100)
+      ln_ty_max_installment:
+        type: decimal(10,0)
+      ln_ty_interest_rate:
+        type: float(2147483647)
+      ln_ty_modified_date:
+        type: date
+      ln_ty_modified_user:
+        type: string(100)
+      ln_ty_amount:
+        type: decimal(18,2)
+      ln_ty_app_req_flg:
+        type: decimal(1,0)
+      wftype_code:
+        type: decimal(10,0)
+      ln_ent_group_number:
+        type: decimal(10,0)
+      ln_ty_entitlement_type_flg:  
+        type: decimal(1,0)
+      ln_ty_interest_fixed_amt:
+        type: decimal(13,2)
+      ln_ty_interest_type:
+        type: decimal(1,0)
+      ln_ty_user_code:
+        type: varchar(10)
+      ln_ty_takehm_req_flg:
+        type: decimal(1,0)
+      ln_ty_takehm_ptg:
+        type: decimal(5,2)
+      dbgroup_user_id:
+        type: varchar(20)
+      ln_ty_inactive_type_flg:
+        type: decimal(1,0) 
+        
+LoanApplication:
+   tableName: hs_ln_application
+   columns: 
+      ln_app_number:
+        type: decimal(10,0)
+        primary: true
+        notnull: true 
+      emp_number:
+        type: integer(7)
+        notnull: true 
+      ln_ty_number:
+        type: decimal(10,0)
+        primary: true
+        notnull: true 
+      ln_app_date:
+        type: date
+      ln_app_amount:
+        type: decimal(18,2)
+      ln_app_installment:
+        type: decimal(20)  
+      ln_app_no_of_Installments:
+        type: integer(2)
+      ln_app_elg_amount:  
+        type: decimal(18,2)
+      ln_app_install_amount:  
+        type: decimal(13,2)
+      dbgroup_user_id:  
+        type: string(20)    
+      ln_app_effective_date: 
+        type: date
+      ln_app_user_number:  
+        type: string(100)        
+   relations:
+     LoanType:
+       local: ln_ty_number
+       foreign: ln_ty_number
+       type: one
+     Employee:
+       local: emp_number
+       foreign: emp_number
+       type: one  
+       
+LoanCheckList:
+   tableName: hs_ln_checklist
+   columns: 
+      ln_chk_cat_number:
+        type: numeric
+        primary: true
+        notnull: true 
+      ln_chk_number:
+        type: numeric
+        primary: true
+        notnull: true 
+      ln_chk_description:
+        type: string(200)
+        notnull: true 
+      ln_chk_is_mandatory_flg:
+        type: numeric(1)
+      ln_chk_type_flg:
+       type: numeric(1)
+      mo dule_code:
+        type: string(20)  
+      formula_name:  
+        type: string(100)
+      ln_chk_validate_req_flg:  
+        type: numeric(1)
+      dbgroup_user_id:  
+        type: string(20)    
+   relations:
+     LoanCheckListCatagory:
+       local: ln_chk_cat_number
+       foreign: ln_chk_cat_number
+       type: one  
+       
+LoanCheckListCatagory:
+   tableName: hs_ln_checklist_catagory
+   columns: 
+      ln_chk_cat_number:
+        type: numeric
+        primary: true
+        notnull: true 
+      ln_chk_cat_name:  
+        type: string(100)
+      ln_chk_cat_type: 
+        type: numeric
+      dbgroup_user_id:
+        type: string(20)
+       
+LoanDocument:
+   tableName: hs_ln_document
+   columns:
+     ln_doc_number:      
+       type: numeric 
+       primary: true
+       notnull: true 
+     ln_app_number:
+       type: decimal(10,0) 
+       notnull: true 
+     ln_ty_number:  
+       type: decimal(10,0)
+       notnull: true
+     ln_doc_source:
+       type: blob(2147483647) 
+     ln_doc_ext:
+       type: string(10)  
+     ln_chk_number:   
+       type: numeric 
+     ln_chk_cat_number:  
+       type: numeric
+     dbgroup_user_id:
+       type: varchar(20) 
+   relations:
+     LoanCheckList:
+      local: ln_chk_number
+      foreign: ln_chk_number
+      type: one  
+     LoanCheckListCatagory:
+      local: ln_chk_cat_number
+      foreign: ln_chk_cat_number
+      type: one    
+     LoanType:
+      local: ln_ty_number
+      foreign: ln_ty_number
+      type: one
+     LoanApplication:  
+      local: ln_app_number
+      foreign: ln_app_number
+      type: one
+      
+LoanEntitlementDetail:
+    tableName: hs_ln_entitlement_detail 
+    columns:
+       ln_ent_group_number:
+         type: numeric 
+         notnull: true
+       emp_number: 
+         type: int(7)
+         notnull: true
+       dbgroup_user_id:
+         type: varchar(20)     
+    relations:
+     Employee:
+       local: emp_number
+       foreign: emp_number
+       type: one 
+       
+LoanEntitlementGroup:
+     tableName: hs_ln_entitlement_group 
+     columns:
+       ln_ent_group_number:
+         primary: true
+         type: numeric 
+         notnull: true
+       ln_ent_description:
+         type: string(200) 
+       elgrp_id:          
+         type: numeric           
+       dbgroup_user_id:
+         type: string(20)   
+               
+LoanGuarantee:
+     tableName: hs_ln_guarantee  
+     columns:
+       ln_gura_number:
+         primary: true
+         type: integer(10)
+         notnull: true
+       ln_app_number:
+         type: decimal(10,0) 
+         notnull: true
+       ln_ty_number:
+         type: decimal(10,0)
+         notnull: true
+       ln_gura_external_flg:
+         type: integer(1) 
+       emp_number:
+         type: integer(7)
+       gura_nic_no: 
+         type: string(20)
+       ln_gura_firstname:
+         type: string(200) 
+       ln_gura_middle_name:  
+         type: string(200) 
+       ln_gura_surname:     
+         type: string(200)         
+       ln_gura_tel:
+         type: string(20)
+       ln_gura_address1:
+         type: string(200)
+       ln_gura_address2: 
+         type: string(200) 
+       ln_gura_address3:  
+         type: string(200) 
+       ln_gura_comment:
+         type: string(400)
+       ln_chk_number:     
+         type: numeric
+       ln_chk_cat_number:
+         type: numeric
+       dbgroup_user_id:
+         type: string(20) 
+     relations:
+      LoanCheckList:
+        local: ln_chk_number
+        foreign: ln_chk_number
+        type: one  
+      LoanCheckListCatagory:
+        local: ln_chk_cat_number
+        foreign: ln_chk_cat_number
+        type: one    
+      LoanType:
+        local: ln_ty_number
+        foreign: ln_ty_number
+        type: one
+      LoanApplication:  
+        local: ln_app_number
+        foreign: ln_app_number
+        type: one             
+        
+LoanHeader:
+     tableName: hs_ln_header  
+     columns:
+       emp_number:
+        type: integer(7) 
+        notnull: true        
+        primary: true
+       ln_app_number:
+        type: decimal(10,0) 
+       ln_ty_number:        
+        type: decimal(10,0)
+        primary: true
+        notnull: true
+       ln_hd_sequence:
+        type: decimal(10,0) 
+        notnull: true
+        primary: true
+       ln_hd_amount:
+        type: decimal(18,2)
+       ln_hd_bal_amount:
+        type: decimal(18,2) 
+       ln_hd_installment:
+        type: decimal(10,0) 
+       ln_hd_is_active_flg:
+        type: integer(1)
+       ln_hd_settled_flg:
+        type: integer(1) 
+       ln_hd_user:
+        type: string(100)
+       ln_hd_apply_date:
+        type: date
+       ln_hd_bal_installment:
+        type: decimal(10,0) 	
+       app_approved: 
+        type: numeric(1) 
+       wfmain_id: 
+        type: varchar(6)
+       ln_hd_lst_proc_to_date:
+        type: date
+       wfmain_sequence:
+        type: numeric 
+       ln_hd_lst_proc_from_date:
+        type: date
+       ln_hd_effective_date:
+        type: date
+       ln_hd_inactive_period:
+        type: integer(10)
+       ln_hd_install_amount: 
+        type: numeric(13,2)
+       dbgroup_user_id:
+        type: string(20)
+       ln_hd_app_date:
+        type: date
+       cancel_approved:
+        type: numeric(5)
+       cancel_main_id:
+        type: string(6)        
+     relations:
+      LoanType:
+        local: ln_ty_number
+        foreign: ln_ty_number
+        type: one
+      Employee:
+        local: emp_number
+        foreign: emp_number
+        type: one 
+      LoanApplication:  
+        local: ln_app_number
+        foreign: ln_app_number
+        type: one    
+ 
+LoanProcessed:
+    tableName: hs_ln_processed_loan
+    columns:
+      emp_number:
+        type: integer(4)
+        primary: true
+        notnull: true
+      ln_hd_sequence:
+        type: decimal(10)
+        primary: true
+        notnull: true
+      ln_sch_ins_no:
+        type: decimal(10)
+        primary: true
+        notnull: true
+      ln_ty_number:
+        type: decimal(10,0)
+        primary: true
+        notnull: true
+      ln_processed_from_date:
+        type: date
+        primary: true
+        notnull: true
+      ln_processed_to_date:
+        type: date
+        primary: true
+        notnull: true
+      ln_processed_capital:
+        type: decimal(18)
+        default: null
+      ln_processed_interest:
+        type: decimal(18)
+        default: null
+      ln_interest_rate:
+        type: decimal(13)
+        default: null
+      dbgroup_user_id:
+        type: string(20)
+        default: null
+      ln_bal_installment:
+        type: decimal(10)
+        default: null
+      ln_bal_amount:
+        type: decimal(18)
+        default: null
+    relations:
+      LoanType:
+        local: ln_ty_number
+        foreign: ln_ty_number
+        type: one
+      Employee:
+        local: emp_number
+        foreign: emp_number
+        type: one 
+      LoanApplication:  
+        local: ln_app_number
+        foreign: ln_app_number
+        type: one           
+    
+LoanSchedule:
+   tableName: hs_ln_schedule
+   columns:
+     emp_number:
+        type: integer(4)
+        primary: true
+        notnull: true
+     ln_hd_sequence:
+        type: decimal(10)
+        primary: true
+        notnull: true
+     ln_sch_ins_no:
+        type: decimal(10)
+        primary: true
+        notnull: true
+     ln_ty_number:
+        type: decimal(10)
+        primary: true
+        notnull: true
+     ln_sch_cap_amt:
+        type: decimal(18,2)
+        default: null
+     ln_sch_inst_amount:
+        type: decimal(13,2) 	
+        default: null
+     ln_st_number:
+        type: integer(11)
+        default: null
+     ln_sch_is_processed:
+        type: integer(1)
+        default: 0
+     ln_sch_inst_rate:
+        type: decimal(5)
+        default: null
+     dbgroup_user_id:
+        type: string(20)
+        default: null
+     ln_sch_proc_to_date:
+        type: date
+     ln_sch_proc_from_date:
+        type: date
+     ln_app_number:
+        type: integer(10)
+     ln_starting_bal_amt:
+        type: decimal(18,2)
+        default: null
+     ln_intrest_amt:
+        type: decimal(18,2)
+        default: null
+     ln_cum_interest_amt:
+        type: decimal(18,2)
+        default: null
+     ln_end_bal_amt:
+        type: decimal(18,2)
+        default: null
+     ln_pay_by_com:
+        type: decimal(18,2)
+        default: null
+     ln_usr_pay_amt:
+        type: decimal(18,2)
+        default: null        
+     ln_check_no:
+        type: string(20)
+        default: null
+     ln_pay_by_com_date:
+        type: date   
+     ln_pay_sch_date:
+        type: date      
+     ln_end_bal_r_amt:
+        type: decimal(18,2)
+        default: null
+     ln_pay_check_no:
+        type: string(20)
+        default: null
+     ln_bal_pay_com_date:
+        type: date
+        default: null
+   relations:
+       LoanType:
+         local: ln_ty_number
+         foreign: ln_ty_number
+         type: one
+       Employee:
+         local: emp_number
+         foreign: emp_number
+         type: one 
+       LoanApplication:  
+         local: ln_app_number
+         foreign: ln_app_number
+         type: one    
+       LoanSettlement:
+         local: ln_st_number
+         foreign: ln_st_number
+         type: one
+         
+LoanSettlement:
+    tableName: hs_ln_settlement
+    columns:
+      ln_st_number:
+        type: integer(11)
+        primary: true
+        notnull: true
+      emp_number:
+        type: integer(4)
+        notnull: true
+      ln_hd_sequence:
+        type: decimal(10,0)
+        notnull: true
+      ln_st_date:
+        type: date
+        default: null
+      ln_st_user:
+        type: string(100)
+        default: null
+      ln_st_amount:
+        type: decimal(18)
+        default: null
+      ln_st_installment:
+        type: decimal(10)
+        default: null
+      ln_st_mode:
+        type: integer(2)
+        default: null
+      ln_st_last_installment_number:
+        type: decimal(10)
+        default: null
+      ln_ty_number:
+        type: decimal(10)
+        default: null
+      dbgroup_user_id:
+        type: string(20)
+        default: null
+      ln_st_interest_amount:
+        type: decimal(13)
+        default: null
+    relations:
+        LoanType:
+          local: ln_ty_number
+          foreign: ln_ty_number
+          type: one
+        Employee:
+          local: emp_number
+          foreign: emp_number
+          type: one       
+
+LoanTypeCheck:
+    tableName: hs_ln_type_check
+    columns:
+       ln_ty_number:
+         type: decimal(10)
+         primary: true
+         notnull: true
+       ln_chk_cat_number:
+         type: decimal(10)
+         primary: true
+         notnull: true
+       dbgroup_user_id:
+         type: string(20)
+         default: null
+       type: one
+       
+       
+EmployeeDefLevel:
+  tableName: hs_hr_emp_level
+  columns:
+     emp_number:
+       type: integer(4)
+       primary: true
+     hie_code_1:
+       type: integer(20)      
+     hie_code_2:
+       type: integer(20)
+     hie_code_3:
+       type: integer(20)
+     hie_code_4:
+       type: integer(20)
+     hie_code_5:
+       type: integer(20)
+     hie_code_6:
+       type: integer(20)
+     hie_code_7:
+       type: integer(20)
+     hie_code_8:
+       type: integer(20)
+     hie_code_9:
+       type: integer(20)
+     hie_code_10:
+       type: integer(20)
+  relations:   
+      Employee:
+       local: emp_number
+       foreign: emp_number
+       type: one
+
+
+PayrollVoteType:
+  tableName: hs_pr_vote_info_type
+  columns:
+    vt_inf_type_code:
+      type: integer(11)
+      primary: true
+    vt_inf_type_name:
+      type: string(200)
+    vt_inf_type_name_si:
+      type: string(200)
+    vt_inf_type_name_ta:
+      type: string(200)  
+      
+PayrollVote:
+  tableName: hs_pr_vote_info
+  columns:
+    vt_typ_code:
+      type: integer(11)
+      primary: true
+    vt_typ_user_code:
+      type: string(20)
+    vt_typ_name:
+      type: string(200)
+    vt_typ_name_si:
+      type: string(200)
+    vt_typ_name_ta:
+      type: string(200)
+    vt_inf_type_code:
+      type: integer(11)      
+  relations:   
+      PayrollVoteType:         
+       local: vt_inf_type_code
+       foreign: vt_inf_type_code
+       type: one     
+       
+PayrollEmployee:
+  tableName: hs_pr_employee
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+    emp_name_on_cheque:
+      type: string(500)
+      default: null
+    sal_dtl_year:
+      type: decimal(10)
+      scale: 0
+      default: null
+    sal_grd_code:
+      type: string(6)
+      default: null
+    last_modified_date:
+      type: timestamp
+      default: null
+    emp_update_status:
+      type: decimal(2)
+      scale: 0
+      default: null
+    emp_pf_code:
+      type: integer(4)
+      default: null
+    vt_sal_code:
+      type: integer(11)
+      default: null
+    vt_epf_code:
+      type: integer(11)
+      default: null
+    vt_etf_code:
+      type: integer(11)
+      default: null
+    dbgroup_user_id:
+      type: string(20)
+      default: null
+    applied_default_txn:
+      type: decimal(1)
+      scale: 0
+      default: null
+    prl_type_code:
+      type: integer(4)
+      default: null
+    emp_epf_number:
+      type: string(25)
+      default: null
+    emp_etf_number:
+      type: string(25)
+      default: null
+    sal_cash_flag:
+      type: string(1)
+      default: null
+  relations:
+    prlTypeCode:
+      class: PayrollType
+      local: prl_type_code
+      foreign: vt_inf_type_code
+    vtEtfCode:
+      class: PayrollVote
+      local: vt_etf_code
+      foreign: vt_typ_code
+    vtEpfCode:
+      class: PayrollVote
+      local: vt_epf_code
+      foreign: vt_typ_code
+    vtSalCode:
+      class: PayrollVote
+      local: vt_sal_code
+      foreign: vt_typ_code
+    Employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number  
+      
+PayrollType:
+  tableName: hs_pr_payroll_type
+  columns:
+    prl_type_code:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    prl_type_name:
+      type: string(200)
+      default: null
+    prl_type_name_si:
+      type: string(200)
+      default: null
+    prl_type_name_ta:
+      type: string(200)
+      default: null 
+      
+PayrollSchedule:
+  tableName: vw_hs_pr_payshedule
+  columns:
+    pay_sch_id:
+      type: integer(11)
+    pay_sch_st_date:
+      type: date
+      primary: true
+    pay_sch_end_date:
+      type: date
+      primary: true
+    pay_sch_processed_flg:
+      type: integer(1)
+      default: null
+    pay_sch_disabled_flg:
+      type: integer(1)
+      default: null
+    pay_sch_year:
+      type: integer(4)
+      primary: true
+    dbgroup_user_id:
+      type: string(20)
+      default: null
+    pay_sch_month:
+      type: integer(2)
+      default: null      
+    pay_hie_code:
+      type: integer(6)
+      primary: true 
+      
+PayrollScheduleMaster:
+  tableName: hs_pr_pay_schedule
+  columns:
+    pay_sch_id:
+      type: integer(11)
+    pay_sch_st_date:
+      type: date
+      primary: true
+    pay_sch_end_date:
+      type: date
+      primary: true
+    pay_sch_processed_flg:
+      type: integer(1)
+      default: null
+    pay_sch_disabled_flg:
+      type: integer(1)
+      default: null
+    pay_sch_year:
+      type: integer(4)
+      primary: true
+    dbgroup_user_id:
+      type: string(20)
+      default: null
+    pay_sch_month:
+      type: integer(2)
+      default: null      
+    pay_hie_code:
+      type: integer(6)
+      primary: true 
+
+PRTransActiontype:
+  tableName: hs_pr_transaction_type
+  columns:
+    trn_typ_code:
+      type: integer(6)
+      primary: true
+    trn_typ_name:
+      type: string(100)
+    trn_typ_name_si:
+      type: string(100)
+    trn_typ_name_ta:
+      type: string(100)
+    trn_typ_type:
+      type: integer(1)
+    erndedcon:
+      type: integer(1)
+    trn_typ_user_code:
+      type: string(10)
+    dbgroup_user_id:
+      type: string(20)
+
+PRTransDetails:
+  tableName: hs_pr_transaction_details
+  columns:
+    trn_dtl_code:
+      type: integer(6)
+      primary: true
+    trn_dtl_name:
+      type: string(100)
+    trn_dtl_name_si:
+      type: string(100)
+    trn_dtl_name_ta:
+      type: string(100)
+    trn_disable_flg:
+      type: integer(1)
+    trn_ishourly:
+      type: integer(1)
+    trn_typ_code:
+      type: integer(6)
+    trn_dtl_payslipnarration:
+      type: string(100)
+    trn_dtl_payslipnarration_si:
+      type: string(100)
+    trn_dtl_payslipnarration_ta:
+      type: string(100)
+    trn_dtl_addtonetpay:
+      type: integer(1)
+    trn_dtl_display_order:
+      type: decimal(4)
+    trn_dtl_isdefault_flg:
+      type: integer(1)
+    trn_dtl_comment:
+      type: string(200)
+    trn_dtl_isprorate_flg:
+      type: integer(1)
+    trn_dtl_user_code:
+      type: string(10)
+    trn_dtl_formula:
+      type: string(100)
+    trn_dtl_isbasetxn_flg:
+      type: integer(1)
+    dbgroup_user_id:
+      type: string(20)
+    trn_dtl_empcont:
+      type: decimal(13)
+    trn_dtl_eyrcont:
+      type: decimal(13)
+    trn_dtl_agent_bank_flg:
+      type: string(1)      
+    trn_dtl_bank_code:
+      type: string(8)  
+    trn_dtl_branch_code:
+      type: string(6)  
+    trn_dtl_account_no:
+      type: string(20)        
+  relations:
+    PRTransActiontype:
+      local: trn_typ_code
+      foreign: trn_typ_code
+    PayRollBranch:
+      local: bbranch_code
+      foreign: bbranch_code  
+    PayRollBank:
+      local: bank_code
+      foreign: bank_code     
+
+PayRollTransBase:
+  tableName: hs_pr_transaction_base
+  columns:
+    trn_dtl_code:
+      type: integer(6)
+      primary: true
+    trn_dtl_base_code:
+      type: integer(6)
+      primary: true
+    dbgroup_user_id:
+      type: string(20)
+    trn_base_prev_flg:
+      type: integer(1)
+    trn_base_use_prorate_flg:
+      type: integer(1)
+    trn_base_dyn_order:
+      type: decimal(5)
+  relations:
+    PRTransDetails:      
+      local: trn_dtl_code
+      foreign: trn_dtl_code
+
+PayRollContributeBase:
+  tableName: hs_pr_contribution_base
+  columns:
+    trn_dtl_code:
+      type: integer(6)
+      primary: true
+    trn_dtl_base_code:
+      type: integer(11)
+      primary: true
+    dbgroup_user_id:
+      type: integer(6)
+    trn_contribute_code:
+      type: integer(11)
+  relations:
+    PRTransDetails:     
+      local: trn_dtl_code
+      foreign: trn_dtl_code
+      
+PayrollIncrement:
+  tableName: hs_pr_increment
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+      notnull: true
+    inc_amount:
+      type: decimal(13)
+      scale: 2
+      default: null
+    inc_previous_salary:
+      type: decimal(13)
+      scale: 2
+      default: null
+    inc_new_salary:
+      type: decimal(13)
+      scale: 2
+      default: null
+    app_approved:
+      type: decimal(1)
+      scale: 0
+      default: null
+    inc_sal_grd_code:
+      type: string(6)
+      default: null
+    wfmain_id:
+      type: string(6)
+      default: null
+    inc_previous_point:
+      type: decimal(10)
+      scale: 0
+      default: null
+    wfmain_sequence:
+      type: decimal(10)
+      scale: 0
+      default: null
+    inc_new_point:
+      type: decimal(10)
+      scale: 0
+      default: null
+    inc_isprocessed:
+      type: integer(2)
+      default: null
+    inc_points_increased:
+      type: decimal(10)
+      scale: 0
+      default: null
+    wftype_code:
+      type: decimal(10)
+      scale: 0
+      default: null
+    dbgroup_user_id:
+      type: string(20)
+      default: null
+    inc_previous_grade_code:
+      type: integer(4)
+      default: null
+    inc_previous_slt_scale_year:
+      type: integer(4)
+      default: null
+    inc_new_grade_code:
+      type: integer(4)
+      primary: true
+    inc_new_slt_scale_year:
+      type: integer(4)
+      primary: true
+    inc_comment:
+      type: string(200)
+      default: null
+    inc_confirm_flag:
+      type: integer(1)
+      default: null
+    inc_effective_date:
+      type: date
+      default: null    
+    inc_cancel_flag:
+      type: integer(1)
+      default: null
+    inc_cancel_comment:
+      type: string(200)
+      default: null      
+  relations:
+    incPreviousGradeCode:
+      class: Grade
+      local: inc_previous_grade_code
+      foreign: grade_code
+    incNewGradeCode:
+      class: Grade
+      local: inc_new_grade_code
+      foreign: grade_code
+    incNewSltScaleYear:
+      class: GradeSlot
+      local: inc_new_slt_scale_year
+      foreign: slt_id
+    incPreviousSltScaleYear:
+      class: GradeSlot
+      local: inc_previous_slt_scale_year
+      foreign: slt_id
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      
+OtherInstitute:
+  tableName: hs_hr_other_institute
+  columns:
+    oth_inst_id:
+      type: integer(10)
+      primary: true    
+    emp_number:
+      type: integer(7)
+    oth_institute_name:
+      type: string(200)
+    oth_release_location:
+      type: string(200)
+    oth_release_from:
+      type: date
+    oth_release_to:
+      type: date      
+    oth_payroll_active_flg:
+      type: integer(1)
+    oth_reason:
+      type: string(200)
+  relations:   
+    Employee:
+      local: emp_number
+      foreign: emp_number
+
+Reinstatement:
+  tableName: hs_hr_reinstatement
+  columns:
+    rei_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(7)
+      default: null
+    emp_epf_number:
+      type: string(25)
+      default: null
+    rei_date:
+      type: date
+    job_title_code:
+      type: string(13)
+      default: null
+    grade_code:
+      type: integer(4)
+      default: null
+    slt_id:
+      type: integer(10)
+      default: null
+    work_station:
+      type: integer(6)
+      default: null
+    rei_reason:
+      type: string(200)
+      default: null
+    pre_emp_epf_number:
+      type: string(25)
+      default: null
+    pre_job_title_code:
+      type: string(13)
+      default: null
+    pre_grade_code:
+      type: integer(4)
+      default: null
+    pre_slt_id:
+      type: integer(10)
+      default: null
+    pre_work_station:
+      type: integer(6)
+      default: null      
+  relations:
+    GradeSlot:
+      local: slt_id
+      foreign: slt_id
+    Employee:
+      local: emp_number
+      foreign: emp_number
+    Grade:
+      local: grade_code
+      foreign: grade_code
+    JobTitle:
+      local: job_title_code
+      foreign: jobtit_code
+    CompanyStructure:
+      local: work_station
+      foreign: id
+    PreGradeSlot:  
+      calss: GradeSlot
+      local: pre_slt_id
+      foreign: slt_id
+    PreGradeSlot:  
+      calss: Grade   
+      local: pre_grade_code
+      foreign: grade_code
+    PreJobTitle:      
+      calss: JobTitle
+      local: pre_job_title_code
+      foreign: jobtit_code
+    PreCompanyStructure:      
+      calss: CompanyStructure
+      local: pre_work_station
+      foreign: id      
+ 
+District:
+   tableName: hs_hr_district
+   columns:
+    district_id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    district_name:
+      type: integer(7)
+      default: null
+    district_name_si:
+      type: string(100)
+      default: null
+    district_name_ta:
+      type: string(100)
+      default: null
+
+PayRollEligibility:
+   tableName: hs_pr_txn_eligibility
+   columns:
+     emp_number:
+      type: integer(7)
+      primary: true      
+     trn_dtl_code:
+      type: integer(6)
+      primary: true      
+     trn_dtl_startdate:
+      type: date
+     trn_dtl_enddate:
+      type: date
+     tre_amount:
+      type: decimal(13,2)      
+     tre_last_modified_date:
+      type: date
+     tre_user_id:
+      type: string(150)
+     tre_stop_flag:
+      type: decimal(1,0)
+     tre_empcon:
+      type: decimal(13,2)
+     tre_eyrcon:
+      type: decimal(13,2)
+     tre_hours:
+      type: decimal(8,2)
+     dbgroup_user_id:
+      type: string(20)
+   relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+    PRTransDetails:
+      local: trn_dtl_code
+      foreign: trn_dtl_code
+      type: one
+
+EmpActiveWorkstation:
+   tableName: hs_hr_empacting_workstation
+   columns:
+     emp_number:
+      type: integer(7)
+      primary: true
+     act_job_title_code: 
+      type: string(13) 
+     act_workstation_no: 
+      type: integer(7) 
+      primary: true
+     act_hie_code_1: 
+      type: integer(6)
+     act_hie_code_2:
+      type: integer(6)
+     act_hie_code_3: 
+      type: integer(6)
+     act_hie_code_4:
+      type: integer(6) 
+     act_hie_code_5: 
+      type: integer(6) 
+     act_hie_code_6: 
+      type: integer(6) 
+     act_hie_code_7: 
+      type: integer(6) 
+     act_hie_code_8: 
+      type: integer(6) 
+     act_hie_code_9: 
+      type: integer(6) 
+     act_hie_code_10: 
+      type: integer(6)
+     act_work_satation: 
+      type: integer(6) 
+   relations:  
+    act_hie_code_1:
+      class: CompanyStructure
+      local: act_hie_code_1
+      foreign: id
+    act_hie_code_2:
+      class: CompanyStructure
+      local: act_hie_code_2
+      foreign: id
+    act_hie_code_3:
+      class: CompanyStructure
+      local: act_hie_code_3
+      foreign: id
+    act_hie_code_4:
+      class: CompanyStructure
+      local: act_hie_code_4
+      foreign: id
+    act_hie_code_5:
+      class: CompanyStructure
+      local: act_hie_code_5
+      foreign: id
+    act_hie_code_6:
+      class: CompanyStructure
+      local: act_hie_code_6
+      foreign: id
+    act_hie_code_7:
+      class: CompanyStructure
+      local: act_hie_code_7
+      foreign: id
+    act_hie_code_8:
+      class: CompanyStructure
+      local: act_hie_code_8
+      foreign: id
+    act_hie_code_9:
+      class: CompanyStructure
+      local: act_hie_code_9
+      foreign: id
+    act_hie_code_10:
+      class: CompanyStructure
+      local: act_hie_code_10
+      foreign: id
+    CompanyStructure:
+      class: CompanyStructure
+      local: act_work_satation
+      foreign: id
+    Employee:
+      local: emp_number
+      foreign: emp_number
+    actjobTitle:
+      class: JobTitle
+      local: act_job_title_code
+      foreign: jobtit_code      
+      
+PayRollBank:
+  tableName: hs_hr_bank
+  columns:
+    bank_code:
+      type: string(8)
+      primary: true
+    bank_user_code:
+      type: string(200)
+      default: null    
+    bank_name:
+      type: string(200)
+      default: null
+    bank_name_si:
+      type: string(200)
+      default: null
+    bank_name_ta:
+      type: string(200)
+      default: null
+    bank_address:
+      type: string(200)
+      default: null
+    bank_address_si:
+      type: string(200)
+      default: null
+    bank_address_ta:
+      type: string(200)
+      default: null
+    bnk_main:
+      type: integer(1)
+      default: null
+    bnk_mainbank:
+      type: string(8)
+      default: null
+    acc_fmt_code:
+      type: decimal(10)
+      scale: 0
+      default: null
+    acc_no_lng:
+      type: decimal(10)
+      scale: 0
+      default: null
+  relations:
+    PayRollBankAccFormat:
+      local: acc_fmt_code
+      foreign: acc_fmt_code
+    accFmtCode:
+      class: PayRollBankAccountType
+      local: acc_fmt_code
+      foreign: acc_fmt_code
+
+PayRollBankAccountType:
+  tableName: hs_hr_bank_account_type
+  columns:
+    acctype_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    acctype_name:
+      type: string(200)
+      default: null
+    acctype_name_si:
+      type: string(200)
+      default: null
+    acctype_name_ta:
+      type: string(200)
+      default: null
+
+PayRollBranch:
+  tableName: hs_hr_branch
+  columns:
+    bbranch_sliptransfers_flg:
+      type: decimal(1)
+      scale: 0
+      default: null
+    bbranch_auto_clr_house_code:
+      type: string(20)
+      default: null
+    bbranch_address:
+      type: string(200)
+      default: null
+    bbranch_address_si:
+      type: string(200)
+      default: null
+    bbranch_address_ta:
+      type: string(200)
+      default: null      
+    bbranch_name:
+      type: string(120)
+      default: null
+    bbranch_name_si:
+      type: string(120)
+      default: null
+    bbranch_name_ta:
+      type: string(120)
+      default: null      
+    bbranch_code:
+      type: string(6)
+      primary: true
+      notnull: true
+    bank_code:
+      type: string(8)
+      default: null
+    bbranch_user_code:
+      type: string(200)
+      default: null
+  relations:
+    PayRollBank:
+      local: bank_code
+      foreign: bank_code
+
+PayRollBankAccFormat:
+  tableName: hs_pr_bank_acc_format
+  columns:
+    acc_fmt_code:
+      type: decimal(10)
+      scale: 0
+      primary: true
+      notnull: true
+    acc_fmt_exprs:
+      type: string(100)
+      notnull: true
+    acc_fmt_desc:
+      type: string(200)
+      default: null
+    acc_fmt_errmsg:
+      type: string(500)
+      default: null
+
+PayRollBankTransfer:
+  tableName: hs_pr_bank_transfers
+  columns:
+    emp_number:
+      type: integer(4)
+      primary: true
+      notnull: true
+    bank_code:
+      type: string(8)
+      primary: true
+      notnull: true
+    bbranch_code:
+      type: string(6)
+      primary: true
+      notnull: true
+    ebank_acc_no:
+      type: string(80)
+      primary: true
+      notnull: true
+    ebt_start_date:
+      type: timestamp
+      primary: true
+      notnull: true
+    ebt_end_date:
+      type: timestamp
+      primary: true
+      notnull: true
+    ebt_amount:
+      type: decimal(15)
+      scale: 2
+      default: null
+    ebank_acc_type_flg:
+      type: integer(4)
+      primary: true
+      notnull: true
+    ebt_cur_base_amount:
+      type: decimal(13)
+      scale: 2
+      default: null
+  relations:
+    PayRollBranch:
+      local: bbranch_code
+      foreign: bbranch_code
+    PayRollBank:
+      local: bank_code
+      foreign: bank_code
+    Employee:
+      local: emp_number
+      foreign: emp_number
+
+PayRollEmployeeBank:
+  tableName: hs_hr_emp_bank
+  columns:
+    bbranch_code:
+      type: string(6)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    ebank_acc_no:
+      type: string(80)
+      primary: true
+    acctype_id:
+      type: integer(4)
+      default: null
+    ebank_amount:
+      type: decimal(15)
+      scale: 2
+      default: null
+    ebank_order:
+      type: integer(4)
+      default: null
+    ebank_active_flag:
+      type: integer(1)
+      default: null
+    ebank_start_date:
+      type: date
+      default: null
+    ebank_end_date:
+      type: date
+      default: null
+    ebank_comment:
+      type: string(200)
+      default: null
+  relations:
+    PayRollBankAccountType:
+      local: acctype_id
+      foreign: acctype_id
+    PayRollBranch:
+      local: bbranch_code
+      foreign: bbranch_code
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      
+Notice:
+  tableName: hs_hr_notice
+  columns:
+    notice_code:
+      type: integer(4)
+      primary: true
+    notice_name:
+      type: string(50)
+    notice_name_si:
+      type: string(50)
+    notice_name_ta:
+      type: string(50)
+    notice_desc:
+      type: string(1000)
+    notice_desc_si:
+      type: string(1000)
+    notice_desc_ta:
+      type: string(1000)
+    from_date:
+      type: date
+    to_date:
+      type: date
+    email_flg:
+      type: string(1)
+    sms_flg:
+      type: string(1)    
+    sms_text:
+      type: string(200)  
+    create_emp_number:
+      type: integer(7)
+    create_date:
+      type: date
+    create_time:
+      type: time    
+  relations:
+    Employee:
+      local: create_emp_number
+      foreign: emp_number     
+      
+NoticeEmployee:
+  tableName: hs_hr_notice_employee
+  columns:
+    ns_id:
+      type: integer(11)
+      primary: true
+    notice_code:
+      type: integer(4)
+    emp_number:
+      type: integer(7)       
+    email:
+      type: string(1)
+    sms:
+      type: string(1)    
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number  
+    Notice:
+      local: notice_code
+      foreign: notice_code      
+
+PayRollTempProcessEmp:
+  tableName: hs_pr_tempprocessemp
+  columns:
+    batch_id:
+      type: integer(20)
+      primary: true
+    emp_number:
+      type: integer(11)
+      primary: true
+    payroll_type:
+      type: integer(11)
+      primary: true
+
+PayRollProcessedEmp:
+  tableName: hs_pr_processedemp
+  columns:
+    pro_payfrequency:
+      type: integer(10)
+      primary: true
+    pro_startdate:
+      type: date
+      primary: true
+    pro_enddate:
+      type: date
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    pro_processed:
+      type: integer(1)
+    pro_inserttime:
+      type: date
+    pro_batch_id:
+      type: integer(11)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+
+      
+hsPrBankDiskette:
+  tableName: hs_pr_bank_diskette
+  columns:
+    dsk_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    dsk_name:
+      type: string(200)
+      default: null
+    dsk_name_si:
+      type: string(200)
+      default: null
+    dsk_name_ta:
+      type: string(200)
+      default: null
+    dsk_start_date:
+      type: date
+      default: null
+    dsk_end_date:
+      type: date
+      default: null
+    dsk_view:
+      type: string(200)
+      default: null
+    dsk_detail_type:
+      type: string(100)
+      default: null
+    bank_code:
+      type: string(8)
+      default: null 
+  relations:
+    PayRollBank:
+      local: bank_code
+      foreign: bank_code      
+
+hsPrBankDisketteDetail:
+  tableName: hs_pr_bank_diskette_detail
+  columns:
+    dskd_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    dsk_id:
+      type: integer(4)
+      default: null
+    dskd_column:
+      type: string(200)
+      default: null
+    dskd_length:
+      type: string(4)
+      default: null
+    dskd_type:
+      type: string(1)
+      default: null
+    dskd_alignment:
+      type: string(1)
+      default: null
+    dskd_fillwith:
+      type: string(1)
+      default: null
+    dskd_value:
+      type: string(200)
+      default: null
+    dskd_order:
+      type: string(100)
+      default: null
+    dskd_active:
+      type: string(1)
+      default: null
+    dsk_detail_type:
+      type: string(1)
+      default: null
+  relations:
+    hsPrBankDiskette:
+      local: dsk_id
+      foreign: dsk_id
+
+PayRollException:
+  tableName: hs_pr_exceptions
+  columns:
+    pro_startdate:
+      type: date
+      primary: true
+    pro_enddate:
+      type: date
+      primary: true
+    emp_number:
+      type: integer(4)
+      primary: true
+    pro_batch_id:
+      type: string(100)
+      primary: true
+    pr_exception:
+      type: varchar(200)
+      primary: true
+
+hsPrBankDisketteProcess:
+  tableName: hs_pr_bank_diskette_process
+  columns:
+    bdp_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    dsk_id:
+      type: integer(4)
+      default: null
+    id:
+      type: integer(4)
+      default: null
+    bdp_start_date:
+      type: date
+      default: null
+    bdp_end_date:
+      type: date
+      default: null
+    bdp_payment_date:
+      type: date
+      default: null
+    bdp_processed:
+      type: string(1)
+      default: null
+    bdp_flg:
+      type: string(1)
+      default: null 
+    bdp_payment_total:
+      type : decimal(13,2) 
+  relations:
+    CompanyStructure:
+      local: id
+      foreign: id
+    hsPrBankDiskette:
+      local: dsk_id
+      foreign: dsk_id
+
+hsPrBankDisketteProcessEmployee:
+  tableName: hs_pr_bank_diskette_process_employee
+  columns:
+    bdp_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    emp_number:
+      type: integer(4)
+      default: null   
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+
+payprocessCapability:
+  tableName: hs_hr_sm_payproccapbility
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true          
+    prl_type_code:
+      type: integer(4)
+      default: null
+      primary: true
+    prl_disc_code:
+      type: integer(10)
+      primary: true
+    prl_process_type:
+      type: integer(4)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+    PayrollType:
+      local: prl_type_code
+      foreign: prl_type_code
+    CompanyStructure:
+      local: prl_disc_code  
+      foreign: id
+      type: one      
+      
+hsPrPayprocess:
+  tableName: hs_pr_payprocess
+  columns:
+    pay_startdate:
+      type: timestamp
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    pay_enddate:
+      type: timestamp
+      primary: true
+    pay_gross_salary:
+      type: decimal(13)
+      scale: 2
+    pay_netpay:
+      type: decimal(13)
+      scale: 2
+    pay_gross_salary_ytd:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_netpay_ytd:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_dsg_code:
+      type: string(13)
+      default: null
+    pay_last_level_hie_code:
+      type: integer(6)
+      default: null
+    pay_cash_paid_amt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_bank_paid_amt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_paid_salary:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_grossnet_amt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_cf_amt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_bf_amt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    pay_emp_comnt:
+      type: string(500)
+      default: null
+    pay_hie_code_1:
+      type: integer(6)
+      default: null
+    pay_salary_point:
+      type: decimal(10)
+      scale: 0
+      default: null
+    pay_hie_code_2:
+      type: integer(6)
+      default: null
+    pay_hie_code_6:
+      type: integer(6)
+      default: null
+    pay_hie_code_4:
+      type: integer(6)
+      default: null
+    pay_hie_code_3:
+      type: integer(6)
+      default: null
+    pay_hie_code_5:
+      type: integer(6)
+      default: null
+    pay_costcenter:
+      type: string(6)
+      default: null
+    emp_epf_number:
+      type: string(25)
+      default: null
+    pay_emp_type:
+      type: string(13)
+      default: null
+    pay_salarygrade:
+      type: string(6)
+      default: null
+    pay_processed_date:
+      type: timestamp
+      default: null
+    pay_proc_user:
+      type: string(150)
+      default: null
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number      
+
+hsPrProcessedtxn:
+  tableName: hs_pr_processedtxn
+  columns:
+    trn_startdate:
+      type: timestamp
+      primary: true
+    trn_enddate:
+      type: timestamp
+      primary: true
+    trn_dtl_code:
+      type: integer(6)
+      primary: true
+    emp_number:
+      type: integer(7)
+      primary: true
+    trn_proc_emp_amt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    trn_proc_eyr_amt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    trn_ytd_amount:
+      type: decimal(13)
+      scale: 2
+      default: null
+    trn_contribution:
+      type: decimal(13)
+      scale: 2
+      default: null
+    trn_hourswkd:
+      type: decimal(13)
+      scale: 2
+      default: null
+    dbgroup_user_id:
+      type: string(20)
+      default: null
+    trn_proc_emp_fullamt:
+      type: decimal(13)
+      scale: 2
+      default: null
+    trn_ytd_eyr_amount:
+      type: decimal(13)
+      scale: 2
+      default: null
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number  
+    PRTransDetails:
+      local: trn_dtl_code
+      foreign: trn_dtl_code
+      
+PayrollIncrementCancel:
+  tableName: hs_pr_increment_cancel
+  columns:
+    emp_number:
+      type: integer(7)
+      notnull: true
+    inc_amount:
+      type: decimal(13)
+      scale: 2
+      default: null
+    inc_previous_salary:
+      type: decimal(13)
+      scale: 2
+      default: null
+    inc_new_salary:
+      type: decimal(13)
+      scale: 2
+      default: null
+    app_approved:
+      type: decimal(1)
+      scale: 0
+      default: null
+    inc_sal_grd_code:
+      type: string(6)
+      default: null
+    wfmain_id:
+      type: string(6)
+      default: null
+    inc_previous_point:
+      type: decimal(10)
+      scale: 0
+      default: null
+    wfmain_sequence:
+      type: decimal(10)
+      scale: 0
+      default: null
+    inc_new_point:
+      type: decimal(10)
+      scale: 0
+      default: null
+    inc_isprocessed:
+      type: integer(2)
+      default: null
+    inc_points_increased:
+      type: decimal(10)
+      scale: 0
+      default: null
+    wftype_code:
+      type: decimal(10)
+      scale: 0
+      default: null
+    dbgroup_user_id:
+      type: string(20)
+      default: null
+    inc_previous_grade_code:
+      type: integer(4)
+      default: null
+    inc_previous_slt_scale_year:
+      type: integer(4)
+      default: null
+    inc_new_grade_code:
+      type: integer(4)
+    inc_new_slt_scale_year:
+      type: integer(4)
+    inc_comment:
+      type: string(200)
+      default: null
+    inc_confirm_flag:
+      type: integer(1)
+      default: null
+    inc_effective_date:
+      type: date
+      default: null    
+    inc_cancel_flag:
+      type: integer(1)
+      default: null
+    inc_cancel_comment:
+      type: string(200)
+      default: null   
+    inc_cancel_oder:  
+      type: integer(11)
+      primary: true      
+  relations:
+    incPreviousGradeCode:
+      class: Grade
+      local: inc_previous_grade_code
+      foreign: grade_code
+    incNewGradeCode:
+      class: Grade
+      local: inc_new_grade_code
+      foreign: grade_code
+    incNewSltScaleYear:
+      class: GradeSlot
+      local: inc_new_slt_scale_year
+      foreign: slt_id
+    incPreviousSltScaleYear:
+      class: GradeSlot
+      local: inc_previous_slt_scale_year
+      foreign: slt_id
+    Employee:
+      local: emp_number
+      foreign: emp_number      
+
+PayrollProcessBar:
+  tableName: hs_pr_progressbar_status
+  columns:
+    pb_user:
+      type: string(36)
+      primary: true 
+    pb_startdate:
+      type: date
+      primary: true 
+    pb_enddate:
+      type: date
+      default: null
+    pb_emp_total_count:
+      type: integer(11)
+      default: null
+    prl_type_code:
+      type: integer(11)
+      primary: true 
+    pb_processtime:
+      type: date
+      default: null
+    pb_emp_remain_count:
+      type: integer(11)
+      default: null
+    pb_status:
+      type: integer(11)
+      default: null
+  
+LDAPAudit:
+  tableName: hs_hr_ldap_audit
+  columns:
+    ldap_adt_employeeid:
+      type: string(200)
+      default: null
+    ldap_adt_firstname:
+      type: string(200)
+      default: null
+    ldap_adt_firstnamesi:
+      type: string(200)
+      default: null
+    ldap_adt_firstnameta:
+      type: string(200)
+      default: null
+    ldap_adt_lastname:
+      type: string(200)
+      default: null
+    ldap_adt_lastnamesi:
+      type: string(200)
+      default: null
+    ldap_adt_lastnameta:
+      type: string(200)
+      default: null
+    ldap_adt_designationcode:
+      type: string(200)
+      default: null
+    ldap_adt_districtcode:
+      type: string(200)
+      default: null
+    ldap_adt_divisioncode:
+      type: string(200)
+      default: null 
+    ldap_adt_zonecode:
+      type: string(200)
+      default: null
+    ldap_adt_wasamcode:
+      type: string(200)
+      default: null
+    ldap_adt_employeeactiveflag:
+      type: string(200)
+      default: null
+    ldap_adt_departmentcode:
+      type: string(200)
+      default: null
+    ldap_adt_email:
+      type: string(200)
+      default: null
+    ldap_adt_cn:
+      type: string(200)
+      default: null
+    ldap_adt_sn:
+      type: string(200)
+      default: null
+    ldap_adt_emp_number:
+      type: string(200)
+      primary: true 
+    ldap_adt_userid:
+      type: string(200)
+      primary: true 
+    ldap_adt_datetime:
+      type: date
+      primary: true
+      
+EducationType:
+  tableName: hs_hr_education_type
+  columns:
+    edu_type_id:
+      type: integer(11)
+      primary: true
+    edu_type_name:
+      type: string(200)
+    edu_type_name_si:
+      type: string(200)
+    edu_type_name_ta:
+      type: string(200)
+      
+EducationSubject:
+  tableName: hs_hr_edu_subject
+  columns:
+    subj_id:
+      type: integer(11)
+      primary: true
+    edu_type_id:
+      type: integer(11)   
+    subj_name:
+      type: string(200)
+    subj_name_si:
+      type: string(200)
+    subj_name_ta:
+      type: string(200)     
+  relations:
+    EducationType:
+      local: edu_type_id
+      foreign: edu_type_id  
+      
+EducationYearGrade:
+  tableName: hs_hr_edu_year_grade
+  columns:
+    grd_id:
+      type: integer(11)
+      primary: true
+    edu_type_id:
+      type: integer(11)  
+    grd_year:
+      type: integer(11)       
+    grd_name:
+      type: string(200)
+    grd_desc:
+      type: string(200)
+    grd_mark:
+      type: string(200)     
+  relations:
+    EducationType:
+      local: edu_type_id
+      foreign: edu_type_id  
+      
+EducationEMPHead:
+  tableName: hs_hr_edu_emp_head
+  columns:
+    eduh_id:
+      type: integer(11)
+      primary: true
+    edu_type_id:
+      type: integer(11)
+    emp_number:
+      type: integer(7)       
+    grd_year:
+      type: integer(4)       
+    eduh_indexno:
+      type: string(200)
+    eduh_institute:
+      type: string(200)     
+    eduh_zscorgdp:
+      type: float(2147483647)
+    eduh_slrank:
+      type: integer(11)
+    eduh_flg:
+      type: integer(1)      
+    eduh_descreption:
+      type: string(1000)
+  relations:
+    EducationType:
+      local: edu_type_id
+      foreign: edu_type_id        
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      
+EducationEMPDetail:
+  tableName: hs_hr_edu_emp_detail
+  columns:
+    edud_id:
+      type: integer(11)
+      primary: true
+    eduh_id:
+      type: integer(11)
+    subj_id:
+      type: integer(11)
+    grd_id:
+      type: integer(11)             
+    lang_code:
+      type: string(13)
+    edud_comment:
+      type: string(200)     
+  relations:
+    EducationEMPHead:
+      local: eduh_id
+      foreign: eduh_id        
+    EducationSubject:
+      local: subj_id
+      foreign: subj_id      
+    EducationYearGrade:
+      local: grd_id
+      foreign: grd_id
+    Language:  
+      local: lang_code
+      foreign: lang_code
+      
+EBSubject:
+  tableName: hs_hr_eb_subject
+  columns:
+    ebs_id:
+      type: integer(11)
+      primary: true  
+    ebs_name:
+      type: string(200)
+    ebs_name_si:
+      type: string(200)
+    ebs_name_ta:
+      type: string(200)  
+      
+EBMasterHead:
+  tableName: hs_hr_eb_master_head
+  columns:
+    ebh_id:
+      type: integer(11)
+      primary: true
+    grade_code:
+      type: integer(4)
+    ebh_exp_year:
+      type: integer(11)      
+    ebh_exam_name:
+      type: string(200)
+    ebh_exam_name_si:
+      type: string(200)
+    ebh_exam_name_ta:
+      type: string(200)     
+  relations:
+    Grade:
+      local: grade_code
+      foreign: grade_code   
+      
+EBMasterDetail:
+  tableName: hs_hr_eb_master_detail
+  columns:
+    ebd_id:
+      type: integer(11)
+      primary: true
+    ebh_id:
+      type: integer(11)
+    ebs_id:
+      type: integer(11)      
+    ebd_pass_mark:
+      type: integer(11)    
+  relations:
+    EBMasterHead:
+      local: ebh_id
+      foreign: ebh_id
+    EBSubject:
+      local: ebs_id
+      foreign: ebs_id  
+
+OfficeOut:
+  tableName: hs_hr_leave_office_out
+  columns:
+    oo_id:
+      type: integer(11)
+      primary: true
+    oo_emp_number:
+      type: integer(7)      
+    oo_date:
+      type: date
+    oo_to_date:
+      type: date      
+    oo_from:
+      type: string(10)            
+    oo_to:
+      type: string(10)
+    oo_category:
+      type: string(1)
+    oo_comment:
+      type: string(1000)
+    oo_vehicle_flg:
+      type: string(1)
+    oo_cancel :  
+      type: string(1)
+    oo_authority:
+      type: string(200) 
+  relations: 
+    Employee:
+      local: oo_emp_number
+      foreign: emp_number   
+      
+OfficeOutDetails:
+  tableName: hs_hr_leave_office_out_detail
+  columns:
+    oo_id:
+      type: integer(11)
+      primary: true
+    emp_number:
+      type: integer(7)       
+  relations: 
+    Employee:
+      local: emp_number
+      foreign: emp_number   
+    OfficeOut:
+      local: oo_id
+      foreign: oo_id       
+      
+LeaveAttachment:
+  tableName: hs_hr_leave_attachment
+  columns:
+    leave_attach_id:
+      type: integer(20)
+      primary: true
+    leave_app_id:
+      type: integer(20)
+      primary: true
+    leave_attach_filename:
+      type: string(200)
+    leave_attach_size:
+      type: integer(11)
+    leave_attach_attachment:
+      type: blob(2147483647)
+    leave_attach_type:
+      type: string(100)
+  relations:
+    Promotion:
+      local: leave_app_id
+      foreign: leave_app_id
+      type: one  
+      
+EvaluationRate:
+  tableName: hs_hr_evl_rate
+  columns:
+    rate_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    rate_code:
+      type: string(10)
+    rate_name:
+      type: string(100)
+    rate_name_si:
+      type: string(100)
+    rate_name_ta:
+      type: string(100)
+    rate_desc:
+      type: string(200)
+    rate_desc_si:
+      type: string(200)
+    rate_desc_ta:
+      type: string(200)
+    rate_option:
+      type: string(1)
+
+EvaluationRateDetails:
+  tableName: hs_hr_evl_rate_detail
+  columns:
+    rate_id:
+      type: integer(4)
+      primary: true
+    rdt_grade:
+      type: string(10)
+      primary: true
+    rdt_mark:
+      type: float(2147483647)
+      primary: true
+    rdt_description:
+      type: string(100)
+  relations:
+    EvaluationRate:
+      local: rate_id
+      foreign: rate_id
+      type: one
+      
+EvaluationCompany:
+  tableName: hs_hr_evl_evaluation
+  columns:
+    eval_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_code:
+      type: string(10)
+    eval_name:
+      type: string(100)
+    eval_name_si:
+      type: string(100)
+    eval_name_ta:
+      type: string(100)
+    eval_desc:
+      type: string(200)
+    eval_desc_si:
+      type: string(200)
+    eval_desc_ta:
+      type: string(200)
+    eval_year:
+      type: string(4)
+    eval_active:
+      type: string(1)
+    rate_id:
+      type: integer(4)
+  relations:
+    PerformanceRate:
+      local: rate_id
+      foreign: rate_id
+      type: one      
+      
+EvaluationSupervisorNominee:
+  tableName: hs_hr_evl_evaluation_supervisor
+  columns:
+    evl_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_id:
+      type: integer(4)
+    emp_number:
+      type: integer(7)
+    sup_num:
+      type: integer(7)
+    eval_sup_flag:
+      type: string(1)      
+    evl_nomine_emp_number:
+      type: integer(7)
+  relations:
+    EvaluationCompany:
+      local: eval_id
+      foreign: eval_id
+      type: one       
+    Employee:
+      class: EmployeeMaster
+      local: emp_number
+      foreign: emp_number        
+    Supervisor:
+      class: EmployeeMaster
+      local: sup_num
+      foreign: emp_number  
+    Nominee:
+      class: EmployeeMaster
+      local: evl_nomine_emp_number
+      foreign: emp_number         
+      
+EvaluationFunctionsTask:
+  tableName: hs_hr_evl_functions_tasks
+  columns:
+    ft_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_id:
+      type: integer(4)
+    emp_number:
+      type: integer(7)
+    ft_title:
+      type: string(200) 
+    ft_description:
+      type: string(500)      
+    ft_from_date:
+      type: date
+    ft_to_date:
+      type: date  
+    ft_active_flg:
+      type: string(1)    
+    ft_approve_flg:
+      type: string(1)     
+    ft_target_indicater:
+      type: string(500) 
+    ft_sup_comment:
+      type: string(500) 
+    ft_mod_comment:
+      type: string(500)  
+    ft_sup_mid_achive:
+      type: float(2147483647)    
+    ft_sup_end_achive:
+      type: float(2147483647)  
+    ft_sup_mid_marks:
+      type: float(2147483647)  
+    ft_sup_end_marks:
+      type: float(2147483647)    
+    ft_mod_end_achive:
+      type: float(2147483647)          
+    ft_mod_end_marks:
+      type: float(2147483647)  
+    ft_weight :
+      type: float(2147483647)       
+  relations:
+    EvaluationCompany:
+      local: eval_id
+      foreign: eval_id
+      type: one       
+    Employee:
+      class: EmployeeMaster
+      local: emp_number
+      foreign: emp_number        
+      
+EvaluationSkill:
+  tableName: hs_hr_evl_skill_master
+  columns:
+    skill_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    skill_title:
+      type: string(200) 
+    skill_title_si:
+      type: string(200)
+    skill_title_ta:
+      type: string(200)   
+    skill_description:
+      type: string(500) 
+    skill_description_si:
+      type: string(500)
+    skill_description_ta:
+      type: string(500)       
+    skill_active_flg:
+      type: string(1)                
+      
+EvaluationSkillEmployee:
+  tableName: hs_hr_evl_skill_emp
+  columns:
+    emp_skill_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_id:
+      type: integer(4)
+    emp_number:
+      type: integer(7)
+    skill_id:
+      type: integer(4)           
+    emp_skill_from_date:
+      type: date
+    emp_skill_to_date:
+      type: date  
+    emp_skill_active_flg:
+      type: string(1)    
+    emp_skill_approve_flg:
+      type: string(1)     
+    emp_skill_target_indicater:
+      type: string(100) 
+    emp_skill_sup_comment:
+      type: string(500) 
+    emp_skill_mod_comment:
+      type: string(500)  
+    emp_skill_sup_mid_achive:
+      type: float(2147483647)    
+    emp_skill_sup_end_achive:
+      type: float(2147483647)  
+    emp_skill_sup_mid_marks:
+      type: float(2147483647)  
+    emp_skill_sup_end_marks:
+      type: float(2147483647)    
+    emp_skill_mod_end_marks:
+      type: float(2147483647)
+    emp_skill_mod_end_achive:
+      type: float(2147483647)        
+    emp_skill_weight :
+      type: float(2147483647)       
+  relations:
+    EvaluationCompany:
+      local: eval_id
+      foreign: eval_id
+      type: one       
+    Employee:
+      class: EmployeeMaster
+      local: emp_number
+      foreign: emp_number     
+    EvaluationSkill:
+      class: EvaluationSkill
+      local: skill_id
+      foreign: skill_id           
+
+EvaluationTSMaster:
+  tableName: hs_hr_evl_ts_master
+  columns:
+    ts_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    ts_title:
+      type: string(200) 
+    ts_title_si:
+      type: string(200)
+    ts_title_ta:
+      type: string(200)   
+    ts_description:
+      type: string(500) 
+    ts_description_si:
+      type: string(500)
+    ts_description_ta:
+      type: string(500)       
+    ts_active_flg:
+      type: string(1)
+    ts_level:
+      type: string(1)      
+ 
+      
+EvaluationTSEmployee:
+  tableName: hs_hr_evl_ts_emp
+  columns:
+    emp_ts_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_id:
+      type: integer(4)
+    emp_number:
+      type: integer(7)
+    ts_id:
+      type: integer(4)           
+    emp_ts_from_date:
+      type: date
+    emp_ts_to_date:
+      type: date  
+    emp_ts_active_flg:
+      type: string(1)    
+    emp_ts_approve_flg:
+      type: string(1)     
+    emp_ts_target_indicater:
+      type: string(100) 
+    emp_ts_sup_comment:
+      type: string(500) 
+    emp_ts_mod_comment:
+      type: string(500)  
+    emp_ts_sup_mid_achive:
+      type: float(2147483647)    
+    emp_ts_sup_end_achive:
+      type: float(2147483647)  
+    emp_ts_sup_mid_marks:
+      type: float(2147483647)  
+    emp_ts_sup_end_marks:
+      type: float(2147483647)    
+    emp_ts_mod_end_marks:
+      type: float(2147483647)  
+    emp_ts_mod_end_achive:
+      type: float(2147483647)        
+    emp_ts_weight :
+      type: float(2147483647)      
+    emp_ts_email_client_1:
+      type: string(100)    
+    emp_ts_send_url_client_1:
+      type: string(1)  
+    emp_ts_marks_client_1:  
+      type: float(2147483647)  
+    emp_ts_send_url_date_client_1:  
+      type: DateTime
+    emp_ts_email_client_2:
+      type: string(100)    
+    emp_ts_send_url_client_2:
+      type: string(1)  
+    emp_ts_marks_client_2:  
+      type: float(2147483647)  
+    emp_ts_send_url_date_client_2:  
+      type: DateTime
+    emp_ts_email_client_3:
+      type: string(100)    
+    emp_ts_send_url_client_3:
+      type: string(1)  
+    emp_ts_marks_client_3:  
+      type: float(2147483647)  
+    emp_ts_send_url_date_client_3:  
+      type: DateTime  
+    emp_ts_email_client_4:
+      type: string(100)    
+    emp_ts_send_url_client_4:
+      type: string(1)  
+    emp_ts_marks_client_4:  
+      type: float(2147483647)  
+    emp_ts_send_url_date_client_4:  
+      type: DateTime       
+    emp_ts_email_client_5:
+      type: string(100)    
+    emp_ts_send_url_client_5:
+      type: string(1)  
+    emp_ts_marks_client_5:  
+      type: float(2147483647)  
+    emp_ts_send_url_date_client_5:  
+      type: DateTime       
+    emp_ts_marks_client_summary:
+      type: float(2147483647)       
+  relations:
+    EvaluationCompany:
+      local: eval_id
+      foreign: eval_id
+      type: one       
+    Employee:
+      class: EmployeeMaster
+      local: emp_number
+      foreign: emp_number     
+    EvaluationTSMaster:
+      class: EvaluationTSMaster
+      local: ts_id
+      foreign: ts_id 
+                 
+EvaluationEmployee:
+  tableName: hs_hr_evl_evaluation_employee
+  columns:
+    ev_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    eval_id:
+      type: integer(4)
+    emp_number:
+      type: integer(7)          
+    ev_start_date:
+      type: date
+    ev_complete_date:
+      type: date  
+    ev_fn_rv_active_flg:
+      type: string(1)    
+    ev_ms_rv_active_flg:
+      type: string(1)        
+    ev_ts_rv_active_flg:
+      type: string(1)        
+    ev_fn_rv_percentage:
+      type: float(2147483647)         
+    ev_ms_rv_percentage:
+      type: float(2147483647)       
+    ev_ts_rv_percentage:
+      type: float(2147483647)       
+    ev_fn_weight_total:
+      type: float(2147483647)     
+    ev_fn_weight_avg :
+      type: float(2147483647)     
+    ev_fn_sup_mid_ach_tot :
+      type: float(2147483647)     
+    ev_fn_sup_mid_ach_avg :
+      type: float(2147483647)      
+    ev_fn_sup_mid_mark_tot :
+      type: float(2147483647)     
+    ev_fn_sup_mid_mark_avg :
+      type: float(2147483647)     
+    ev_fn_sup_end_ach_tot :
+      type: float(2147483647)     
+    ev_fn_sup_end_ach_avg :
+      type: float(2147483647)     
+    ev_fn_sup_end_mark_tot :
+      type: float(2147483647)     
+    ev_fn_sup_end_mark_avg :
+      type: float(2147483647)     
+    ev_fn_mod_end_mark_tot :
+      type: float(2147483647)     
+    ev_fn_mod_end_mark_avg :
+      type: float(2147483647)      
+    ev_fn_sup_mark_tot :
+      type: float(2147483647)     
+    ev_fn_mod_mark_tot :
+      type: float(2147483647) 
+    ev_fn_mod_end_ach_avg:
+      type: float(2147483647) 
+    ev_fn_mod_end_ach_tot:
+      type: float(2147483647)       
+    ev_fn_sup_comment :
+      type: float(2147483647)     
+    ev_fn_mod_comment :
+      type: float(2147483647)       
+    ev_ms_weight_total:
+      type: float(2147483647)     
+    ev_ms_weight_avg :
+      type: float(2147483647)     
+    ev_ms_sup_mid_ach_tot :
+      type: float(2147483647)     
+    ev_ms_sup_mid_ach_avg :
+      type: float(2147483647)      
+    ev_ms_sup_mid_mark_tot :
+      type: float(2147483647)     
+    ev_ms_sup_mid_mark_avg :
+      type: float(2147483647)     
+    ev_ms_sup_end_ach_tot :
+      type: float(2147483647)     
+    ev_ms_sup_end_ach_avg :
+      type: float(2147483647)     
+    ev_ms_sup_end_mark_tot :
+      type: float(2147483647)     
+    ev_ms_sup_end_mark_avg :
+      type: float(2147483647)     
+    ev_ms_mod_end_mark_tot :
+      type: float(2147483647)     
+    ev_ms_mod_end_mark_avg :
+      type: float(2147483647) 
+    ev_ms_mod_end_ach_avg:
+      type: float(2147483647) 
+    ev_ms_mod_end_ach_tot:
+      type: float(2147483647)       
+    ev_ms_sup_mark_tot :
+      type: float(2147483647)     
+    ev_ms_mod_mark_tot :
+      type: float(2147483647)     
+    ev_ms_sup_comment :
+      type: float(2147483647)     
+    ev_ms_mod_comment :
+      type: float(2147483647)  
+    ev_ts_weight_total:
+      type: float(2147483647)     
+    ev_ts_weight_avg :
+      type: float(2147483647)     
+    ev_ts_sup_mid_ach_tot :
+      type: float(2147483647)     
+    ev_ts_sup_mid_ach_avg :
+      type: float(2147483647)      
+    ev_ts_sup_mid_mark_tot :
+      type: float(2147483647)     
+    ev_ts_sup_mid_mark_avg :
+      type: float(2147483647)     
+    ev_ts_sup_end_ach_tot :
+      type: float(2147483647)     
+    ev_ts_sup_end_ach_avg :
+      type: float(2147483647)     
+    ev_ts_sup_end_mark_tot :
+      type: float(2147483647)     
+    ev_ts_sup_end_mark_avg :
+      type: float(2147483647)     
+    ev_ts_mod_end_mark_tot :
+      type: float(2147483647)     
+    ev_ts_mod_end_mark_avg :
+      type: float(2147483647)      
+    ev_ts_sup_mark_tot :
+      type: float(2147483647)     
+    ev_ts_mod_mark_tot :
+      type: float(2147483647)
+    ev_ts_mod_end_ach_avg:
+      type: float(2147483647) 
+    ev_ts_mod_end_ach_tot:
+      type: float(2147483647)       
+    ev_ts_sup_comment :
+      type: float(2147483647)     
+    ev_ts_mod_comment :
+      type: float(2147483647)        
+    ev_appraisee_comment:
+      type: string(500)
+    ev_appraiser_comment:
+      type: string(500)  
+    ev_employee_comment:
+      type: string(500)   
+    ev_employee_agree:
+      type: string(1)       
+    ev_final_mark :
+      type: float(2147483647)     
+    rate_id :
+      type: integer(4) 
+    ev_aggree_rate_flg:
+      type: string(1)  
+    ev_mod_final_mark:
+      type: float(2147483647) 
+    ev_moderator_comment:
+      type: string(500)  
+    ev_complete_flg:
+      type: string(1) 
+    ev_email_client_1:
+      type: string(100)
+    ev_name_client_1:
+      type: string(100)  
+    ev_desg_client_1:
+      type: string(100)      
+    ev_email_client_2:
+      type: string(100)
+    ev_name_client_2:
+      type: string(100)  
+    ev_desg_client_2:
+      type: string(100)      
+    ev_email_client_3:
+      type: string(100) 
+    ev_name_client_3:
+      type: string(100)  
+    ev_desg_client_3:
+      type: string(100) 
+    ev_email_client_4:
+      type: string(100) 
+    ev_name_client_4:
+      type: string(100)  
+    ev_desg_client_4:
+      type: string(100) 
+    ev_email_client_5:
+      type: string(100) 
+    ev_name_client_5:
+      type: string(100)  
+    ev_desg_client_5:
+    ev_level_client_1:
+      type: string(1)   
+    ev_level_client_2:
+      type: string(1) 
+    ev_level_client_3:
+      type: string(1) 
+    ev_level_client_4:
+      type: string(1) 
+    ev_level_client_5:
+      type: string(1)       
+      type: string(100)       
+    ev_avg_client_1 :
+      type: float(2147483647)    
+    ev_avg_client_2 :
+      type: float(2147483647)    
+    ev_avg_client_3 :
+      type: float(2147483647)    
+    ev_tot_client_1 :
+      type: float(2147483647)    
+    ev_tot_client_2 :
+      type: float(2147483647)    
+    ev_tot_client_3 :
+      type: float(2147483647)   
+    emp_ts_marks_client_avg_summary:
+      type: float(2147483647)   
+    emp_ts_marks_client_tot_summary:
+      type: float(2147483647)      
+  relations:
+    EvaluationCompany:
+      local: eval_id
+      foreign: eval_id
+      type: one       
+    Employee:
+      class: EmployeeMaster
+      local: emp_number
+      foreign: emp_number     
+    EvaluationRate:
+      class: EvaluationRate
+      local: rate_id
+      foreign: rate_id   
+      
+EvaluationFunctionsTaskComments:
+  tableName: hs_hr_evl_functions_tasks_comment_detail
+  columns:
+    ftc_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true 
+    ft_id:
+      type: integer(4) 
+    ftc_comment:
+      type: string(100) 
+    ftc_date:
+      type: date  
+    emp_number:
+      type: integer(7) 
+  relations:      
+    Employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number 
+    EvaluationFunctionsTask:
+      local: ft_id
+      foreign: ft_id           
+      
+EvaluationSkillEmployeeComments:
+  tableName:  hs_hr_evl_skill_emp_comment_detail
+  columns:
+    esc_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true 
+    emp_skill_id:
+      type: integer(4) 
+    esc_comment:
+      type: string(100) 
+    esc_date:
+      type: date  
+    emp_number:
+      type: integer(7) 
+  relations:      
+    Employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number 
+    EvaluationSkillEmployee:
+      local: emp_skill_id
+      foreign: emp_skill_id           
+      
+EvaluationTSEmployeeComments:
+  tableName:  hs_hr_evl_ts_emp_comment_detail
+  columns:
+    etc_id:
+      type: integer(4)
+      primary: true
+      autoincrement: true 
+    emp_ts_id:
+      type: integer(4) 
+    etc_comment:
+      type: string(100) 
+    etc_date:
+      type: date  
+    emp_number:
+      type: integer(7) 
+  relations:      
+    Employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number 
+    EvaluationTSEmployee:
+      local: emp_ts_id
+      foreign: emp_ts_id  
+      
+NotificationEmployee:
+  tableName: hs_hr_notification_employee
+  columns:
+    not_id:
+      type: integer(11)
+      primary: true
+      autoincrement: true
+    mod_id:
+      type: string(36)
+    not_message:
+      type: string(500)      
+    emp_number:
+      type: integer(7)
+    status:
+      type: string(1)                 
+    from:
+      type: date
+    to:
+      type: date  
+    create_date:
+      type: date
+    create_emp_number:
+      type: integer(7) 
+  relations:      
+    Employee:
+      class: Employee
+      local: emp_number
+      foreign: emp_number 
+    EmployeeCreate:
+      class: Employee
+      local: create_emp_number
+      foreign: emp_number      
+       
+EmployeeSignature:
+  tableName: hs_hr_emp_signature
+  columns:
+    emp_number:
+      type: integer(7)
+      primary: true
+    signature:
+      type: string(100000)
+    sig_image:
+      type: blob(2147483647)
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one       

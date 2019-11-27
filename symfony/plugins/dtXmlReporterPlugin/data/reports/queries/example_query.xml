@@ -1,0 +1,8 @@
+<query name="foobar">
+  <select as="foo">foo</select>
+  <from table="foobar"/>
+  <query name="sub-query">
+    <select as="something_else">something</select>
+    <from table="some-other-table"/>
+  </query>
+</query>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="si" datatype="plaintext" original="messages" date="2009-12-08T13:58:35Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Document Type Summary</source>
+        <target>ලේඛන වර්ග සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Document Type</source>
+        <target>ලේඛන වර්ග</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Add Document Type</source>
+        <target>ලේඛන වර්ග එක් කිරිම</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Document Type Name</source>
+        <target>ලේඛන වර්ග</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Attachment Documents Summary</source>
+        <target>ඇමිණුම් සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Document Title</source>
+        <target>ලේඛන මාතෘකාව</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Add Attachment Documents</source>
+        <target>ඇමිණුම් එක් කිරීම</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Document Title Name</source>
+        <target>ලේඛන මාතෘකාව</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Keywords</source>
+        <target>මූලපද</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Upload Document</source>
+        <target>ලේඛන උඩුගත කිරීම</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Publish Date</source>
+        <target>පළ කර දිනය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Knowledge Base</source>
+        <target>දැනුම් පද්ධතිය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Search Within</source>
+        <target>සෙවීම</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Search In</source>
+        <target>සෙවීම තුළ</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Document Type Required</source>
+        <target>අනිවාර්යයි</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Document Type is required in English</source>
+        <target>ඉංග්‍රීසියෙන් අනිවාර්යයි</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Key Words</source>
+        <target>මූලපද</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Key words (separated using , )</source>
+        <target>මූලපද (, භාවිතා කර වෙන් කරන්න)</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Keywords are required in English</source>
+        <target>ඕනෑ කරනවා</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Keywords are required in Sinhala</source>
+        <target>ඉංග්‍රීසියෙන් අනිවාර්යයි</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Keywords are required in Tamil</source>
+        <target>දෙමළෙන් අනිවාර්යයි</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Attachment Required</source>
+        <target>අනිවාර්යයි</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Maximum 500 Characters</source>
+        <target>උපරිමය අකුරු 500</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Posted Date</source>
+        <target>පළ කල දිනය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Updated Date</source>
+        <target>යාවත්කාල කල දිනය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>All Time</source>
+        <target>සියල්ල</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Last 10 days</source>
+        <target>අවසාන දින 10</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Last 30 days</source>
+        <target>අවසාන දින 30</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Last 90 days</source>
+        <target>අවසාන දින 90</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Last year</source>
+        <target>අවසාන වසර</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Attachment</source>
+        <target>ඇමිණුම</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>view</source>
+        <target>බැලීම</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>all</source>
+        <target>සියල්ල</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Knowledge Share</source>
+        <target>දැනුම බෙදා දීම</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>This is required</source>
+        <target>අනිවාර්යයි</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Key words (separated using comma , )</source>
+        <target>මූලපද (, භාවිතා කර වෙන් කරන්න)</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Content</source>
+        <target>අන්තර්ගතය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Edit Document Type</source>
+        <target>ලේඛන වර්ග සංස්කරණය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Please select the Search Within</source>
+        <target>සෙවීම අතර තෝරන්න</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Please select the Serach In</source>
+        <target>සෙවීම තුළ තෝරන්න</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Edit Attachment Documents</source>
+        <target>ලේඛන ඇමිණුම් සංස්කරණය</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Update Date</source>
+        <target>යාවත්කාලීන කරන දිනය</target>
+      </trans-unit>
+      </body>
+  </file>
+</xliff>
+

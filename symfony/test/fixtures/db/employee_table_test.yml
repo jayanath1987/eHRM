@@ -1,0 +1,242 @@
+CompanyStructure:
+  CompanyStructure_1:
+    id: 1
+    title: 'OrangeHRM Test'
+    description: ''
+    lft: '1'
+    rgt: '16'
+    parnt: '0'
+    loc_code: null
+    dept_id: ''
+  CompanyStructure_2:
+    id: 2
+    title: 'Sales Department'
+    description: 'Sales department'
+    lft: '2'
+    rgt: '7'
+    parnt: '1'
+    loc_code: LOC001
+    dept_id: A1
+  CompanyStructure_3:
+    id: 3
+    title: 'Engineering Department'
+    description: 'The engineering department'
+    lft: '8'
+    rgt: '15'
+    parnt: '1'
+    loc_code: LOC002
+    dept_id: A2
+  CompanyStructure_4:
+    id: 4
+    title: 'Research  Division'
+    description: ''
+    lft: '9'
+    rgt: '10'
+    parnt: '3'
+    loc_code: LOC003
+    dept_id: A21
+  CompanyStructure_5:
+    id: 5
+    title: 'Pre-sales Team'
+    description: 'Pre sales team'
+    lft: '11'
+    rgt: '12'
+    parnt: '3'
+    loc_code: LOC001
+    dept_id: A22
+  CompanyStructure_6:
+    id: 6
+    title: 'Professional services Division'
+    description: 'Professional Services'
+    lft: '13'
+    rgt: '14'
+    parnt: '3'
+    loc_code: LOC001
+    dept_id: A23
+  CompanyStructure_7:
+    id: 7
+    title: 'Sales asia Team'
+    description: ''
+    lft: '3'
+    rgt: '4'
+    parnt: '2'
+    loc_code: LOC004
+    dept_id: A11
+  CompanyStructure_8:
+    id: 8
+    title: 'North America Team'
+    description: ''
+    lft: '5'
+    rgt: '6'
+    parnt: '2'
+    loc_code: LOC005
+    dept_id: A12
+
+
+JobTitle:
+  JobTitle_JOB001:
+    id: JOB001
+    name: Programmer
+    description: 'Programmer Description'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+  JobTitle_JOB002:
+    id: JOB002
+    name: 'QA Engineer'
+    description: 'QA Engineer desc'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+  JobTitle_JOB003:
+    id: JOB003
+    name: 'Software Engineer'
+    description: 'Software Engineer'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+  JobTitle_JOB004:
+    id: JOB004
+    name: 'Sales Engineer'
+    description: 'Sales Engineer Desc'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+
+EmployeeStatus:
+  EmployeeStatus_EST000:
+    id: EST000
+    name: Terminated
+  EmployeeStatus_EST001:
+    id: EST001
+    name: 'Full Time Contract'
+  EmployeeStatus_EST002:
+    id: EST002
+    name: 'Full Time Internship'
+  EmployeeStatus_EST003:
+    id: EST003
+    name: 'Full Time Permanent'
+  EmployeeStatus_EST004:
+    id: EST004
+    name: 'Part Time Contract'
+  EmployeeStatus_EST005:
+    id: EST005
+    name: 'Part Time Internship'
+  EmployeeStatus_EST006:
+    id: EST006
+    name: 'Part Time Permanent'
+
+Employee:
+  Employee_1:
+    empNumber: 1
+    lastName: Smith
+    firstName: Rosa
+    middleName: K
+    employeeId: '001'
+    jobTitle: JobTitle_JOB003
+    subDivision: CompanyStructure_2
+  Employee_2:
+    empNumber: 2
+    lastName: Morales
+    firstName: Joseph
+    middleName: R
+    employeeId: '002'
+    employeeStatus: EmployeeStatus_EST001
+    jobTitle: JobTitle_JOB003
+    subDivision: CompanyStructure_5
+  Employee_3:
+    empNumber: 3
+    lastName: Gutierrez
+    firstName: Kevin
+    middleName: ''
+    employeeStatus: EmployeeStatus_EST003
+    jobTitle: JobTitle_JOB003
+    subDivision: CompanyStructure_4
+  Employee_4:
+    empNumber: 4
+    lastName: Stevens
+    firstName: Gary
+    middleName: Paul
+    employeeId: '004'
+    employeeStatus: EmployeeStatus_EST004
+    jobTitle: JobTitle_JOB001
+  Employee_5:
+    empNumber: 5
+    lastName: Porter
+    firstName: Timothy
+    middleName: ''
+    employeeId: '005'
+    employeeStatus: EmployeeStatus_EST003
+    jobTitle: JobTitle_JOB001
+    subDivision: CompanyStructure_6
+  Employee_6:
+    empNumber: 6
+    lastName: Boyd
+    firstName: Lynn
+    middleName: ''
+    employeeId: '006'
+    employeeStatus: EmployeeStatus_EST006
+    jobTitle: JobTitle_JOB002
+    subDivision: CompanyStructure_4
+  Employee_7:
+    empNumber: 7
+    lastName: Rose
+    firstName: Douglas
+    middleName: Jack
+    nickName: ''
+    employeeId: '007'
+    employeeStatus: EmployeeStatus_EST005
+    jobTitle: JobTitle_JOB002
+  Employee_8:
+    empNumber: 8
+    lastName: Elliott
+    firstName: Wilma
+    middleName: S
+    employeeId: '008'
+    employeeStatus: EmployeeStatus_EST001
+    jobTitle: JobTitle_JOB002
+    subDivision: CompanyStructure_4
+  Employee_9:
+    empNumber: 9
+    lastName: Greene
+    firstName: Keith
+    middleName: ''
+    employeeId: '009'
+    employeeStatus: EmployeeStatus_EST006
+    jobTitle: JobTitle_JOB003
+    subDivision: CompanyStructure_7
+  Employee_10:
+    empNumber: 10
+    lastName: Montgomery
+    firstName: Courtney
+    middleName: Connie
+    employeeId: '010'
+    jobTitle: JobTitle_JOB001
+    subDivision: CompanyStructure_1
+ReportTo:
+  ReportTo_7_4_1:
+    supervisorId: '7'
+    subordinateId: '4'
+    reportingMode: '1'
+  ReportTo_6_6_1:
+    supervisorId: '6'
+    subordinateId: '4'
+    reportingMode: '1'
+  ReportTo_3_7_1:
+    supervisorId: '3'
+    subordinateId: '7'
+    reportingMode: '1'
+  ReportTo_2_8_1:
+    supervisorId: '2'
+    subordinateId: '8'
+    reportingMode: '1'
+  ReportTo_10_9_1:
+    supervisorId: '10'
+    subordinateId: '9'
+    reportingMode: '1'
+  ReportTo_1_10_1:
+    supervisorId: '1'
+    subordinateId: '10'
+    reportingMode: '1'
+
+

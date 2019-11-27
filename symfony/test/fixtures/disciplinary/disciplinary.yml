@@ -1,0 +1,20 @@
+DisciplinaryActionType:
+  1: { dis_acttype_id: 1, dis_acttype_name: 'nibm',dis_acttype_name_si: 'ිාිාි',dis_acttype_name_ta: 'ளனளள' }
+  2: { dis_acttype_id: 2, dis_acttype_name: 'nibmd',dis_acttype_name_si: 'ිාිාිdd',dis_acttype_name_ta: 'ளனdளள' }
+Offence:
+  1: { dis_offence_id: 1, dis_acttype_id: 1, dis_offence_name: 'ිාිfාි',dis_offence_name_si: 'ளfனளள',dis_offence_name_ta: 'ளfனளள' }
+  2: { dis_offence_id: 2, dis_acttype_id: 2, dis_offence_name: 'ිාිාි',dis_offence_name_si: 'ளனளள',dis_offence_name_ta: 'ளனளள' }
+Incidents:
+  1: { dis_inc_id: 1, emp_number: 1,dis_acttype_id: 1,dis_inc_level: 1,dis_inc_isclosed: 0,dis_inc_pro_officer: 'sdsdsd',dis_inc_inq_officer: 'sdsdsdsd',dis_inc_defe_officer: 'sdsds',dis_inc_filedate: '2007-08-01'}
+  2: { dis_inc_id: 2, emp_number: 2,dis_acttype_id: 2,dis_inc_level: 2,dis_inc_isclosed: 0,dis_inc_pro_officer: 'sdsdsd',dis_inc_inq_officer: 'sdsdsdsd',dis_inc_defe_officer: 'sdsds',dis_inc_filedate: '2007-08-01'}
+IncidentDetails:
+  1: { dis_inc_id: 1, dis_indetail_level: 'nibm',dis_indetail_takenby: 'asas',dis_indetail_takendate: '2007-08-01',	dis_indetail_comment: 'asasa' }
+  2: { dis_inc_id: 2, dis_indetail_level: 'nibm',dis_indetail_takenby: 'sdsd',dis_indetail_takendate: '2007-08-01',	dis_indetail_comment: 'asasa' }
+OffenceList:
+  1: { dis_inc_id: 1, dis_offence_id: 1}
+  2: { dis_inc_id: 2, dis_offence_id: 2}
+DisAttachment:
+  1: { dis_attach_id: 1, dis_attach_name: 'nibm',dis_attach_type: 'kk',dis_attach_content: '', dis_inc_id: 1}
+  2: { dis_attach_id: 2, dis_attach_name: 'nibm',dis_attach_type: 'kk',dis_attach_content: '', dis_inc_id: 2}
+
+

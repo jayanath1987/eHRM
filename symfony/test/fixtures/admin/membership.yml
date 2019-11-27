@@ -1,0 +1,6 @@
+MembershipType:
+  MT_001: { name: 'type 1' }
+  MT_002: { name: 'type 2' }
+Membership:
+  M_001: { name: 'mem 1', typeId: 1 }
+  M_002: { name: 'mem 2', typeId: 1 }

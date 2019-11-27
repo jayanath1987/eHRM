@@ -1,0 +1,105 @@
+input.checkbox {
+	vertical-align: middle;
+}
+
+input#calFromDate,input#calToDate {
+	float: none;
+	display: inline;
+	margin-right: -10px;
+	margin-left: 8px;
+}
+
+label.mainLabel {
+	font-weight: bold;
+	float: none;
+	display: inline-block;
+	width: 150px;
+}
+
+label.subLabel {
+	float: none;
+	display: inline;
+	width: auto;
+	margin: 4px 6px 4px 4px;
+}
+
+form#frmFilterLeave {
+	padding: 6px;
+}
+
+div.actionbuttons {
+	width: 99%;
+	padding: 4px;
+	margin: 0px;
+	display: block;
+	float: none;
+	border-top: solid 1px #ff9900;
+}
+
+span.action_ApproveLeave_active,
+span.action_RejectLeave_active,
+span.action_CancelLeave_active,
+span.action_ApproveLeave_inactive,
+span.action_RejectLeave_inactive,
+span.action_CancelLeave_inactive {
+	display: block;
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin: 0px 2px 0px 2px;
+	padding: 0px;
+}
+
+span.action_ApproveLeave_active {
+	background: transparent url('../../../../themes/orange/icons/appraove_active.png');
+}
+
+span.action_RejectLeave_active {
+	background: transparent url('../../../../themes/orange/icons/reject_active.png'); ?>");
+}
+
+span.action_CancelLeave_active {
+	background: transparent url('../../../../themes/orange/icons/cancel_active.png'); ?>");
+}
+
+span.action_ApproveLeave_inactive {
+	background: transparent url('../../../../themes/orange/icons/appraove_inactive.png');
+}
+
+span.action_RejectLeave_inactive {
+	background: transparent url('../../../../themes/orange/icons/reject_inactive.png'); ?>");
+}
+
+span.action_CancelLeave_inactive {
+	background: transparent url('../../../../themes/orange/icons/cancel_inactive.png'); ?>");
+}
+
+tr.markedForApproval td {
+	background-color: #bef1bf;
+}
+
+tr.markedForRejection td {
+	background-color: #fddac4;
+}
+
+tr.markedForCancellation td {
+	background-color: #ffb6b6;
+}
+
+table.data-table td {
+	vertical-align: top;
+}
+
+table.data-table td.actions {
+	vertical-align: middle;
+}
+
+#divHelp span {
+	display: inline;
+	margin: 0px 20px 0px 6px;
+}
+
+#divHelp img {
+	vertical-align: text-bottom;
+	margin-bottom: 0px;
+}

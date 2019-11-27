@@ -1,0 +1,51 @@
+-
+  firstName: John
+  middleName: K
+  lastName: Lowe
+  fullName: 'John K Lowe'
+-
+  firstName: Timothy 
+  middleName: William 
+  lastName: Lopez
+  fullName: 'Timothy William Lopez'
+-
+  firstName: Tim
+  middleName: ''
+  lastName: Sheldon
+  fullName: 'Tim Sheldon'
+-
+  firstName: Elisa
+  middleName: ''
+  lastName: ''
+  fullName: Elisa
+-
+  firstName: ''
+  middleName: ' Sonny'
+  lastName: King
+  fullName: 'Sonny King'
+-
+  firstName: ' '
+  middleName: '  '
+  lastName: ''
+  fullName: ''
+-
+  firstName: ''
+  middleName: ''
+  lastName: ''
+  fullName: ''
+-
+  firstName: ''
+  middleName: 'Samantha'
+  lastName: Jayasinghe
+  fullName: 'Samantha Jayasinghe'
+-
+  firstName: ''
+  middleName: ' Himath'
+  lastName: Dissanayake
+  fullName: 'Himath Dissanayake'
+-
+  firstName: ''
+  middleName: 'Nadeeth'
+  lastName: Lansakara
+  fullName: 'Nadeeth Lansakara'
+

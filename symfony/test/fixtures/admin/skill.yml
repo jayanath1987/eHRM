@@ -1,0 +1,4 @@
+Skill:
+  SK_001: { name: Cricket, description: ' Play Great Cricket', id: SKI004 }
+  SK_002: { name: QA, description: 'hacking codes', id: SKI005 }
+  SK_003: { name: 'Watch Movies', description: 'watching movies', id: SKI006 }

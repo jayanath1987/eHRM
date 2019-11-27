@@ -1,0 +1,7 @@
+Education:
+  EDU_001: { Institute: 'University of colombo', course: BSC, id: EDU004 }
+  EDU_002: { Institute: 'University of Moratuwa', course: 'BSC Eng', id: EDU005 }
+  EDU_003: { Institute: APilt, course: test, id: EDU006 }
+Licenses:
+  LIC_001: { desc: 'some description1' }
+  LIC_002: { desc: 'some description2' }

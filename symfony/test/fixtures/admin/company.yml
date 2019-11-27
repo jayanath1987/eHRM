@@ -1,0 +1,9 @@
+CompanyGenInfo:
+  companyName: Orangehrminc
+  taxId: 443
+  NAICS: '6242252452'
+CompanyProperty:
+  COM_POP001: { prop_name: Computer }
+  COM_POP002: { prop_name: Keyboard }
+CompanyStructure:
+  CS_001: { title: my_title_2, title_si: my_title_2_si, title_ta: my_title_2_ta, parnt: 1, address: my_address_2, address_si: my_address_2_si, address_ta: my_address_2_ta, phone_intercom: 38048329, phone_vip: 38347922, phone_direct_line: 38647515, phone_extension: 38947108, fax: 4905837, email: 2@hsenid.lk, url: 'http://www.yahoo_2.com', emp_number: 1 }

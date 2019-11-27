@@ -1,0 +1,4 @@
+crontab -e <= CONTJOB ADD
+
+1 9 * * * php /var/www/eSamudhiHRM/symfony/symfony updateincrement:employee >> /var/www/JBL/test.txt
+

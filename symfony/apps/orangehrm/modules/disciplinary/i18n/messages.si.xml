@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="si" datatype="plaintext" original="messages" date="2009-12-08T13:58:35Z" product-name="messages">
+    <header/>
+    <body>
+     <trans-unit id="1">
+        <source>Disciplinary Type Summary</source>
+        <target>විනය පිළිබඳ ක්‍රියාමාර්ග සාරාංශය</target>
+     </trans-unit>	
+     <trans-unit id="1">
+        <source>Action Type</source>
+        <target>ක්‍රියාමාර්ගය</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Please Select the Case File</source>
+        <target>ඕනෑ</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Pending Incident Summery</source>
+        <target>විසදීමට තිබෙන සිද්ධි සාරාංශය</target>
+     </trans-unit>
+     <trans-unit id="116">
+        <source>Define Disciplinary type</source>
+        <target>විනය පිළිබඳ ක්‍රියාමාර්ග</target>
+      </trans-unit>
+     <trans-unit id="1">
+        <source>Disciplinary Type</source>
+        <target>විනය පිළිබඳ වර්ග</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Disciplinary Action Type is required</source>
+        <target>අනිවාර්යයි</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Offence Summry</source>
+        <target>වරද සාරාංශය</target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Offence</source>
+        <target>වරද </target>
+     </trans-unit>
+     <trans-unit id="1">
+        <source>Action type</source>
+        <target>වරද වර්ගය</target>
+     </trans-unit>
+     <trans-unit id="116">
+        <source>Offence List</source>
+        <target>නැත</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Action taken by</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Action taken date</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Isclosed</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Case Closed</source>
+        <target>චෝදනාව අවසානයි</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Further Actions</source>
+        <target>චෝදනාව ඉදිරියට</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>New Incident Report</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Pending Inquiry Summery</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Action Details</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Level</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Comment</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Inquiry Officer</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Prosecuting Officer</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Defending Officer</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Case File Produce Date</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Inquiry</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Closed Incident Summery</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Disciplinary Action Type is required</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>No Special characters are allowed</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident type and Incident sub type should be selected.</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>There is No Offences in this Disciplinary Type</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Define New Offence</source>
+        <target>අඅඅඅඅ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Disciplinary Sub Type Summary</source>
+        <target>විනය උප අකාර</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Please Select at least one employee</source>
+        <target>විනය උප අකාර</target>
+      </trans-unit>
+       <trans-unit id="116">
+        <source>Incident Reporting</source>
+        <target>සිද්ධි වාර්තා කරනවා</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Date</source>
+        <target>සිද්ධි දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Reported By</source>
+        <target>වාර්ථා කරු</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident</source>
+        <target>සිද්ධි</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Employee Involved</source>
+        <target>විනය සේවකයා</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Time</source>
+        <target>සිද්ධි වේලාව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Emp Id</source>
+        <target>විනය අංකය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Emp Name</source>
+        <target>විනය නම</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Designation</source>
+        <target>තනතුර</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>section</source>
+        <target>අංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Add Employee</source>
+        <target>සේවකයා එක් කරන්න</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Pending Incident Summary</source>
+        <target>විසදීමට තිබෙන සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Reported By</source>
+        <target>වාර්ථා කරු</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Date</source>
+        <target>සිද්ධිය දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Summary</source>
+        <target>සිද්ධි සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Status</source>
+        <target>තත්වය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident</source>
+        <target>සිද්ධිය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Close Incident Summary</source>
+        <target>නිමා කල සිද්ධිය සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Disciplinary Action Types</source>
+        <target>විනය පිළිබඳ ක්‍රියා වර්ගය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Sub Types</source>
+        <target>උප වර්ගය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Sub Type</source>
+        <target>උප වර්ගය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Pending Inquery Summary</source>
+        <target>විසදීමට තිබෙන පරීක්ෂණ සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action taken by</source>
+        <target>අවසන් ක්‍රියාව ගත්තේ</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action taken date</source>
+        <target>අවසන් ක්‍රියාව ගත් දවස</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Case File</source>
+        <target>ලිපි ගොනුව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Define Disciplinary Sub Types</source>
+        <target>විනය පිළිබඳ වර්ග</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Pending Inquiry Summary</source>
+        <target>විසදීමට තිබෙන විමර්ශන සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Inquery Summary</source>
+        <target>විමර්ශන සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Type</source>
+        <target>සිද්ධි වර්ග</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident Sub Type</source>
+        <target>සිද්ධි උප වර්ග</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Inquiry Officer name</source>
+        <target>විභාග නිලධාරියා</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Preliminary Inquiry Officer's Comments</source>
+        <target>මූලික විභාග නිලධාරියාගේ සටහන</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>History Information</source>
+        <target>ඉතිහාස තොරතුරු</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action</source>
+        <target>අවසන් ක්‍රියාව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>History</source>
+        <target>ඉතිහාසය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Remove</source>
+        <target>ඉවත්කරන්න</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Minor Incident</source>
+        <target>සුළු සිද්ධිය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Major Incident</source>
+        <target>බරපතල සිද්ධිය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Prosecuting Officer name </source>
+        <target>අභිචෝදන නිලධාරියා</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Defending Officer name </source>
+        <target>විත්තිකාර නිලධාරියා</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Case File Produced Date </source>
+        <target>චෝදනා ගොනුව ආරම්භ කල දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Case File </source>
+        <target>චෝදනා ගොනුව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Case Finalized</source>
+        <target>චෝදනාව අවසානයි</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action Taken By </source>
+        <target>අවසාන ක්‍රියාව ගත්තේ </target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action Taken</source>
+        <target>අවසාන ක්‍රියාව ගත්තේ </target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action Taken Date </source>
+        <target>අවසාන ක්‍රියාව ගත් දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Go to Disciplinary Actions Page</source>
+        <target>විනය පිළිබඳ ක්‍රියාමාර්ග පිටුවට</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>preliminary investigation</source>
+        <target>මූලික විමර්ශනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Charge Sheet</source>
+        <target>චෝදනා පත්‍රය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Summary</source>
+        <target>සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Disciplinary History</source>
+        <target>විනය ඉතිහාසය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>New Disciplinary Action Type Define</source>
+        <target>විනය පිළිබඳ ක්‍රියාමාර්ග සංස්කරණය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action Summary</source>
+        <target>අවසන් ක්‍රියාව සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Add Final Action</source>
+        <target>අවසන් ක්‍රියාව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Edit Final Action</source>
+        <target>අවසන් ක්‍රියාව සංස්කරණය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Final Action Code</source>
+        <target>අවසන් ක්‍රියාව කේතය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Major</source>
+        <target>ප්‍රධාන</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Minor</source>
+        <target>සුළු</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Investigate</source>
+        <target>විමර්ශනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Repoted Date</source>
+        <target>වාර්තා කළ දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident From Date</source>
+        <target>සිද්ධිය සිට දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident To Date</source>
+        <target>සිද්ධිය දක්වා දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Repoted Time</source>
+        <target>වාර්තා කළ වේලාව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident From Time</source>
+        <target>සිද්ධිය සිට වේලාව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Incident To Time</source>
+        <target>සිද්ධිය දක්වා වේලාව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Investigation / Audit Feedback</source>
+        <target>විමර්ශන / විඝණන ප්‍රතිචාරය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Comments Inquiry</source>
+        <target>විමර්ශන විස්තරය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>If Appeal</source>
+        <target>අභියාචනාවක් නම්</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Appeal Date</source>
+        <target>සාරාංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Comments Appeal Board</source>
+        <target>අභියාචනා මණ්ඩලයේ ප්‍රතිචාරය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Comments From Labour Tribunal or Labour Commissioner or Amusement Human Rights</source>
+        <target>කම්කරු විනිශ්චය සභාව හෝ කම්කරු කොමසාරිස්ගේ ප්‍රතිචාරය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Reported Date</source>
+        <target>වාර්ථා කළ දිනය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Reported Time</source>
+        <target>වාර්ථා කළ වේලාව</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Emp NIC</source>
+        <target>ජා.හැ.අංකය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Section</source>
+        <target>අංශය</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Explanation</source>
+        <target>නිදහසට කියන කරුණ</target>
+      </trans-unit>
+        <trans-unit id="1">
+        <source>Disciplinary Types</source>
+        <target>විනය පිළිබඳ වාර්ග</target>
+     </trans-unit>
+     <trans-unit>
+        <source>Employee No</source>
+        <target>සේවක අංකය</target>
+     </trans-unit>
+     <trans-unit>
+        <source>Employee NIC</source>
+        <target>සේවක ජාතික හැදුනුම් පත් අංකය</target>
+     </trans-unit>
+     <trans-unit>
+        <source>Closed</source>
+        <target>අවසන්</target>
+     </trans-unit>
+     <trans-unit>
+        <source>Ongoing</source>
+        <target>ඉදිරියට</target>
+     </trans-unit>   
+     <trans-unit>
+        <source>Major / Minor</source>
+        <target>ප්‍රධාන / සුළු</target>
+     </trans-unit>   
+     <trans-unit>
+        <source>Incident Major/Minor</source>
+        <target>සිද්ධි ප්‍රධාන / සුළු</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>Close Status</source>
+        <target>අවසන් වූ විදිය</target>
+     </trans-unit>     
+     <trans-unit>
+        <source>Charge Sheet Issued</source>
+        <target>චෝදනා පත්‍රය නිකුත් කල</target>
+     </trans-unit> 
+          <trans-unit>
+        <source>Explanation</source>
+        <target>නිදහසට කරුණු විමසීම</target>
+     </trans-unit> 
+          <trans-unit>
+        <source>Interdicted</source>
+        <target>වැඩ තහනම් කල</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>Further Action</source>
+        <target>වැඩිදුර ක්‍රියාමාර්ගය</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>&nbsp;Further Actions Required</source>
+        <target>වැඩිදුර ක්‍රියාමාර්ගය</target>
+     </trans-unit>
+     <trans-unit>
+        <source>If Interdicted</source>
+        <target>වැඩ තහනම් කිරීම</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>Update Disciplinary Sub Types</source>
+        <target>විනය උප අකාර සංස්කරණය</target>
+     </trans-unit>      
+     <trans-unit>
+        <source>Inquiry Summary</source>
+        <target>විසදීමට තිබෙන විමර්ශන සාරාංශය </target>
+     </trans-unit>
+     <trans-unit id="116">
+        <source>Incident reported date should be greater than to from date</source>
+        <target>වාර්තා කල දිනය ආරම්භක දිනයට වඩා වැඩි විය යුතුය.</target>
+     </trans-unit>
+     <trans-unit>
+        <source>Reinstatement Summary</source>
+        <target>නැවත සේවයේ පිහිටුවීමේ සාරාංශය</target>
+     </trans-unit>
+     <trans-unit>
+        <source>Reinstatement</source>
+        <target>නැවත සේවයේ පිහිටුවීම</target>
+     </trans-unit>
+     <trans-unit>
+        <source>Employee Number</source>
+        <target>සේවක අංකය</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>EPF Number</source>
+        <target>සේවක අර්ථසාධක අරමුදල අංකය</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>Reinstatement Date</source>
+        <target>නැවත සේවයේ පිහිටුවීමේ දිනය</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>Grade</source>
+        <target>ශ්‍රේණිය</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>Grade Slot</source>
+        <target>ශ්‍රේණි කාණ්ඩය</target>
+     </trans-unit> 
+     <trans-unit>
+        <source>Work Station</source>
+        <target>සේවා ස්ථානය</target>
+     </trans-unit>      
+    </body>
+  </file>
+</xliff> 

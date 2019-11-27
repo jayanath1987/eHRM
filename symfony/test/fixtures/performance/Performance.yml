@@ -1,0 +1,33 @@
+PerformanceRate:
+    1: {rate_id: 1 ,rate_code: 001, rate_name: 'Rating_1',	rate_name_si: 'ප්‍රතිශතය 1', rate_name_ta: 'ஸநஸநஸ 1', rate_desc: 'rate Description', rate_desc_si: 'ප්‍රතිශතය විස්තරය',	rate_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර', rate_option: 1}
+    2: {rate_id: 2 ,rate_code: 002, rate_name: 'Rating_2',	rate_name_si: 'ප්‍රතිශතය 2', rate_name_ta: 'ஸநஸநஸ 2', rate_desc: 'rate Description', rate_desc_si: 'ප්‍රතිශතය විස්තරය',	rate_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර', rate_option: 1}
+    3: {rate_id: 3 ,rate_code: 003, rate_name: 'Rating_3',	rate_name_si: 'ප්‍රතිශතය 3', rate_name_ta: 'ஸநஸநஸ 3', rate_desc: 'rate Description', rate_desc_si: 'ප්‍රතිශතය විස්තරය',	rate_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර', rate_option: 1}
+
+PerformanceDutyGroup:
+    1: {dtg_id: 1 ,dtgt_code: 001 ,dtg_name: 'Duty Group _1', dtg_name_si: 'ඍඇඑඍඇඑ 1' ,dtg_name_ta: 'ஸநஸநஸ 1', dtg_desc: 'Duty group Description 1', dtg_desc_si: 'දඅදඅසදඅසදඅසද 1' ,dtg_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර 1'}
+    2: {dtg_id: 2 ,dtgt_code: 002 ,dtg_name: 'Duty Group _2', dtg_name_si: 'ෆගදෆගදෆග 2' ,dtg_name_ta: 'ஸநஸநஸ 2', dtg_desc: 'Duty group Description 2' , dtg_desc_si: 'දඅදඅසදඅසදඅසද 2' ,dtg_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර 2'}
+    3: {dtg_id: 3 ,dtgt_code: 003 ,dtg_name: 'Duty Group _3', dtg_name_si: 'ඍඇඑඍඇඑඍඇ 3' ,dtg_name_ta: 'ஸநஸநஸ 3', dtg_desc: 'Duty group Description 3', dtg_desc_si: 'දඅදඅසදඅසදඅසද 3' ,dtg_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර 3'}
+
+PerformanceDuty:
+    1: {dut_id: 1 ,dut_code: 001 ,dut_name: 'Duty_1', dut_name_si: 'ඍඇඑඍඇඑ 1' ,dut_name_ta: 'ஸநஸநஸ 1', dut_desc: 'Duty Description 1', dut_desc_si: 'දඅදඅසදඅසදඅසද 1' ,dut_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර 1', dtg_id: 2 ,rate_id: 1}
+    2: {dut_id: 2 ,dut_code: 002 ,dut_name: 'Duty_2', dut_name_si: 'ඍඇඑඍඇඑ 2' ,dut_name_ta: 'ஸநஸநஸ 2', dut_desc: 'Duty Description 2', dut_desc_si: 'දඅදඅසදඅසදඅසද 2' ,dut_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර 2', dtg_id: 3 ,rate_id: 3}
+    3: {dut_id: 3 ,dut_code: 003 ,dut_name: 'Duty_3', dut_name_si: 'ඍඇඑඍඇඑ 3' ,dut_name_ta: 'ஸநஸநஸ 3', dut_desc: 'Duty Description 3', dut_desc_si: 'දඅදඅසදඅසදඅසද 3' ,dut_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර 3', dtg_id: 1 ,rate_id: 2}
+
+PerformanceEvaluation:
+  1: {eval_id: 1 ,eval_code: 001, 	eval_name: 'evaluation1' ,	eval_name_si: 'ඇඑරඇඑර'	,eval_name_ta: 'ඇඑරඇඑර'	,eval_desc: 'evaluation Description' ,	eval_desc_si: 'ඇඑරඇඑරඇඑරඇඑර',	eval_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර' ,eval_year: 2011 ,	eval_active: 1 ,rate_id: '1'}
+  2: {eval_id: 2 ,eval_code: 002, 	eval_name: 'evaluation2' ,	eval_name_si: 'ඇඑරඇඑර'	,eval_name_ta: 'ඇඑරඇඑර'	,eval_desc: 'evaluation Description' ,	eval_desc_si: 'ඇඑරඇඑරඇඑරඇඑර',	eval_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර' ,eval_year: 2012 ,	eval_active: 0 ,rate_id: '3'}
+  3: {eval_id: 3 ,eval_code: 003, 	eval_name: 'evaluation3' ,	eval_name_si: 'ඇඑරඇඑර'	,eval_name_ta: 'ඇඑරඇඑර'	,eval_desc: 'evaluation Description' ,	eval_desc_si: 'ඇඑරඇඑරඇඑරඇඑර',	eval_desc_ta: 'ඇඑරඇඑරඇඑරඇඑර' ,eval_year: 2011 ,	eval_active: 1 ,rate_id: '2'}
+
+PerformanceEvaluationDetail:
+    1: {eval_dtl_id: 1 ,eval_id: 001, jobtit_code: 'JOB001' ,	level_code: '1'	,eval_dtl_project_percentage: '50'	,eval_dtl_duty_percentage: '50' ,	service_code: '1'}
+    2: {eval_dtl_id: 2 ,eval_id: 002, jobtit_code: 'JOB002' ,	level_code: '2'	,eval_dtl_project_percentage: '80'	,eval_dtl_duty_percentage: '20' ,	service_code: '1'}
+    3: {eval_dtl_id: 3 ,eval_id: 003, jobtit_code: 'JOB003' ,	level_code: '3'	,eval_dtl_project_percentage: '0'	,eval_dtl_duty_percentage: '100' ,	service_code: '2'}
+
+PerformanceEvaluationDuty:
+    1: {eval_dtl_id: 1	,dut_id: 1 ,dut_weightage: '50'}
+    2: {eval_dtl_id: 2	,dut_id: 2 ,dut_weightage: '30'}
+    3: {eval_dtl_id: 3	,dut_id: 3 ,dut_weightage: '80'}
+
+PerformanceEvaluationEmployee:
+    1: {emp_number: 4 ,eval_id: 1,eval_dtl_id: 1,eval_emp_project_rate: '80',eval_emp_duty_rate: '90',eval_emp_duty_comment: 'sdfsdfs',eval_emp_overall_rate: '80',eval_emp_overall_grade: 'A',eval_emp_overall_comment: 'sdfsd',eval_emp_sujested_overall_rate: '80',eval_emp_sujested_overall_rate_comment: 'dfgdf',eval_emp_status: 0 ,sup_emp_number: 3  ,eval_type_id: 1 }
+    2: {emp_number: 5 ,eval_id: 1,eval_dtl_id: 2,eval_emp_project_rate: '90',eval_emp_duty_rate: '80',eval_emp_duty_comment: 'dfgdfgg',eval_emp_overall_rate: '80',eval_emp_overall_grade: 'A',eval_emp_overall_comment: 'sdfsd',eval_emp_sujested_overall_rate: '80',eval_emp_sujested_overall_rate_comment: 'sdfff',eval_emp_status: 0 ,sup_emp_number: 3  ,eval_type_id: 1 }

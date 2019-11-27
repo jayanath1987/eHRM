@@ -1,0 +1,75 @@
+CompanyStructure:
+  CompanyStructure_1:
+    id: 1
+    title: 'OrangeHRM Test'
+    description: ''
+    lft: '1'
+    rgt: '16'
+    parnt: '0'
+    loc_code: null
+    dept_id: ''
+  CompanyStructure_2:
+    id: 2
+    title: 'Sales Department'
+    description: 'Sales department'
+    lft: '2'
+    rgt: '7'
+    parnt: '1'
+    loc_code: LOC001
+    dept_id: A1
+  CompanyStructure_3:
+    id: 3
+    title: 'Engineering Department'
+    description: 'The engineering department'
+    lft: '8'
+    rgt: '15'
+    parnt: '1'
+    loc_code: LOC002
+    dept_id: A2
+  CompanyStructure_4:
+    id: 4
+    title: 'Research  Division'
+    description: ''
+    lft: '9'
+    rgt: '10'
+    parnt: '3'
+    loc_code: LOC003
+    dept_id: A21
+  CompanyStructure_5:
+    id: 5
+    title: 'Pre-sales Team'
+    description: 'Pre sales team'
+    lft: '11'
+    rgt: '12'
+    parnt: '3'
+    loc_code: LOC001
+    dept_id: A22
+  CompanyStructure_6:
+    id: 6
+    title: 'Professional services Division'
+    description: 'Professional Services'
+    lft: '13'
+    rgt: '14'
+    parnt: '3'
+    loc_code: LOC001
+    dept_id: A23
+  CompanyStructure_7:
+    id: 7
+    title: 'Sales asia Team'
+    description: ''
+    lft: '3'
+    rgt: '4'
+    parnt: '2'
+    loc_code: LOC004
+    dept_id: A11
+  CompanyStructure_8:
+    id: 8
+    title: 'North America Team'
+    description: ''
+    lft: '5'
+    rgt: '6'
+    parnt: '2'
+    loc_code: LOC005
+    dept_id: A12
+
+

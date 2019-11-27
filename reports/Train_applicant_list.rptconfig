@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.21" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isnull_1228_0</property>
+            <property name="value">FromDate_1228</property>
+        </structure>
+        <structure>
+            <property name="name">FromDate_1228_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1229_1</property>
+            <property name="value">ToDate_1229</property>
+        </structure>
+        <structure>
+            <property name="name">ToDate_1229_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1231_2</property>
+            <property name="value">EmpId_1231</property>
+        </structure>
+        <structure>
+            <property name="name">EmpId_1231_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1232_3</property>
+            <property name="value">EmpName_1232</property>
+        </structure>
+        <structure>
+            <property name="name">EmpName_1232_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1251_4</property>
+            <property name="value">trainingName_1251</property>
+        </structure>
+        <structure>
+            <property name="name">trainingName_1251_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__status_1253_5</property>
+            <property name="value">Approved</property>
+        </structure>
+        <structure>
+            <property name="name">status_1253_6</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">status_1253_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

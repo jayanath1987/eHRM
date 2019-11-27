@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="si" datatype="plaintext" original="messages" date="2009-12-08T13:58:35Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="116">
+        <source>Document Type is required in English</source>
+        <target>Required in English</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Document Type Summary</source>
+        <target>Define Document Type/Group Summary</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Add Document Type</source>
+        <target>Define Document Type/Group</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

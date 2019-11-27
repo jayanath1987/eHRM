@@ -1,0 +1,56 @@
+<definition>
+  <title>
+    <text>Example Report</text>
+  </title>
+  <section>
+    <title>FooBar</title>
+    <!-- Iterate with the results of the query "foobar" !-->
+    <with resultset="foobar">
+      <section>
+        <title>
+          <text valueFromResultset="field[@name='foo']"/>
+        </title>
+
+        <!-- Field and value, value evaluated from resultset with valueFromResultset !-->
+        <field label="Field Label">
+          <text valueFromResultset="field[@name='foo']"/>
+        </field>
+  
+        <!-- Table with header and footer (with total) !-->
+        <table>
+          <header>
+            <row>
+              <cell colspan="3">
+                <text>Table heading</text>
+              </cell>
+            </row>
+          </header>
+          <body>
+            <!-- Iterate the rows with the results of "sub-query" !-->
+            <with resultset="sub-query">
+              <row>
+                <cell colspan="2">
+                  <text valueFromResultset="field[@name='something_else']"/>
+                </cell>
+                <cell name="a-number">
+                  <number>1</number>
+                </cell>
+              </row>
+            </with>
+          </body>
+          <footer>
+            <row>
+              <cell colspan="2">
+                <text>Total</text>
+              </cell>
+              <cell>
+                <!-- Use XPath expression to determine the total using valueFromHere attribute !-->
+                <number valueFromHere="sum(../../../../body/row/cell[@name='a-number'])"/>
+              </cell>
+            </row>
+          </footer>
+        </table>
+      </section>
+    </with>
+  </section>
+</definition>

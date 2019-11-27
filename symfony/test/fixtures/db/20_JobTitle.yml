@@ -1,0 +1,30 @@
+JobTitle:
+  JobTitle_JOB001:
+    id: JOB001
+    name: Programmer
+    description: 'Programmer Description'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+  JobTitle_JOB002:
+    id: JOB002
+    name: 'QA Engineer'
+    description: 'QA Engineer desc'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+  JobTitle_JOB003:
+    id: JOB003
+    name: 'Software Engineer'
+    description: 'Software Engineer'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+  JobTitle_JOB004:
+    id: JOB004
+    name: 'Sales Engineer'
+    description: 'Sales Engineer Desc'
+    comments: ''
+    salaryGradeId: SAL001
+    jobspecId: null
+
